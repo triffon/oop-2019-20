@@ -7,6 +7,6 @@
  * Какво са структури, защо използваме структури и как ги използваме.
 
 ### Бележка
-Може да намерите много повече информация в [**README.md**](https://github.com/triffon/oop-2019-20/tree/master/exercises/6/Seminar 01) файла в самата папка.
+Може да намерите много повече информация в [**README.md**](https://github.com/triffon/oop-2019-20/tree/master/exercises/6/Seminar_01) файла в самата папка.
 
 ---
