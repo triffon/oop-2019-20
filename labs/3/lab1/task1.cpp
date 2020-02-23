@@ -31,6 +31,7 @@ struct Rectangle {
     }
 
     double findRadius() {
+        //пробвайте да го направите без pow (с побитова операция)
         return (sqrt(pow(a, 2) + pow(b, 2))) / 2;
     }
 
