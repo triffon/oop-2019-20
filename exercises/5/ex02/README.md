@@ -118,7 +118,7 @@ struct point {
     double x, y;
     double distanceTo(point & p) {
         return hypot(p.x - x, p.y - y);
-    } 
+    }
 };
 
 int main() {
