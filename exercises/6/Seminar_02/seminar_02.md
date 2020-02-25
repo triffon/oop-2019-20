@@ -491,14 +491,14 @@ void DynamicArray::add(int number)
         }
     }
 
-	numbers[size] = number;
-	size++;
+    numbers[size] = number;
+    size++;
 }
 
 
 bool DynamicArray::contains(int number) const
 {
-	bool result	=	false;
+    bool result = false;
     for (size_t i = 0; i < size; i++)
     {
         if (numbers[i] == number)
@@ -528,22 +528,22 @@ DynamicArray::~DynamicArray()
 
 bool DynamicArray::increaseCapacity()
 {
-	bool result	=	false;
+    bool result	=	false;
     capacity *= 2;
     int* numbersCopy = new (std::nothrow) int[capacity];
-	if ( numbersCopy )
-	{		
-    	copyArray(numbersCopy, numbers, size);
-    	delete[] numbers;
-    	numbers = numbersCopy;
-    	result true;
-	}
-	else
-	{
-		capacity /= 2;
-	}
+    if ( numbersCopy )
+    {		
+        copyArray(numbersCopy, numbers, size);
+        delete[] numbers;
+        numbers = numbersCopy;
+        result true;
+    }
+    else
+    {
+        capacity /= 2;
+    }
 	
-	return result;
+    return result;
 }
 
 void DynamicArray::copyArray(int* destination, int* source, const size_t& sourceSize)
@@ -653,13 +653,13 @@ void DynamicArray::add(int number)
         }
     }
 
-	numbers[size] = number;
-	size++;
+    numbers[size] = number;
+    size++;
 }
 
 bool DynamicArray::contains(int number) const
 {
-	bool result = false;
+    bool result = false;
     for (size_t i = 0; i < size; i++)
     {
         if (numbers[i] == number)
@@ -691,15 +691,15 @@ DynamicArray& DynamicArray::operator=(const DynamicArray& other)
 {
     if (this != &other)
     {
-		int* copy = new (std::nothrow) int[other.capacity];
-		if(copy)
-		{
-			this->copyArray(copy, other.numbers, other.size);
-			delete[] numbers;
-			numbers = copy;
-			size = other.size;
-			capacity = other.capacity;
-		}
+        int* copy = new (std::nothrow) int[other.capacity];
+        if(copy)
+        {
+            this->copyArray(copy, other.numbers, other.size);
+            delete[] numbers;
+            numbers = copy;
+            size = other.size;
+            capacity = other.capacity;
+        }
     }
 
     return *this;
@@ -707,22 +707,22 @@ DynamicArray& DynamicArray::operator=(const DynamicArray& other)
 
 bool DynamicArray::increaseCapacity()
 {
-	bool result	=	false;
+    bool result = false;
     capacity *= 2;
     int* numbersCopy = new (std::nothrow) int[capacity];
-	if ( numbersCopy )
-	{		
-    	copyArray(numbersCopy, numbers, size);
-    	delete[] numbers;
-    	numbers = numbersCopy;
-    	result true;
-	}
-	else
-	{
-		capacity /= 2;
-	}
+    if ( numbersCopy )
+    {		
+        copyArray(numbersCopy, numbers, size);
+        delete[] numbers;
+        numbers = numbersCopy;
+        result true;
+    }
+    else
+    {
+        capacity /= 2;
+    }
 	
-	return result;
+    return result;
 }
 
 void DynamicArray::copyArray(int* destination, int* source, const size_t& sourceSize)
