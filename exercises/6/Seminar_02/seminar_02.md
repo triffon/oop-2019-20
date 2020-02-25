@@ -340,8 +340,8 @@ private:
 
 public:
     void add(int number);
-    bool contains(int number);
-    void print();
+    bool contains(int number) const;
+    void print() const;
 };
 ```
 
@@ -351,15 +351,15 @@ public:
 
 class DynamicArray {
 private:
-    int capacity;
-    int* numbers;
+    size_t capacity;
     size_t size;
+    int* numbers;
 
 public:
-    DynamicArray(int capacity = 16);
+    DynamicArray(size_t capacity = 16);
     void add(int number);
-    bool contains(int number);
-    void print();
+    bool contains(int number) const;
+    void print() const;
 };
 ```
 
@@ -367,7 +367,7 @@ public:
 // DynamicArray.cpp
 #include "DynamicArray.h"
 
-DynamicArray::DynamicArray(int capacity)
+DynamicArray::DynamicArray(size_t capacity)
 {
     this->capacity = capacity;
     numbers = new int[capacity];
@@ -398,15 +398,15 @@ int main()
 
 class DynamicArray {
 private:
-    int capacity;
-    int* numbers;
+    size_t capacity;
     size_t size;
+    int* numbers;
 
 public:
-    DynamicArray(int capacity = 16);
+    DynamicArray(size_t capacity = 16);
     void add(int number);
-    bool contains(int number);
-    void print();
+    bool contains(int number) const;
+    void print() const;
     ~DynamicArray();
 };
 ```
@@ -415,7 +415,7 @@ public:
 // DynamicArray.cpp
 #include "DynamicArray.hpp"
 
-DynamicArray::DynamicArray(int capacity)
+DynamicArray::DynamicArray(size_t capacity)
 {
     this->capacity = capacity;
     numbers = new int[capacity];
@@ -454,17 +454,17 @@ using std::endl;
 
 class DynamicArray {
 private:
-    int capacity;
-    int* numbers;
+    size_t capacity;
     size_t size;
+    int* numbers;
 
     void copyArray(int* destination, int* source, const size_t& sourceSize);
     void increaseCapacity();
 public:
-    DynamicArray(int capacity = 16);
+    DynamicArray(size_t capacity = 16);
     void add(int number);
-    bool contains(int number);
-    void print();
+    bool contains(int number) const;
+    void print() const;
     ~DynamicArray();
 };
 
@@ -474,7 +474,7 @@ public:
 // DynamicArray.cpp
 #include "DynamicArray.hpp"
 
-DynamicArray::DynamicArray(int capacity)
+DynamicArray::DynamicArray(size_t capacity)
 {
     this->capacity = capacity;
     numbers = new int[capacity];
@@ -485,28 +485,33 @@ void DynamicArray::add(int number)
 {
     if (size >= capacity)
     {
-        increaseCapacity();
+        if(!this->increaseCapacity())
+        {
+        	std::cerr << "Not enough memory!" << std::endl;
+        }
     }
 
-    numbers[size] = number;
-    size++;
+	numbers[size] = number;
+	size++;
 }
 
 
-bool DynamicArray::contains(int number)
+bool DynamicArray::contains(int number) const
 {
+	bool result	=	false;
     for (size_t i = 0; i < size; i++)
     {
         if (numbers[i] == number)
         {
-            return true;
+            result = true;
+            break;
         }
     }
 
-    return false;
+    return result;
 }
 
-void DynamicArray::print()
+void DynamicArray::print() const
 {
     for (size_t i = 0; i < size; i++)
     {
@@ -521,16 +526,24 @@ DynamicArray::~DynamicArray()
     delete[]  numbers;
 }
 
-void DynamicArray::increaseCapacity()
+bool DynamicArray::increaseCapacity()
 {
-    int* numbersCopy = new int[size];
-    copyArray(numbersCopy, numbers, size);
-
-    delete[] numbers;
-    capacity = 2 * capacity;
-    numbers = new int[capacity];
-
-    copyArray(numbers, numbersCopy, size);
+	bool result	=	false;
+    capacity *= 2;
+    int* numbersCopy = new (std::nothrow) int[capacity];
+	if ( numbersCopy )
+	{		
+    	copyArray(numbersCopy, numbers, size);
+    	delete[] numbers;
+    	numbers = numbersCopy;
+    	result true;
+	}
+	else
+	{
+		capacity /= 2;
+	}
+	
+	return result;
 }
 
 void DynamicArray::copyArray(int* destination, int* source, const size_t& sourceSize)
@@ -603,19 +616,19 @@ using std::endl;
 
 class DynamicArray {
 private:
-    int capacity;
-    int* numbers;
+    size_t capacity;
     size_t size;
+    int* numbers;
 
     void copyArray(int* destination, int* source, const size_t& sourceSize);
-    void increaseCapacity();
+    bool increaseCapacity();
 public:
-    DynamicArray(int capacity = 16);
+    DynamicArray(size_t capacity = 16);
     ~DynamicArray();
     DynamicArray& operator=(const DynamicArray& other);
     void add(int number);
-    bool contains(int number);
-    void print();
+    bool contains(int number) const;
+    void print() const;
 };
 ```
 
@@ -623,7 +636,7 @@ public:
 // DynamicArray.cpp
 #include "DynamicArray.hpp"
 
-DynamicArray::DynamicArray(int capacity)
+DynamicArray::DynamicArray(size_t capacity)
 {
     this->capacity = capacity;
     numbers = new int[capacity];
@@ -634,28 +647,32 @@ void DynamicArray::add(int number)
 {
     if (size >= capacity)
     {
-        increaseCapacity();
+        if(!this->increaseCapacity())
+        {
+        	std::cerr << "Not enough memory!" << std::endl;
+        }
     }
 
-    numbers[size] = number;
-    size++;
+	numbers[size] = number;
+	size++;
 }
 
-
-bool DynamicArray::contains(int number)
+bool DynamicArray::contains(int number) const
 {
+	bool result = false;
     for (size_t i = 0; i < size; i++)
     {
         if (numbers[i] == number)
         {
-            return true;
+            result = true;
+            break;
         }
     }
 
-    return false;
+    return result;
 }
 
-void DynamicArray::print()
+void DynamicArray::print() const
 {
     for (size_t i = 0; i < size; i++)
     {
@@ -674,26 +691,38 @@ DynamicArray& DynamicArray::operator=(const DynamicArray& other)
 {
     if (this != &other)
     {
-        delete[] numbers;
-        capacity = other.capacity;
-        size = other.size;
-        numbers = new int[capacity];
-        copyArray(numbers, other.numbers, size);
+		int* copy = new (std::nothrow) int[other.capacity];
+		if(copy)
+		{
+			this->copyArray(copy, other.numbers, other.size);
+			delete[] numbers;
+			numbers = copy;
+			size = other.size;
+			capacity = other.capacity;
+		}
     }
 
     return *this;
 }
 
-void DynamicArray::increaseCapacity()
+bool DynamicArray::increaseCapacity()
 {
-    int* numbersCopy = new int[size];
-    copyArray(numbersCopy, numbers, size);
-
-    delete[] numbers;
-    capacity = 2 * capacity;
-    numbers = new int[capacity];
-
-    copyArray(numbers, numbersCopy, size);
+	bool result	=	false;
+    capacity *= 2;
+    int* numbersCopy = new (std::nothrow) int[capacity];
+	if ( numbersCopy )
+	{		
+    	copyArray(numbersCopy, numbers, size);
+    	delete[] numbers;
+    	numbers = numbersCopy;
+    	result true;
+	}
+	else
+	{
+		capacity /= 2;
+	}
+	
+	return result;
 }
 
 void DynamicArray::copyArray(int* destination, int* source, const size_t& sourceSize)
