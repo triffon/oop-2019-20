@@ -1,21 +1,30 @@
 #include <iostream>
 #include <cmath>
+#include <numeric>
 
 struct Rational {
-  int numer, denom;
+  long numer;
+  unsigned long denom;
 
   Rational() {
       numer = 0;
       denom = 1;
   }
 
-  Rational(int n, int d) {
-      numer = n;
-      denom = d;
+  Rational(long n, unsigned long d) {
+      if (d == 0) {
+          std::cerr << "Нулев знаменател, променям на 1" << std::endl;
+          d = 1;
+      }
+      if (n == 0)
+        d = 1;
+      unsigned long g = std::gcd(std::abs(n), d);
+      numer = n / g;
+      denom = d / g;
   }
 
-  int getNumerator()    { return numer; }
-  int getDenominator()  { return denom; }
+  long getNumerator()    { return numer; }
+  unsigned long getDenominator()  { return denom; }
 
   void print() {
       // TODO: по желание да извежда q = преди числото
@@ -74,6 +83,7 @@ Rational ratexp(unsigned k, unsigned n) {
     Rational sum(0, 1);
     for(unsigned i = 0; i <= n; i++)
         // !!! sum += pow(k, i) / fact(i);
+        // TODO: да се сметне общия член на редицата
         sum = add(sum, Rational(pow(k, i), fact(i)));
     return sum;
 }
@@ -92,7 +102,7 @@ void testRationals() {
 }
 
 void testRatExp() {
-    Rational r = ratexp(2, 7);
+    Rational r = ratexp(2, 14);
     r.printnl();
     std::cout << "r      = " << r.toDouble() << std::endl;
     std::cout << "exp(2) = " << exp(2) << std::endl;
