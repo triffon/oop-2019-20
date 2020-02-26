@@ -1,0 +1,13 @@
+4
+Ivan Kolev
+40000
+5.75
+Stefan Stefanov
+40007
+4.5
+Petya Petrova
+40002
+6
+Viktoria Ivanova
+40001
+5.5
