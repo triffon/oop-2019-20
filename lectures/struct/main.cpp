@@ -1,8 +1,9 @@
 #include <iostream>
+#include <cstring>
 
 struct Point {
     double x, y;
-} p, q;
+} p, q; 
 Point r;
 
 const int MAX_NAME = 30;
@@ -48,7 +49,7 @@ void readStudent(Student& s) {
 }
 
 void testStruct() {
-        std::cout << "sizeof(Point) = " << sizeof(Point) << std::endl;
+    std::cout << "sizeof(Point) = " << sizeof(Point) << std::endl;
     std::cout << "sizeof(Student) = " << sizeof(Student) << std::endl;
     Point p = { 1.2, 3.4 }, q;
     q = p;
@@ -60,6 +61,9 @@ void testStruct() {
     // !!! s = q;
     // !!! std::cout << s;
     // !!! std::cin >> s;
+    Student* ps1 = &s;
+    strcpy(ps1->name, "Петър Петров");
+    std::cout << ps1->name << std::endl;
 }
 
 unsigned readStudents(Student students[]) {
