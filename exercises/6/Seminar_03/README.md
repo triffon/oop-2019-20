@@ -1,6 +1,5 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Голямата четворка](#%D0%B3%D0%BE%D0%BB%D1%8F%D0%BC%D0%B0%D1%82%D0%B0-%D1%87%D0%B5%D1%82%D0%B2%D0%BE%D1%80%D0%BA%D0%B0)
 - [Проблемът](#%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC%D1%8A%D1%82)
@@ -468,7 +467,7 @@ Transaction::~Transaction()
 Тъй като копираме стойности от друг обект от същия тип няма нужда да ги валидираме, поне в този случай, може да се наложи валидация в друг случай.
 Нека рефакторираме малко класа, добавим `getters` и видим финалния продукт.
 
-## Тhe Big Four imeplemented - Default constructor, Copy constructor, Operator=, Desctructor.
+## Тhe Big Four imeplemented - Default constructor, Copy constructor, Operator=, Destructor.
 ```c++
 // Transaction.hpp
 #pragma once
@@ -703,101 +702,3 @@ void Transaction::print()
 
 ```
 
-Small summary of what we did last time - classes, access modifiers, getters, setters(validation), constructors - default values, strcpy, etc.. what are objects
-Example of
-
-
-
-
-Introduction
-Default constructor -> sets default values. What are default values? Default values for char[] and int/double...
-getters and return types -> consts modifiers
-    -> const char * return type? what is "Hello, World!"? string literals
-
-Using dynamic memory -> memory allocation in the constructor. What are the default values? Once we allocate the memory it's like we are using the same static arrays -> "" default value.
-Allocating memory -> deallocating memory -> destructor -> couts in methods.
-Operator=, deep copy and shallow copy -> values and references. What is const Class& - pseudonyms, const char * const name
-What happens when we use (x = y) = z, what do we expect to happen, what is the result of (x = y)
-The mad programmer who uses x = x. What happens when we do x = x?
-
-Couts on ctors, and operator=
-can use fields of "other" because this is the same class
-Hidden usage of copy ctor
-
-How to write copy ctor - simplified operator=
-
-destructor -> del() function
-copy constructor -> copy() function
-
-refactor of the class!
-refresher on const stuff
-refresher on pointer and address stuff
-```c++
-#include <iostream>
-
-#pragma warning(disable: 4996)
-
-class Student {
-    char* name;
-    int facultyNumber;
-public:
-    Student() : name(nullptr), facultyNumber(0) { std::cout << "Default Constructor Called." << std::endl; }
-
-    Student(const char* _name, int _fn) : facultyNumber(_fn)
-    {
-        name = new char[strlen(_name) + 1];
-        strcpy(name, _name);
-        std::cout << "Constructor for " << name << std::endl;
-
-    }
-
-    Student(const Student& other)
-    {
-        std::cout << "Copy constructor for " << other.name << std::endl;
-
-        this->facultyNumber = other.facultyNumber;
-
-        name = new char[strlen(other.name) + 1];
-        strcpy(this->name, other.name);
-    }
-
-    ~Student()
-    {
-        std::cout << "Desctructor for " << name << std::endl;
-        delete[] name;
-    }
-
-    Student& operator=(const Student& other)
-    {
-        std::cout << "Operator= for " << other.name << std::endl;
-        if (this != &other)
-        {
-            this->facultyNumber = other.facultyNumber;
-
-            delete[] name;
-            name = new char[strlen(other.name) + 1];
-            strcpy(this->name, other.name);
-        }
-
-        return *this;
-    }
-    void print()
-    {
-        std::cout << name << ", " << facultyNumber << std::endl;
-        std::cout << "Name address: " << &name << std::endl;
-    }
-};
-
-int main()
-{
-    Student yasen = Student("Yasen Bonev", 81498);
-    Student stefan = Student("Stefan Petrov", 12345);
-    Student pesho = yasen;
-    Student gosho;
-    gosho = yasen;
-    yasen.print();
-    pesho.print();
-}
-
-
-```
