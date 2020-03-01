@@ -1,3 +1,16 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Голямата четворка](#%D0%B3%D0%BE%D0%BB%D1%8F%D0%BC%D0%B0%D1%82%D0%B0-%D1%87%D0%B5%D1%82%D0%B2%D0%BE%D1%80%D0%BA%D0%B0)
+- [Проблемът](#%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC%D1%8A%D1%82)
+- [Какво се има предвид](#%D0%BA%D0%B0%D0%BA%D0%B2%D0%BE-%D1%81%D0%B5-%D0%B8%D0%BC%D0%B0-%D0%BF%D1%80%D0%B5%D0%B4%D0%B2%D0%B8%D0%B4)
+- [Конструктори, деструктори и динамична памет](#%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D0%BE%D1%80%D0%B8-%D0%B4%D0%B5%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D0%BE%D1%80%D0%B8-%D0%B8-%D0%B4%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D1%87%D0%BD%D0%B0-%D0%BF%D0%B0%D0%BC%D0%B5%D1%82)
+- [Copy constructor](#copy-constructor)
+- [Тhe Big Four imeplemented - Default constructor, Copy constructor, Operator=, Desctructor.](#%D1%82he-big-four-imeplemented---default-constructor-copy-constructor-operator-desctructor)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Голямата четворка
 Днес ще се занимаваме отново с класове, като този път ще полета, които ще се грижат за заделянето и освобождането на динамична памет. Ще разгледаме даден проблем, които не можем да решим с текущите си знания. След това ще покажем как можем да се справим с този проблем чрез използването на динамична памет. След това ще покажем какви проблеми възникват когато използваме динамична памет в нашите класове и как да решим един по един тези проблеми. Ще завършим с обобщение на това, което направим и за финал ще рефакторираме кода, така че да покажем колко лесно можем да постигнем същия ефект с много по-малко код чрез преизползване на функционалност.
 
