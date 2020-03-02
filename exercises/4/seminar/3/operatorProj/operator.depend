@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1583113139 source:c:\users\dtrz\desktop\oop-2019-20\exercises\4\seminar\3\operatorproj\extrafile.cpp
+	<iostream>
+	"operator.h"
+
+1583113349 c:\users\dtrz\desktop\oop-2019-20\exercises\4\seminar\3\operatorproj\operator.h
+
+1583113337 source:c:\users\dtrz\desktop\oop-2019-20\exercises\4\seminar\3\operatorproj\operator.cpp
+	<iostream>
+	"operator.h"
+
