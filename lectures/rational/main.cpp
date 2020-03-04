@@ -23,6 +23,7 @@ void testRationals() {
     // Rational r;
     Rational r(1, 2);
     Rational q = Rational(3, 4);
+    Rational s = r;
     q.printnl();
     r.printnl();
     q = r;
@@ -42,6 +43,6 @@ void testRatExp() {
 }
 
 int main(int, char**) {
-    testRationals();
-    // testRatExp();
+    // testRationals();
+    testRatExp();
 }

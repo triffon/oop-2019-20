@@ -3,6 +3,10 @@
 #include "rational.hpp"
 #include "rational.hpp"
 
+void print() {
+    std::cout << "Аз съм глобалната функция print()!\n";
+}
+
 Rational::Rational() {
     numer = 0;
     denom = 1;
@@ -20,17 +24,20 @@ Rational::Rational(long n, unsigned long d) {
     denom = d / g;
 }
 
-void Rational::print() const {
+inline void Rational::print() const {
     // TODO: по желание да извежда q = преди числото
      std::cout << numer << '/' << denom;
 }
 
 void Rational::printnl() const {
     print();
+    // ::print();
     std::cout << std::endl;
 }
 
 double Rational::toDouble() const {
+    int numer = 5, denom = 2;
+    // !!! this = &r;
     return (double)numer / denom;
 }
 
@@ -40,6 +47,7 @@ void Rational::read() {
     unsigned n;
     std::cin >> n;
     numer = n;
+    int cin = 2;
     std::cin.get(); // прескачаме символа '/'
     std::cin >> denom;
     std::clog << "[LOG] numer = " << numer << std::endl;
