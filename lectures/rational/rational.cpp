@@ -1,6 +1,7 @@
 #include <iostream>
 #include <numeric>
 #include "rational.hpp"
+#include "rational.hpp"
 
 Rational::Rational() {
     numer = 0;
@@ -19,24 +20,26 @@ Rational::Rational(long n, unsigned long d) {
     denom = d / g;
 }
 
-void Rational::print() {
+void Rational::print() const {
     // TODO: по желание да извежда q = преди числото
      std::cout << numer << '/' << denom;
 }
 
-void Rational::printnl() {
+void Rational::printnl() const {
     print();
     std::cout << std::endl;
 }
 
-double Rational::toDouble() {
+double Rational::toDouble() const {
     return (double)numer / denom;
 }
 
 void Rational::read() {
     // 1/2
     // int cin = 2;
-    std::cin >> numer;
+    unsigned n;
+    std::cin >> n;
+    numer = n;
     std::cin.get(); // прескачаме символа '/'
     std::cin >> denom;
     std::clog << "[LOG] numer = " << numer << std::endl;
