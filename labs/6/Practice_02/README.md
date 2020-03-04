@@ -21,18 +21,18 @@
 
 ###### Конструктори
  * `Student()` - Конструктор по подразбиране, който инициализира обекта с начални стойности.
- * `Student(int facultyNumber,char name[], char major[], int group)` - Конструктор, който инициализира полетата на обект от тип `Student`. Да прави всички нужни валидации.
+ * `Student(int facultyNumber,const char * name,const char * major, int group)` - Конструктор, който инициализира полетата на обект от тип `Student`. Да прави всички нужни валидации.
  
 ###### Getters(Аксесори)
 
  * `int getFacultyNumber() const` - **Getter**, който връща факултетния номер на студента.
- * `char* getName() const` - **Getter**, който връща името на студента.
- * `char* getMajor() const` - **Getter**, който специалността на студента.
+ * `const char* getName() const` - **Getter**, който връща името на студента.
+ * `const char* getMajor() const` - **Getter**, който специалността на студента.
  * `int getGroup() const` - **Getter**, който връща групата на студента.
 
 ###### Setters(Модификатори)
 
- * `void setMajor(char newMajor[])` - **Setter**, който дава нова стойност за специалността на студента.
+ * `void setMajor(const char * newMajor)` - **Setter**, който дава нова стойност за специалността на студента.
  * `void setGroup(int newGroup)` - **Setter**, който дава нова стойност за групата на студента.
 
 ###### Обикновени Методи
