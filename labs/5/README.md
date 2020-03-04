@@ -1,5 +1,11 @@
 # Практикум на 5 група
 
+### Git & GitHub
+
+* [Git website](https://git-scm.com/) 	
+* ["Git Started with GitHub" free course](https://www.udemy.com/course/git-started-with-github/) 	
+* [Git cheatsheet](https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf)
+
 ### Библиотечна система - мини проект
 
 Да се реализира програма, която поддържа обектите и операциите на библиотечна система. 
