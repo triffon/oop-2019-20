@@ -29,6 +29,8 @@ void testRationals() {
     std::cout << q.toDouble() << std::endl;
     q.read();
     q.printnl();
+    // !!! q.denom = 0;
+    // q.printnl();
 }
 
 void testRatExp() {
@@ -39,6 +41,6 @@ void testRatExp() {
 }
 
 int main(int, char**) {
-    // testRationals();
-    testRatExp();
+    testRationals();
+    // testRatExp();
 }

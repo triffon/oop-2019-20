@@ -1,7 +1,7 @@
-struct Rational {
+class Rational {
   long numer;
   unsigned long denom;
-
+public:
   Rational();
 
   Rational(long n, unsigned long d);
