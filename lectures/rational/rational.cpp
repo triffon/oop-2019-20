@@ -1,6 +1,6 @@
 #include <iostream>
 #include <numeric>
-#include "rational.h"
+#include "rational.hpp"
 
 Rational::Rational() {
     numer = 0;

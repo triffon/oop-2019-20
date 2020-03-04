@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cmath>
-#include "rational.h"
+#include "rational.hpp"
 
 unsigned fact(unsigned n) {
     unsigned product = 1;
