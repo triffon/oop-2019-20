@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1583416231 source:c:\users\kamen\documents\oop3\codeblocks projects\oop-upr3\src\linkedstack.cpp
+	"LinkedStack.h"
+
+1583416238 c:\users\kamen\documents\oop3\codeblocks projects\oop-upr3\include\linkedstack.h
+	"Node.h"
+
+1583416242 c:\users\kamen\documents\oop3\codeblocks projects\oop-upr3\include\node.h
+
+1583416283 source:c:\users\kamen\documents\oop3\codeblocks projects\oop-upr3\main.cpp
+	<iostream>
+	<cstring>
+	"LinkedStack.h"
+
+1583416599 source:c:\users\kamen\documents\oop3\codeblocks projects\oop-upr3\src\arraystack.cpp
+	"ArrayStack.h"
+
+1583416576 c:\users\kamen\documents\oop3\codeblocks projects\oop-upr3\include\arraystack.h
+
