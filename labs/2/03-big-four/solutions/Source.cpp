@@ -26,8 +26,8 @@ int main()
     Vector vec2;  // Calling the default constructor
     
     // We can easily add a lot of elements
-    for (int i = 0; i <= 100; i++)
-        vec2.push_back(2 * i);  // adding all the 
+    for (int i = 0; i <= 200; i += 2)
+        vec2.push_back(i);  // adding even numbers up to 200
 
     // And printing each one
     for (int i = 0; i < vec2.size(); i++)
