@@ -1,3 +1,4 @@
+#include <iostream>
 #include <cassert>
 #include "rstack.hpp"
 
@@ -44,5 +45,17 @@ int ResizingStack::peek() const {
 
 // разширяване на стека
 void ResizingStack::resize() {
-    // пас
+    // удвояваме капацитета
+    unsigned newCapacity = capacity * 2;
+    std::clog << "Разширяваме стека до капацитет " << newCapacity << std::endl;
+    // заделяме памет за новия стек
+    int *newa = new int[newCapacity];
+    // копираме елементите от стария стек
+    for(int i = 0; i < capacity; i++)
+        newa[i] = a[i];
+    capacity = newCapacity;
+    // унищожаваме стария масив
+    delete[] a;
+    // насочваме указателя към новия
+    a = newa;
 }
