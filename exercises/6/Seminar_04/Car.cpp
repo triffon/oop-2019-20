@@ -5,10 +5,10 @@ Car::Car( unsigned int horsePower, double volume, EngineType type,
 		unsigned int doorCount, bool hasWing, const char * color,
 		const char * name, const char * model, unsigned int year,
 		bool isNew, unsigned int price ) :
-		fEngineDetails(horsePower, volume, type), // Тук се вика констуктора с параметри на EngineDetails класа
-		fVisualDetails(doorCount, hasWing, color), // Тук се вика констуктора с параметри на VisualDetails класа
-		fManufactureDetails(name, model, year), // Тук се вика констуктора с параметри на ManufactureDetails класа
-		fIsNew(isNew), fPrice(price) // Останалите параметри се инициализират при създаването също
+		fEngineDetails(horsePower, volume, type), // РўСѓРє СЃРµ РІРёРєР° РєРѕРЅСЃС‚СѓРєС‚РѕСЂР° СЃ РїР°СЂР°РјРµС‚СЂРё РЅР° EngineDetails РєР»Р°СЃР°
+		fVisualDetails(doorCount, hasWing, color), // РўСѓРє СЃРµ РІРёРєР° РєРѕРЅСЃС‚СѓРєС‚РѕСЂР° СЃ РїР°СЂР°РјРµС‚СЂРё РЅР° VisualDetails РєР»Р°СЃР°
+		fManufactureDetails(name, model, year), // РўСѓРє СЃРµ РІРёРєР° РєРѕРЅСЃС‚СѓРєС‚РѕСЂР° СЃ РїР°СЂР°РјРµС‚СЂРё РЅР° ManufactureDetails РєР»Р°СЃР°
+		fIsNew(isNew), fPrice(price) // РћСЃС‚Р°РЅР°Р»РёС‚Рµ РїР°СЂР°РјРµС‚СЂРё СЃРµ РёРЅРёС†РёР°Р»РёР·РёСЂР°С‚ РїСЂРё СЃСЉР·РґР°РІР°РЅРµС‚Рѕ СЃСЉС‰Рѕ
 {
 	std::cout << "Constuctor Car" << std::endl;
 }
@@ -17,19 +17,19 @@ Car::Car( const EngineDetails& engineDetails,
 		const VisualDetails & visualDetails, 
 		const ManufactureDetails & manufactureDetails, 
 		bool isNew, unsigned int price ) : 
-		fEngineDetails(engineDetails), // Тук се вика дефоутния копи констуктор на EngineDetails класа
-		fVisualDetails(visualDetails), // Тук се вика дефоутния копи констуктор на VisualDetails класа
+		fEngineDetails(engineDetails), // РўСѓРє СЃРµ РІРёРєР° РґРµС„РѕСѓС‚РЅРёСЏ РєРѕРїРё РєРѕРЅСЃС‚СѓРєС‚РѕСЂ РЅР° EngineDetails РєР»Р°СЃР°
+		fVisualDetails(visualDetails), // РўСѓРє СЃРµ РІРёРєР° РґРµС„РѕСѓС‚РЅРёСЏ РєРѕРїРё РєРѕРЅСЃС‚СѓРєС‚РѕСЂ РЅР° VisualDetails РєР»Р°СЃР°
 		fIsNew(isNew), fPrice(price)
-		// Също така се вика и дефоутния констуктор на ManufactureDetails, за да се създаде полето fManufactureDetails
+		// РЎСЉС‰Рѕ С‚Р°РєР° СЃРµ РІРёРєР° Рё РґРµС„РѕСѓС‚РЅРёСЏ РєРѕРЅСЃС‚СѓРєС‚РѕСЂ РЅР° ManufactureDetails, Р·Р° РґР° СЃРµ СЃСЉР·РґР°РґРµ РїРѕР»РµС‚Рѕ fManufactureDetails
 {
-	fManufactureDetails = manufactureDetails; // след като вече е създадено полето, тук се вика operator= на ManufactureDetails класа
+	fManufactureDetails = manufactureDetails; // СЃР»РµРґ РєР°С‚Рѕ РІРµС‡Рµ Рµ СЃСЉР·РґР°РґРµРЅРѕ РїРѕР»РµС‚Рѕ, С‚СѓРє СЃРµ РІРёРєР° operator= РЅР° ManufactureDetails РєР»Р°СЃР°
 	std::cout << "Constuctor Car" << std::endl;
 }
 
-// Не е задължителен, защото нямаме динамичма памет, която да трием
-// Нищо, че някой от полетата на класа са обекти съдържащи динамична памет, 
-// при (автоматичното) викане на този деструктор, ще се викнат(пак автоматично)
-// и деструкторите на класовете на съответните полета
+// РќРµ Рµ Р·Р°РґСЉР»Р¶РёС‚РµР»РµРЅ, Р·Р°С‰РѕС‚Рѕ РЅСЏРјР°РјРµ РґРёРЅР°РјРёС‡РјР° РїР°РјРµС‚, РєРѕСЏС‚Рѕ РґР° С‚СЂРёРµРј
+// РќРёС‰Рѕ, С‡Рµ РЅСЏРєРѕР№ РѕС‚ РїРѕР»РµС‚Р°С‚Р° РЅР° РєР»Р°СЃР° СЃР° РѕР±РµРєС‚Рё СЃСЉРґСЉСЂР¶Р°С‰Рё РґРёРЅР°РјРёС‡РЅР° РїР°РјРµС‚, 
+// РїСЂРё (Р°РІС‚РѕРјР°С‚РёС‡РЅРѕС‚Рѕ) РІРёРєР°РЅРµ РЅР° С‚РѕР·Рё РґРµСЃС‚СЂСѓРєС‚РѕСЂ, С‰Рµ СЃРµ РІРёРєРЅР°С‚(РїР°Рє Р°РІС‚РѕРјР°С‚РёС‡РЅРѕ)
+// Рё РґРµСЃС‚СЂСѓРєС‚РѕСЂРёС‚Рµ РЅР° РєР»Р°СЃРѕРІРµС‚Рµ РЅР° СЃСЉРѕС‚РІРµС‚РЅРёС‚Рµ РїРѕР»РµС‚Р°
 Car::~Car()
 {
 	std::cout << "Destructor Car" << std::endl;
