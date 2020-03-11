@@ -5,13 +5,13 @@
 
 int main()
 {
-	// Дебъгнете това създаване на инстанции
+	// Р”РµР±СЉРіРЅРµС‚Рµ С‚РѕРІР° СЃСЉР·РґР°РІР°РЅРµ РЅР° РёРЅСЃС‚Р°РЅС†РёРё
 	EngineDetails ed( 200, 200, EngineType::Petrol );
 	VisualDetails vd( 5, true, "chernooo" );
 	ManufactureDetails md( "name", "model", 2020 );
 	Car car( ed, vd, md, true, 20000000 );
 
-	/* След това дебъгнете това създаване на обекти
+	/* РЎР»РµРґ С‚РѕРІР° РґРµР±СЉРіРЅРµС‚Рµ С‚РѕРІР° СЃСЉР·РґР°РІР°РЅРµ РЅР° РѕР±РµРєС‚Рё
 	Car car(	EngineDetails( 200, 200, EngineType::Petrol ), 
 				VisualDetails( 5, true, "chernooo" ), 
 				ManufactureDetails( "name", "model", 2020 ), 
