@@ -8,6 +8,11 @@ Stack::Stack() {
     top = EMPTY_STACK;
 }
 
+// проверка дали стекът е пълен
+bool Stack::full() const {
+    return top == MAX_STACK - 1;
+}
+
 // проверка за празнота
 bool Stack::empty() const {
     return top == EMPTY_STACK;
@@ -15,6 +20,7 @@ bool Stack::empty() const {
 
 // включване на елемент
 void Stack::push(int x) {
+    assert(!full());
     a[++top] = x;
     // !!! top++ = 4;
     // OK: ++top = 4;

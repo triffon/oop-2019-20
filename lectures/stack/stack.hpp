@@ -2,6 +2,9 @@ const int MAX_STACK = 100;
 class Stack {
     int a[MAX_STACK];
     int top; // индекс на последно включения елемент в стека
+
+    // проверка дали стекът е пълен
+    bool full() const;
 public:
     // създаване на празен стек 
     Stack();
