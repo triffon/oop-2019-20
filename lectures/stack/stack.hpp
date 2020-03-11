@@ -1,3 +1,7 @@
+// #pragma once
+#ifndef __STACK_HPP
+#define __STACK_HPP
+
 const int MAX_STACK = 100;
 class Stack {
     int a[MAX_STACK];
@@ -21,3 +25,5 @@ public:
     // поглеждане на последно включения елемент
     int peek() const;
 };
+
+#endif

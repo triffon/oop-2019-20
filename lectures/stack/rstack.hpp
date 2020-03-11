@@ -1,3 +1,6 @@
+#ifndef __RSTACK_HPP
+#define __RSTACK_HPP
+
 class ResizingStack {
     int* a;
     int top; // индекс на последно включения елемент в стека
@@ -24,3 +27,5 @@ public:
     // поглеждане на последно включения елемент
     int peek() const;
 };
+
+#endif
