@@ -1,3 +1,4 @@
+#include <cassert>
 #include "stack.hpp"
 
 const int EMPTY_STACK = -1;
@@ -21,10 +22,12 @@ void Stack::push(int x) {
 
 // изключване на елемент
 int Stack::pop() {
+    assert(!empty()); // не искаме да позволяваме изключване на елемент от празен стек
     return a[top--];
 }
 
 // поглеждане на последно включения елемент
 int Stack::peek() const {
+    assert(!empty()); // не искаме да позволяваме поглеждане на елемент от празен стек
     return a[top];
 }
