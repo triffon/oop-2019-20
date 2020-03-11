@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Vector.h"
+#include "Problem2.h"
 
 int main()
 {
@@ -32,6 +33,11 @@ int main()
     // And printing each one
     for (int i = 0; i < vec2.size(); i++)
         std::cout << vec2.at(i) << ' ';
+
+    std::cout << std::endl;
+
+    // Running Problem 2's solution
+    problem2();
 
     return 0;
 }
