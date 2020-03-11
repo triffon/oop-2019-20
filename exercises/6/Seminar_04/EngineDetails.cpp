@@ -1,7 +1,7 @@
 #include "EngineDetails.h"
 #include <iostream>
 
-EngineDetails::EngineDetails( unsigned int horsePower, double volume, EngineType type) : // обикновен инициализиращ списък
+EngineDetails::EngineDetails( unsigned int horsePower, double volume, EngineType type) : // РѕР±РёРєРЅРѕРІРµРЅ РёРЅРёС†РёР°Р»РёР·РёСЂР°С‰ СЃРїРёСЃСЉРє
 	fHorsePower(horsePower),
 	fVolume(volume),
 	fEngineType(type)
@@ -9,7 +9,7 @@ EngineDetails::EngineDetails( unsigned int horsePower, double volume, EngineType
 	std::cout << "Constuctor EngineDetails" << std::endl;
 }
 
-// Не е задължителен, защото нямаме динамичма памет, която да трием
+// РќРµ Рµ Р·Р°РґСЉР»Р¶РёС‚РµР»РµРЅ, Р·Р°С‰РѕС‚Рѕ РЅСЏРјР°РјРµ РґРёРЅР°РјРёС‡РјР° РїР°РјРµС‚, РєРѕСЏС‚Рѕ РґР° С‚СЂРёРµРј
 EngineDetails::~EngineDetails()
 {
 	std::cout << "Destructor EngineDetails" << std::endl;
