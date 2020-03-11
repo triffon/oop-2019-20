@@ -81,6 +81,7 @@ void Vector::erase(int index)
 {
     for (int i = index; i < m_size - 1; i++)
         m_arr[i] = m_arr[i + 1];
+    m_size--;
 }
 
 
