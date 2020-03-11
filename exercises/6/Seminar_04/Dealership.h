@@ -7,7 +7,7 @@ class Dealership
 
 public:
 	// TODO:
-	// ÒHE BIG 4
+	// Ð¢HE BIG 4
 
 private:
 	size_t size;
