@@ -24,6 +24,7 @@ void LinkedStack::push(int x) {
 
 // изключване на елемент
 int LinkedStack::pop() {
+    assert(!empty());
     // запомняме върха на стека и елемента на върха
     int x = peek();
     StackElement* p = top;
