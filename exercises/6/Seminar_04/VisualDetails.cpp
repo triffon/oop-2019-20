@@ -3,16 +3,16 @@
 #include <iostream>
 
 
-VisualDetails::VisualDetails( unsigned int doorCount, bool hasWing, const char* color) : // обикновен инициализиращ списък
+VisualDetails::VisualDetails( unsigned int doorCount, bool hasWing, const char* color) : // РѕР±РёРєРЅРѕРІРµРЅ РёРЅРёС†РёР°Р»РёР·РёСЂР°С‰ СЃРїРёСЃСЉРє
 	fDoorCount(doorCount),
 	fHasWing(hasWing)
 {
 	std::cout << "Constuctor VisualDetails" << std::endl;
-	strcpy( fColor, color ); // Препоръчително да се изкопира по този начин
+	strcpy( fColor, color ); // РџСЂРµРїРѕСЂСЉС‡РёС‚РµР»РЅРѕ РґР° СЃРµ РёР·РєРѕРїРёСЂР° РїРѕ С‚РѕР·Рё РЅР°С‡РёРЅ
 }
 
 
-// Не е задължителен, защото нямаме динамичма памет, която да трием
+// РќРµ Рµ Р·Р°РґСЉР»Р¶РёС‚РµР»РµРЅ, Р·Р°С‰РѕС‚Рѕ РЅСЏРјР°РјРµ РґРёРЅР°РјРёС‡РјР° РїР°РјРµС‚, РєРѕСЏС‚Рѕ РґР° С‚СЂРёРµРј
 VisualDetails::~VisualDetails()
 {
 	std::cout << "Destructor VisualDetails" << std::endl;
