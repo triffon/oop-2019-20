@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cassert>
 #include "stack.hpp"
+#include "rstack.hpp"
 
 char toDigit(unsigned digit) {
     if (digit < 10)
@@ -50,7 +51,7 @@ bool matchParentheses(char open, char close) {
 }
 
 bool checkParentheses(char const* s) {
-    Stack stack;
+    ResizingStack stack;
     while (*s) {
         if (isOpenParenthesis(*s))
             stack.push(*s);
