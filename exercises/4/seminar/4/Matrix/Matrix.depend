@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1584117413 source:c:\users\dtrz\desktop\sem3\new folder\matrix\rational.cpp
+	"ration.hpp"
+
+1584117865 c:\users\dtrz\desktop\sem3\new folder\matrix\ration.hpp
+
+1584117687 source:c:\users\dtrz\desktop\sem3\new folder\matrix\main.cpp
+	<iostream>
+	"ration.hpp"
+	"matrix.hpp"
+
+1584117920 c:\users\dtrz\desktop\sem3\new folder\matrix\matrix.hpp
+	"ration.hpp"
+
+1584117754 source:c:\users\dtrz\desktop\sem3\new folder\matrix\matrix.cpp
+	<iostream>
+	"matrix.hpp"
+
