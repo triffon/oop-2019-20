@@ -12,6 +12,7 @@
 
 ### Бележка
 Може да намерите много повече информация в [**README.md**](https://github.com/triffon/oop-2019-20/tree/master/exercises/6/Seminar_01) файла в самата папка.
+
 --- 
 ## Seminar 02
   * Unions, aligment and bitfuilds
