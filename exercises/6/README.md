@@ -12,7 +12,7 @@
 
 ### Бележка
 Може да намерите много повече информация в [**README.md**](https://github.com/triffon/oop-2019-20/tree/master/exercises/6/Seminar_01) файла в самата папка.
-
+--- 
 ## Seminar 02
   * Unions, aligment and bitfuilds
   * Какво наричаме структура
@@ -27,7 +27,7 @@
   * [**How to write a class**](https://www.youtube.com/watch?v=3dHBFBw13E0)
   * [**Constructors**](https://www.youtube.com/watch?v=FXhALMsHwEY)
   * [**Destructors**](https://www.youtube.com/watch?v=D8cWquReFqw)
-  
+---  
 ## Seminar 03
   * Const instance, const reference, const methods, return const reference
   * Голяма четворка
@@ -35,9 +35,7 @@
   * [**All about const**](https://www.youtube.com/watch?v=4fJBrditnJU&t)
   * [**Copy Constuctor**](https://www.youtube.com/watch?v=BvR1Pgzzr38)
   * [**'this' keyword**](https://www.youtube.com/watch?v=Z_hPJ_EhceI)
-  
 --- 
-
 ## Seminar 04
   * По-сложна задача с материала взет до момента 
   * Композиция(Composition) на класове и/или структури
