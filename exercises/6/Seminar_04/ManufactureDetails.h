@@ -20,7 +20,7 @@ public:
 	~ManufactureDetails();
 
 	void print() const;
-
+	void readFromConsole();
 private:
 	void init( const char*, const char*, unsigned int );
 	void clean();
