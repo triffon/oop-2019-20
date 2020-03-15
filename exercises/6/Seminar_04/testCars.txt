@@ -1,0 +1,36 @@
+engine details - int horsePower, double volume, EngineType type
+visual details - unsigned int doorCount, bool hasWing, char color[50],
+manufactureDetails - const char * name, const char * model, unsigned int year,
+default- bool isNew, unsigned int price
+
+horsePower volume type
+doorCount hasWing color(str)
+name(str)
+model(str)
+year isNew price
+==============================
+
+600 300 Electric
+4 0 Skyblue
+Honda City 3
+Blue-eyed White Dragon
+2019 1 600000
+
+600 300 Diesel
+4 0 Red
+Honda City 3
+Aloma
+2011 1 60
+
+600 300 Hybrid
+4 0 Black
+Vienna
+Black Tiger
+2000 0 999999
+
+300 150 Fuel
+4 0 Pink
+Alexa
+Girichka
+1884 1 42
+
