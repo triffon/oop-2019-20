@@ -1,6 +1,11 @@
 #include "Car.h"
 #include <iostream>
 
+Car::Car()
+{
+	std::cout << "Default Constuctor Car" << std::endl;
+}
+
 Car::Car( unsigned int horsePower, double volume, EngineType type,
 		unsigned int doorCount, bool hasWing, const char * color,
 		const char * name, const char * model, unsigned int year,
@@ -23,6 +28,7 @@ Car::Car( const EngineDetails& engineDetails,
 		// Също така се вика и дефоутния констуктор на ManufactureDetails, за да се създаде полето fManufactureDetails
 {
 	fManufactureDetails = manufactureDetails; // след като вече е създадено полето, тук се вика operator= на ManufactureDetails класа
+	
 	std::cout << "Constuctor Car" << std::endl;
 }
 
@@ -33,4 +39,26 @@ Car::Car( const EngineDetails& engineDetails,
 Car::~Car()
 {
 	std::cout << "Destructor Car" << std::endl;
+}
+
+void Car::print() const
+{
+	std::cout << "Price: " << fPrice << std::endl;
+	std::cout << ( fIsNew ? "Is new" : "Not new" ) << std::endl;
+	fEngineDetails.print();
+	fVisualDetails.print();
+	fManufactureDetails.print();
+}
+
+void Car::readFromConsole()
+{
+	std::cout << "Enter information for one car: " << std::endl;
+	fEngineDetails.readFromConsole();
+	fVisualDetails.readFromConsole();
+	fManufactureDetails.readFromConsole();
+	std::cout << "Enter 0 if the car is old, otherwise - 1: ";
+	std::cin >> fIsNew;
+	std::cout << "Enter price: ";
+	std::cin >> fPrice;
+	std::cout << "====================================" << std::endl;
 }
