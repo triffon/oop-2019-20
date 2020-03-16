@@ -8,6 +8,7 @@
 class Car
 {
 public:
+	Car();
 	Car(unsigned int horsePower, double volume, EngineType type,
 		unsigned int doorCount, bool hasWing, const char* color,
 		const char* name, const char* model, unsigned int year,
@@ -16,6 +17,9 @@ public:
 		const ManufactureDetails& manufactureDetails, bool isNew, unsigned int price );
 
 	~Car();
+
+	void print() const;
+	void readFromConsole();
 private:
 	EngineDetails fEngineDetails;
 	VisualDetails fVisualDetails;
@@ -24,4 +28,3 @@ private:
 	unsigned int fPrice;
 
 };
-

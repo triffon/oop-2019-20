@@ -6,6 +6,7 @@
 
 enum class EngineType
 {
+	Unknown = -1,
 	Diesel = 0,
 	Petrol,
 	Hybrid,
@@ -18,8 +19,10 @@ struct EngineDetails
 	double fVolume;
 	EngineType fEngineType;
 
-
+	EngineDetails();
 	EngineDetails( unsigned int, double, EngineType );
 	~EngineDetails();
-};
 
+	void print() const;
+	void readFromConsole();
+};

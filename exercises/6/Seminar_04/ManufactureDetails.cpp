@@ -2,6 +2,8 @@
 #include <string.h>
 #include <iostream>
 
+#define MAX_BUFF (1 << 10)
+
 ManufactureDetails::ManufactureDetails()
 {
 	std::cout << "Default Constuctor ManufactureDetails" << std::endl;
@@ -50,14 +52,48 @@ void ManufactureDetails::print() const
 	std::cout << fYear << std::endl;
 }
 
+void ManufactureDetails::readFromConsole()
+{
+	std::cout << "Enter a name of manufacture: " << std::endl;
+	char name[ MAX_BUFF + 1 ];
+	std::cin.getline( name, MAX_BUFF );
+	
+	std::cout << "Enter a name of model: " << std::endl;
+	char model[ MAX_BUFF + 1 ];
+	std::cin.getline( model, MAX_BUFF );
+	
+	std::cout << "Еnter the year of production: " << std::endl;
+	unsigned int year;
+	std::cin >> year;
+
+	this->init( name, model, year );
+}
+
 void ManufactureDetails::init( const char* name, const char* model, unsigned int year)
 {
-	fName = new char[ strlen(name) + 1 ];
-	strcpy( fName, name );
-	fModel = new char[ strlen(model) + 1 ];
-	strcpy( fModel, model );
+	if ( name )
+	{
+		fName = new char[ strlen(name) + 1 ];
+		strcpy( fName, name );
+	}
+	if ( model )
+	{
+		fModel = new char[ strlen(model) + 1 ];
+		strcpy( fModel, model );
+	}
 
-	fYear = year;
+	if ( year < CAR_FIRST_YEAR  )
+	{
+		fYear = CAR_FIRST_YEAR;
+	} 
+	else if ( year >  CURRENT_YEAR )
+	{
+		fYear = CURRENT_YEAR;
+	}
+	else
+	{
+		fYear = year;
+	}
 }
 
 void ManufactureDetails::clean()
