@@ -22,13 +22,13 @@ int main() {
     std::cout << s4 << std::endl;
 
     Rational z1;
-    std::cout << z1 << std::endl;
+    std::cout << "z1: " << z1 << std::endl;
 
     Rational z2(p);
-    std::cout << z2 << std::endl;
+    std::cout << "z2: " << z2 << std::endl;
 
     z1 = p;
-    std::cout << z1 << std::endl;
+    std::cout << "z1: " << z1 << std::endl;
 
     p = z1 * q;
     std::cout << z1 << ' ' << p << std::endl;
