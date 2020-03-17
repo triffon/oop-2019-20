@@ -46,10 +46,10 @@ void Person::setFamilyName(const char *familyName)
 
 void Person::setEgn(int egn)
 {
-    Person::egn = egn;
+    this->egn = egn;
 }
 
 void Person::setAge(int age)
 {
-    Person::age = age;
+    this->age = age;
 }
