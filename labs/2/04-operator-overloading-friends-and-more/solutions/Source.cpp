@@ -1,20 +1,25 @@
 #include <iostream>
-#include "Vector.h"
 #include "Virus.h"
+#include "Vector.h"
+#include "Person.h"
 
 int main()
 {
-    Vector vec;
+    Person person("Ivan", 42);
+    person.infect(Virus("Common cold", 2));
+    std::cout << person.getViruses() << std::endl;
 
-    vec += Virus("Corona", 5);
-    vec += Virus("The flu", 3);
-    vec += Virus("Spanish flu", 6);
-    vec += Virus("Corona B", 8);
-    vec += Virus("Virus Z", 10);
+    Virus corona("Coronavirus", 7);
+    person.infect(corona);
 
-    std::cout << vec << std::endl;
-    vec.sort();
-    std::cout << vec << std::endl;
+    std::cout << person.getViruses() << std::endl;
+
+    Person person2(person);
+    std::cout << person2.getName() << " has " << person2.getViruses() << std::endl;
+
+    person.infect(corona);
+    std::cout << person.getName() << " has " << person.getViruses() << std::endl;
+    std::cout << person2.getName() << " has " << person2.getViruses() << std::endl;
 
     return 0;
 }
