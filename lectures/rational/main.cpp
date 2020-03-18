@@ -40,8 +40,10 @@ void testRatExp() {
     r.printnl();
     std::cout << "r      = " << r.toDouble() << std::endl;
     std::cout << "exp(2) = " << exp(2) << std::endl;
-    Rational r2 = r, r3;
+    Rational r2 = r, r3 = 42;
+    r3.printnl();
     r3 = r;
+    add(42, Rational(1, 3)).printnl();
 }
 
 int main(int, char**) {
