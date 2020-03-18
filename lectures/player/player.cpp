@@ -24,3 +24,7 @@ void Player::print() const {
 Player::Player(Player const& p) : name(nullptr), score(p.score) {
     setName(p.name);
 }
+
+Player::~Player() {
+    delete[] name;
+}

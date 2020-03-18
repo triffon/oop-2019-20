@@ -15,6 +15,9 @@ void testPlayer() {
     p2.print();
     anonymousPrint(p2);
     p2.print();
+    Player("Соник таралежът", 100).print();
+    // !!! delete p1.getName();
+    // !!! p1.~Player();
 }
 
 int main() {
