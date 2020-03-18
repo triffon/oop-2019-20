@@ -20,3 +20,7 @@ void Player::setName(char const* n) {
 void Player::print() const {
     std::cout << "Играчът " << getName() << " има " << getScore() << " точки" << std::endl;
 }
+
+Player::Player(Player const& p) : name(nullptr), score(p.score) {
+    setName(p.name);
+}

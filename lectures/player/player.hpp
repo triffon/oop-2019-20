@@ -7,6 +7,7 @@ class Player {
 public:
 
     Player(char const* n = "<неизвестен>", unsigned s = 0);
+    Player(Player const&);
 
     char const* getName() const { return name; }
 /*
