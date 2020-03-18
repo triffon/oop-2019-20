@@ -12,9 +12,11 @@ class Rational {
   long numer;
   unsigned long denom;
 public:
-  Rational();
+//  Rational();
 
-  Rational(long n, unsigned long d);
+  Rational(long n = 0, unsigned long d = 1);
+
+  Rational(Rational const&);
 
   long getNumerator() const            { return numer; }
   unsigned long getDenominator() const { return denom; }
@@ -26,9 +28,9 @@ public:
   void read();
 };
 
-Rational multiply(Rational p, Rational q);
-Rational divide(Rational p, Rational q);
-Rational add(Rational p, Rational q);
-Rational subtract(Rational p, Rational q);
+Rational multiply(Rational const& p, Rational const& q);
+Rational divide(Rational const& p, Rational const& q);
+Rational add(Rational const& p, Rational const& q);
+Rational subtract(Rational const& p, Rational const& q);
 
 #endif

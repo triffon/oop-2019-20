@@ -7,10 +7,7 @@ void print() {
     std::cout << "Аз съм глобалната функция print()!\n";
 }
 
-Rational::Rational() {
-    numer = 0;
-    denom = 1;
-}
+// Rational::Rational() : denom(1), numer(0) {}
 
 Rational::Rational(long n, unsigned long d) {
     if (d == 0) {
@@ -22,6 +19,10 @@ Rational::Rational(long n, unsigned long d) {
     unsigned long g = std::gcd(std::abs(n), d);
     numer = n / g;
     denom = d / g;
+}
+
+Rational::Rational(Rational const& r) : numer(r.numer), denom(r.denom) {
+    std::clog << "Копираме числото " << r.numer << "/" << r.denom << std::endl;
 }
 
 inline void Rational::print() const {
@@ -54,23 +55,23 @@ void Rational::read() {
     std::clog << "[LOG] denom = " << denom << std::endl;
 }
 
-Rational multiply(Rational p, Rational q) {
+Rational multiply(Rational const& p, Rational const& q) {
     return Rational(p.getNumerator() * q.getNumerator(),
                     p.getDenominator() * q.getDenominator());
 }
 
-Rational divide(Rational p, Rational q) {
+Rational divide(Rational const& p, Rational const& q) {
     return Rational(p.getNumerator() * q.getDenominator(),
                     p.getDenominator() * q.getNumerator());
 }
 
-Rational add(Rational p, Rational q) {
+Rational add(Rational const& p, Rational const& q) {
     return Rational(p.getNumerator() * q.getDenominator() +
                     q.getNumerator() * p.getDenominator(),
                     p.getDenominator() * q.getDenominator());
 }
 
-Rational subtract(Rational p, Rational q) {
+Rational subtract(Rational const& p, Rational const& q) {
     return Rational(p.getNumerator() * q.getDenominator() -
                     q.getNumerator() * p.getDenominator(),
                     p.getDenominator() * q.getDenominator());

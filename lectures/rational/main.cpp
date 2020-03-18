@@ -11,7 +11,7 @@ unsigned fact(unsigned n) {
 }
 
 Rational ratexp(unsigned k, unsigned n) {
-    Rational sum(0, 1);
+    Rational sum;
     for(unsigned i = 0; i <= n; i++)
         // !!! sum += pow(k, i) / fact(i);
         // TODO: да се сметне общия член на редицата
@@ -40,6 +40,8 @@ void testRatExp() {
     r.printnl();
     std::cout << "r      = " << r.toDouble() << std::endl;
     std::cout << "exp(2) = " << exp(2) << std::endl;
+    Rational r2 = r, r3;
+    r3 = r;
 }
 
 int main(int, char**) {
