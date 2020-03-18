@@ -19,6 +19,7 @@ Rational::Rational(long n, unsigned long d) {
     unsigned long g = std::gcd(std::abs(n), d);
     numer = n / g;
     denom = d / g;
+    std::clog << "Създавам ново рационално число: " << numer << "/" << denom << std::endl;
 }
 
 Rational::Rational(Rational const& r) : numer(r.numer), denom(r.denom) {

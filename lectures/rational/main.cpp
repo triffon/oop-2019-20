@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cmath>
 #include "rational.hpp"
-#include "rational.hpp"
+#include "rational_point.hpp"
 
 unsigned fact(unsigned n) {
     unsigned product = 1;
@@ -46,7 +46,17 @@ void testRatExp() {
     add(42, Rational(1, 3)).printnl();
 }
 
+void testRationalPoint() {
+    RationalPoint rp;
+    rp.print();
+    RationalPoint rp2(Rational(1, 3), Rational(2, 5));
+    rp2.print();
+    RationalPoint rp3 = rp2;
+    rp3.print();
+}
+
 int main(int, char**) {
     // testRationals();
-    testRatExp();
+    // testRatExp();
+    testRationalPoint();
 }
