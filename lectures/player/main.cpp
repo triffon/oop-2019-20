@@ -13,6 +13,7 @@ void testPlayer() {
     p1.print();
     p2.print();
     anonymousPrint(p2);
+    p2.print();
 }
 
 int main() {

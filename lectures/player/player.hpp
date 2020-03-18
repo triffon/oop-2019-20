@@ -1,10 +1,8 @@
 #ifndef __PLAYER_HPP
 #define __PLAYER_HPP
 
-const unsigned MAX_NAME = 100;
-
 class Player {
-    char name[MAX_NAME];
+    char* name;
     unsigned score;
 public:
 
