@@ -40,3 +40,8 @@ int LinkedStack::peek() const {
     assert(!empty());
     return top->data;
 }
+
+LinkedStack::~LinkedStack() {
+    while (!empty())
+        pop();
+}

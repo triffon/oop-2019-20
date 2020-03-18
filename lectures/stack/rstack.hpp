@@ -15,6 +15,9 @@ public:
     // създаване на празен стек 
     ResizingStack();
 
+    // унищожаване на стека
+    ~ResizingStack();
+
     // проверка за празнота
     bool empty() const;
 

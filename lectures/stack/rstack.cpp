@@ -59,3 +59,7 @@ void ResizingStack::resize() {
     // насочваме указателя към новия
     a = newa;
 }
+
+ResizingStack::~ResizingStack() {
+    delete[] a;
+}

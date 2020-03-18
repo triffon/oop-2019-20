@@ -12,6 +12,9 @@ public:
     // създаване на празен стек 
     LinkedStack();
 
+    // унищожаване на стек
+    ~LinkedStack();
+
     // проверка за празнота
     bool empty() const;
 
