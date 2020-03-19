@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1584625470 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week4\week4\src\student.cpp
+	"Student.h"
+	<iostream>
+
+1584625416 c:\users\kamen\documents\oop-2019-20\exercises\3\week4\week4\include\student.h
+	"Faculty.h"
+
+1584634585 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week4\week4\main.cpp
+	<iostream>
+	"DynamicArray.h"
+	"Student.h"
+
+1584634609 c:\users\kamen\documents\oop-2019-20\exercises\3\week4\week4\include\faculty.h
+
+1584634650 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week4\week4\src\faculty.cpp
+	"Faculty.h"
+	<cstring>
+	<iostream>
+
+1584627971 c:\users\kamen\documents\oop-2019-20\exercises\3\week4\week4\include\dynamicarray.h
+
+1584628639 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week4\week4\src\dynamicarray.cpp
+	"DynamicArray.h"
+	<iostream>
+	<cassert>
+
