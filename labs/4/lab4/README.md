@@ -30,3 +30,13 @@
 
 ## Допълнително
  - Да се дефинира метод за премахване на стока от магазина
+
+## За упражнение
+Понеже не успяхме да направим всичко на упражнението, добавихме 5 метода за упражнение вкъщи:
+ -	bool updateQuantity(const char* productName, const char* manufacturerName);
+ -  bool buy(const char* productName, const char* manufacturerName);
+ -  bool listAvailableProducts();
+ -  bool listManufacturerProducts(const char* manufacturerName);
+ -  bool removeProduct(const char* name, const char* manufacturerName);
+
+Съшо така, да се промени addProduct метода, когато добавим продукт, който вече съществува, да му се ъпдейтне количеството, вместо да добавим втори път същия продукт.
