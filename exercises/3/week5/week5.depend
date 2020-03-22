@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1584837153 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week5\main.cpp
+	<iostream>
+	"SmartPointer.h"
+	"Student.h"
+
+1584832248 c:\users\kamen\documents\oop-2019-20\exercises\3\week5\include\smartpointer.h
+
+1584834587 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week5\src\smartpointer.cpp
+	"SmartPointer.h"
+	<iostream>
+
+1584837687 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week5\src\student.cpp
+	"Student.h"
+	<cstring>
+
+1584837623 c:\users\kamen\documents\oop-2019-20\exercises\3\week5\include\student.h
+	<iostream>
+
