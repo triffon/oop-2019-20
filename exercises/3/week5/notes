@@ -1,0 +1,32 @@
+Are we recording?
+Questions?
+
+Smart Pointers
+
+const doesn’t really make our variables safe!
+Const cast isn’t good practice
+
+Const functions are only callable on const objects. And the type of this is 
+const ClassName * this
+Instead of
+ClassName * this
+
+Overloading Operator >> and << 
+Friend functions 
+Friendship isn’t symmetric or transitive
+I am not a friend of my friend!
+The friend of my friend is not a friend
+ 
+Access modifier is by class not by instance demo !!!
+
+Returning const doesn’t really make our variables safe!
+Then how should we return dynamically allocated objects?
+    Cloning:
+    Pros: Complete encapsulation
+    Cons: Possible memory leaks
+
+Cool stuff to show if we have time left:
+Enums
+Generics/templates
+Inheritance basics
+
