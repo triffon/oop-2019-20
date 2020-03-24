@@ -6,16 +6,33 @@ Person::Person() {
     name = nullptr;
 }
 
+Person::Person(Person const & p) {
+    name = nullptr;
+    setNameFromString(p.name);
+    age = p.age;
+    height = p.height;
+    weight = p.weight;
+}
+
+Person & Person::operator=(Person const & p) {
+    setNameFromString(p.name);
+    age = p.age;
+    height = p.height;
+    weight = p.weight;
+
+    return *this;
+}
+
 Person::Person(const char * _name, int _age, double _height, double _weight) {
-    name = new char[strlen(_name)];
-    strcpy(name, _name);
+    name = nullptr;
+    setNameFromString(_name);
     age = _age;
     height = _height;
     weight = _weight;
 }
 
 Person::~Person() {
-    delete name;
+    delete[] name;
 }
 
 const char * Person::getName() const {
@@ -35,9 +52,7 @@ double Person::getWeight() const {
 }
 
 void Person::setName(const char * _name) {
-    delete name;
-    name = new char[strlen(_name)];
-    strcpy(name, _name);
+    setNameFromString(_name);
 }
 
 void Person::setAge(int _age) {
@@ -58,4 +73,10 @@ std::ostream & operator<<(std::ostream & out, Person const & p) {
 
 double Person::getBMI() const {
     return weight / (height * height);
+}
+
+void Person::setNameFromString(const char * _name) {
+    delete[] name;
+    name = new char[strlen(_name) + 1];
+    strcpy(name, _name);
 }

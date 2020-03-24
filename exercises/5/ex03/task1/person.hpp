@@ -8,6 +8,8 @@ class Person {
 public:
     Person();
     Person(const char *, int, double, double);
+    Person(Person const &);
+    Person & operator=(Person const &);
     ~Person();
     
     const char * getName() const;
@@ -29,6 +31,8 @@ private:
     int age;
     double height;
     double weight;
+
+    void setNameFromString(const char *);
 
 };
 
