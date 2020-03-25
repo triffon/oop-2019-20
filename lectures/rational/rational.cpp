@@ -15,7 +15,7 @@ Rational::Rational(long n, unsigned long d) {
         d = 1;
     }
     if (n == 0)
-    d = 1;
+        d = 1;
     unsigned long g = std::gcd(std::abs(n), d);
     numer = n / g;
     denom = d / g;
