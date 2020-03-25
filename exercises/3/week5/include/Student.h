@@ -40,7 +40,7 @@ class Student
     friend istream& operator>> (istream& is, Student& s);
     friend ostream& operator<< (ostream& os, Student& s);
     /// allows private access to a class, use with caution!
-    /// class University; //when you start a master degree the university assigns you a new facultyNumber thus it requires private access
+    /// friend class University; //when you start a master degree the university assigns you a new facultyNumber thus it requires private access
 
     /// Important!!!
     /// Friendship isn’t symmetric, transitive ( or inheritable)
