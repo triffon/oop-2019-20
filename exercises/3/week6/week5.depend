@@ -1,0 +1,80 @@
+# depslib dependency file v1.0
+1584839038 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week5\main.cpp
+	<iostream>
+	"SmartPointer.h"
+	"Student.h"
+
+1584839038 c:\users\kamen\documents\oop-2019-20\exercises\3\week5\include\smartpointer.h
+
+1584839038 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week5\src\smartpointer.cpp
+	"SmartPointer.h"
+	<iostream>
+
+1584870708 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week5\src\student.cpp
+	"Student.h"
+	<cstring>
+
+1584867615 c:\users\kamen\documents\oop-2019-20\exercises\3\week5\include\student.h
+	<iostream>
+
+1584839038 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week6\src\smartpointer.cpp
+	"SmartPointer.h"
+	<iostream>
+
+1584839038 c:\users\kamen\documents\oop-2019-20\exercises\3\week6\include\smartpointer.h
+
+1585163870 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week6\src\student.cpp
+	"Student.h"
+	<cstring>
+
+1585228011 c:\users\kamen\documents\oop-2019-20\exercises\3\week6\include\student.h
+	<iostream>
+
+1585160392 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week6\src\studentcontainer.cpp
+	"StudentContainer.h"
+
+1585160380 c:\users\kamen\documents\oop-2019-20\exercises\3\week6\include\studentcontainer.h
+	"Student.h"
+
+1585181206 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week6\src\dynamicarray.cpp
+	"DynamicArray.h"
+
+1585227100 c:\users\kamen\documents\oop-2019-20\exercises\3\week6\include\dynamicarray.h
+	"DynamicArray.tpp"
+
+1585230698 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week6\main.cpp
+	<iostream>
+	"SmartPointer.h"
+	"Student.h"
+	"StudentContainer.h"
+	"DynamicArray.h"
+	"Human.h"
+	"Bird.h"
+
+1585183679 c:\users\kamen\documents\oop-2019-20\exercises\3\week6\src\dynamicarray.cpp
+
+1585226974 c:\users\kamen\documents\oop-2019-20\exercises\3\week6\include\dynamicarray.tpp
+	"DynamicArray.h"
+	<iostream>
+	<cassert>
+
+1585229285 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week6\src\animal.cpp
+	"Animal.h"
+	<iostream>
+
+1585230728 c:\users\kamen\documents\oop-2019-20\exercises\3\week6\include\animal.h
+
+1585230779 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week6\src\bird.cpp
+	"Bird.h"
+	<iostream>
+
+1585230786 c:\users\kamen\documents\oop-2019-20\exercises\3\week6\include\bird.h
+	"Animal.h"
+
+1585230567 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week6\src\human.cpp
+	"Human.h"
+	<iostream>
+
+1585230544 c:\users\kamen\documents\oop-2019-20\exercises\3\week6\include\human.h
+	"Animal.h"
+
