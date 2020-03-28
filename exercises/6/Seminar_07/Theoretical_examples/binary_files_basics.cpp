@@ -9,31 +9,31 @@ struct Student {
 	unsigned int fn;
 };
 
-//дава дължината на вече отворен файл
-//в режим за четене, връща get position-ът в началото на файла
+//РґР°РІР° РґСЉР»Р¶РёРЅР°С‚Р° РЅР° РІРµС‡Рµ РѕС‚РІРѕСЂРµРЅ С„Р°Р№Р»
+//РІ СЂРµР¶РёРј Р·Р° С‡РµС‚РµРЅРµ, РІСЂСЉС‰Р° get position-СЉС‚ РІ РЅР°С‡Р°Р»РѕС‚Рѕ РЅР° С„Р°Р№Р»Р°
 size_t getFileLen( std::ifstream& ifs )
-{ //можем да подаваме вече създаден поток на функции
+{ //РјРѕР¶РµРј РґР° РїРѕРґР°РІР°РјРµ РІРµС‡Рµ СЃСЉР·РґР°РґРµРЅ РїРѕС‚РѕРє РЅР° С„СѓРЅРєС†РёРё
 
-	ifs.seekg( 0, std::ios::end ); //местим се в края на файла
-	size_t size = ifs.tellg(); //взимаме текущата позиция
-	ifs.seekg( 0, std::ios::beg ); //връщаме се в началото
+	ifs.seekg( 0, std::ios::end );  //РјРµСЃС‚РёРј СЃРµ РІ РєСЂР°СЏ РЅР° С„Р°Р№Р»Р°
+	size_t size = ifs.tellg(); //РІР·РёРјР°РјРµ С‚РµРєСѓС‰Р°С‚Р° РїРѕР·РёС†РёСЏ
+	ifs.seekg( 0, std::ios::beg ); //РІСЂСЉС‰Р°РјРµ СЃРµ РІ РЅР°С‡Р°Р»РѕС‚Рѕ
 
 	return size;
 }
 
-//записва няколко студента в двоичен файл
-//зададен чрез пътия си, като премахва старото съдържание
-//на файла
-//връща true при успешно записване, false иначе
+//Р·Р°РїРёСЃРІР° РЅСЏРєРѕР»РєРѕ СЃС‚СѓРґРµРЅС‚Р° РІ РґРІРѕРёС‡РµРЅ С„Р°Р№Р»
+//Р·Р°РґР°РґРµРЅ С‡СЂРµР· РїСЉС‚РёСЏ СЃРё, РєР°С‚Рѕ РїСЂРµРјР°С…РІР° СЃС‚Р°СЂРѕС‚Рѕ СЃСЉРґСЉСЂР¶Р°РЅРёРµ
+//РЅР° С„Р°Р№Р»Р°
+//РІСЂСЉС‰Р° true РїСЂРё СѓСЃРїРµС€РЅРѕ Р·Р°РїРёСЃРІР°РЅРµ, false РёРЅР°С‡Рµ
 bool writeStudents( const char* path )
 {
 
 	std::ofstream ofs( path, std::ios::binary | std::ios::trunc );
 
-	if ( !ofs.is_open() ) //проверка дали е отворен успешно файлът
+	if ( !ofs.is_open() ) //РїСЂРѕРІРµСЂРєР° РґР°Р»Рё Рµ РѕС‚РІРѕСЂРµРЅ СѓСЃРїРµС€РЅРѕ С„Р°Р№Р»СЉС‚
 		return false;
 
-	//няколко случайни ученици
+	//РЅСЏРєРѕР»РєРѕ СЃР»СѓС‡Р°Р№РЅРё СѓС‡РµРЅРёС†Рё
 	Student students[] = {
 
 		{ "Yasen", 45460 },
@@ -42,16 +42,16 @@ bool writeStudents( const char* path )
 
 	};
 
-	//записваме ги във файла един по един
+	//Р·Р°РїРёСЃРІР°РјРµ РіРё РІСЉРІ С„Р°Р№Р»Р° РµРґРёРЅ РїРѕ РµРґРёРЅ
 	//size_t size = sizeof(students) / sizeof(Student);
 	//for (size_t i = 0; i < size; i++)
 	//ofs.write((const char*)&students[i], sizeof(Student));
 
-	//нищо не ни пречи да ги запишем и всички наведнъж :
-	ofs.write( (const char*) students, sizeof( students ) ); //students е началото на масива
-														//няма нужда от & за да вземем адреса
+	//РЅРёС‰Рѕ РЅРµ РЅРё РїСЂРµС‡Рё РґР° РіРё Р·Р°РїРёС€РµРј Рё РІСЃРёС‡РєРё РЅР°РІРµРґРЅСЉР¶ :
+	ofs.write( (const char*) students, sizeof( students ) ); //students Рµ РЅР°С‡Р°Р»РѕС‚Рѕ РЅР° РјР°СЃРёРІР°
+								//РЅСЏРјР° РЅСѓР¶РґР° РѕС‚ & Р·Р° РґР° РІР·РµРјРµРј Р°РґСЂРµСЃР°
 
-	if ( !ofs.good() ) // проверяваме дали след операцията потокът е в невалидено състояние
+	if ( !ofs.good() ) // РїСЂРѕРІРµСЂСЏРІР°РјРµ РґР°Р»Рё СЃР»РµРґ РѕРїРµСЂР°С†РёСЏС‚Р° РїРѕС‚РѕРєСЉС‚ Рµ РІ РЅРµРІР°Р»РёРґРµРЅРѕ СЃСЉСЃС‚РѕСЏРЅРёРµ
 		return false;
 
 	ofs.close();
@@ -59,7 +59,7 @@ bool writeStudents( const char* path )
 }
 
 
-//чете неизвестен предварително брой студенти записани в двойчен файл
+//С‡РµС‚Рµ РЅРµРёР·РІРµСЃС‚РµРЅ РїСЂРµРґРІР°СЂРёС‚РµР»РЅРѕ Р±СЂРѕР№ СЃС‚СѓРґРµРЅС‚Рё Р·Р°РїРёСЃР°РЅРё РІ РґРІРѕР№С‡РµРЅ С„Р°Р№Р»
 bool readStudents( const char* path )
 {
 
@@ -68,44 +68,44 @@ bool readStudents( const char* path )
 	if ( !ifs.is_open() )
 		return false;
 
-	size_t fileSize = getFileLen( ifs ); // общия брой записани байтове
+	size_t fileSize = getFileLen( ifs ); // РѕР±С‰РёСЏ Р±СЂРѕР№ Р·Р°РїРёСЃР°РЅРё Р±Р°Р№С‚РѕРІРµ
 
 	if ( fileSize == 0 )
 		return false;
 
-	size_t objCount = fileSize / sizeof( Student ); // общия брой записи
+	size_t objCount = fileSize / sizeof( Student ); // РѕР±С‰РёСЏ Р±СЂРѕР№ Р·Р°РїРёСЃРё
 
-	Student* students; //тук ще прочетем студентите
+	Student* students; //С‚СѓРє С‰Рµ РїСЂРѕС‡РµС‚РµРј СЃС‚СѓРґРµРЅС‚РёС‚Рµ
 
 	students = new Student[ objCount ];
 
-	//прочитаме ги от файла в масива 
+	//РїСЂРѕС‡РёС‚Р°РјРµ РіРё РѕС‚ С„Р°Р№Р»Р° РІ РјР°СЃРёРІР° 
 	ifs.read( (char*) students, fileSize );
 
-	if ( !ifs ) //ако четенето не е било успешно
+	if ( !ifs ) //Р°РєРѕ С‡РµС‚РµРЅРµС‚Рѕ РЅРµ Рµ Р±РёР»Рѕ СѓСЃРїРµС€РЅРѕ
 		return false;
 
 	for ( size_t i = 0; i < objCount; i++ )
 		std::cout << students[ i ].name << ' '
 		<< students[ i ].fn << std::endl;
 
-	ifs.seekg( std::ios::beg ); // преместваме пак поинтера за четене в началото на файла
-	//можем и да прочетем точно един студент на произволна позиция от файла
+	ifs.seekg( std::ios::beg ); // РїСЂРµРјРµСЃС‚РІР°РјРµ РїР°Рє РїРѕРёРЅС‚РµСЂР° Р·Р° С‡РµС‚РµРЅРµ РІ РЅР°С‡Р°Р»РѕС‚Рѕ РЅР° С„Р°Р№Р»Р°
+	//РјРѕР¶РµРј Рё РґР° РїСЂРѕС‡РµС‚РµРј С‚РѕС‡РЅРѕ РµРґРёРЅ СЃС‚СѓРґРµРЅС‚ РЅР° РїСЂРѕРёР·РІРѕР»РЅР° РїРѕР·РёС†РёСЏ РѕС‚ С„Р°Р№Р»Р°
 	srand( time( nullptr ) );
-	size_t randomIndex = rand() % objCount; // избираме рандом индекс
-	ifs.seekg( randomIndex * sizeof( Student ) ); // преместваме поинтера за четене толкова байта от началото, колкото се намира randomIndex студента
+	size_t randomIndex = rand() % objCount; // РёР·Р±РёСЂР°РјРµ СЂР°РЅРґРѕРј РёРЅРґРµРєСЃ
+	ifs.seekg( randomIndex * sizeof( Student ) ); // РїСЂРµРјРµСЃС‚РІР°РјРµ РїРѕРёРЅС‚РµСЂР° Р·Р° С‡РµС‚РµРЅРµ С‚РѕР»РєРѕРІР° Р±Р°Р№С‚Р° РѕС‚ РЅР°С‡Р°Р»РѕС‚Рѕ, РєРѕР»РєРѕС‚Рѕ СЃРµ РЅР°РјРёСЂР° randomIndex СЃС‚СѓРґРµРЅС‚Р°
 
 
-	Student singleStudent; // Създаваме си студент
-	// Student* singleStudent = new Student; // можем и динамично на хийпа
+	Student singleStudent; // РЎСЉР·РґР°РІР°РјРµ СЃРё СЃС‚СѓРґРµРЅС‚
+	// Student* singleStudent = new Student; // РјРѕР¶РµРј Рё РґРёРЅР°РјРёС‡РЅРѕ РЅР° С…РёР№РїР°
 	ifs.read( (char*) &singleStudent, sizeof( Student ) );
-	//ifs.read( (char*) singleStudent, sizeof( Student ) ); // няма нужда от & за да вземем адреса на променливата, 
-															//тя вече си е адрес и само кастваме към char*
+	//ifs.read( (char*) singleStudent, sizeof( Student ) ); // РЅСЏРјР° РЅСѓР¶РґР° РѕС‚ & Р·Р° РґР° РІР·РµРјРµРј Р°РґСЂРµСЃР° РЅР° РїСЂРѕРјРµРЅР»РёРІР°С‚Р°, 
+															//С‚СЏ РІРµС‡Рµ СЃРё Рµ Р°РґСЂРµСЃ Рё СЃР°РјРѕ РєР°СЃС‚РІР°РјРµ РєСЉРј char*
 
 	std::cout << singleStudent.name << ' '
 		<< singleStudent.fn << std::endl;
 
-	//освобождаваме ресурсите
+	//РѕСЃРІРѕР±РѕР¶РґР°РІР°РјРµ СЂРµСЃСѓСЂСЃРёС‚Рµ
 	delete[] students;
 	ifs.close();
 	return true;
@@ -113,16 +113,16 @@ bool readStudents( const char* path )
 
 bool writeStudentsInEndOfFile( const char* path )
 {
-	std::ofstream ofs( path, std::ios::binary | std::ios::app ); // разлика с std::ios::ate
+	std::ofstream ofs( path, std::ios::binary | std::ios::app ); // СЂР°Р·Р»РёРєР° СЃ std::ios::ate
 	//'app' comes from 'append' - all output will be added (appended) to the end of the file. 
 	// In other words you cannot write anywhere else in the file but at the end.
 	//'ate' comes from 'at end' - it sets the stream position at the end of the file when you open it,
 	// but you are free to move it around (seek) and write wherever it pleases you.
 
-	if ( !ofs.is_open() ) //проверка дали е отворен успешно файлът
+	if ( !ofs.is_open() ) //РїСЂРѕРІРµСЂРєР° РґР°Р»Рё Рµ РѕС‚РІРѕСЂРµРЅ СѓСЃРїРµС€РЅРѕ С„Р°Р№Р»СЉС‚
 		return false;
 
-	//няколко случайни ученици
+	//РЅСЏРєРѕР»РєРѕ СЃР»СѓС‡Р°Р№РЅРё СѓС‡РµРЅРёС†Рё
 	Student students[] = {
 
 		{ "Ivo", 45260 },
@@ -130,16 +130,16 @@ bool writeStudentsInEndOfFile( const char* path )
 		{ "Petar", 61433 }
 	};
 
-	//записваме ги във файла един по един
+	//Р·Р°РїРёСЃРІР°РјРµ РіРё РІСЉРІ С„Р°Р№Р»Р° РµРґРёРЅ РїРѕ РµРґРёРЅ
 	//size_t size = sizeof(students) / sizeof(Student);
 	//for (size_t i = 0; i < size; i++)
 	//ofs.write((const char*)&students[i], sizeof(Student));
 
-	//нищо не ни пречи да ги запишем и всички наведнъж :
-	ofs.write( (const char*) students, sizeof( students ) ); //students е началото на масива
-															 //няма нужда от & за да вземем адреса
+	//РЅРёС‰Рѕ РЅРµ РЅРё РїСЂРµС‡Рё РґР° РіРё Р·Р°РїРёС€РµРј Рё РІСЃРёС‡РєРё РЅР°РІРµРґРЅСЉР¶ :
+	ofs.write( (const char*) students, sizeof( students ) ); //students Рµ РЅР°С‡Р°Р»РѕС‚Рѕ РЅР° РјР°СЃРёРІР°
+															 //РЅСЏРјР° РЅСѓР¶РґР° РѕС‚ & Р·Р° РґР° РІР·РµРјРµРј Р°РґСЂРµСЃР°
 
-	if ( !ofs.good() ) // проверяваме дали след операцията потокът е в невалидено състояние
+	if ( !ofs.good() ) // РїСЂРѕРІРµСЂСЏРІР°РјРµ РґР°Р»Рё СЃР»РµРґ РѕРїРµСЂР°С†РёСЏС‚Р° РїРѕС‚РѕРєСЉС‚ Рµ РІ РЅРµРІР°Р»РёРґРµРЅРѕ СЃСЉСЃС‚РѕСЏРЅРёРµ
 		return false;
 
 	ofs.close();
