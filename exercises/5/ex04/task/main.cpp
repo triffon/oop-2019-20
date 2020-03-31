@@ -10,12 +10,12 @@ int main() {
     std::cout << std::endl;
 
     Animal a1;
-    //a1.setName("Animal 1");
-    //a1.setAge(12);
-    //a1.setType(type1);
+    a1.setName("Animal 1");
+    a1.setAge(12);
+    a1.setType(type1);
 
-    //a1.print();
-    //std::cout << std::endl;
+    a1.print();
+    std::cout << std::endl;
 
     return 0;
 }

@@ -6,6 +6,7 @@ using std::cout;
 
 AnimalType::AnimalType() {
     name = nullptr;
+    setNameFromString("");
     lifetime = 0;
     status = safe;
 }
