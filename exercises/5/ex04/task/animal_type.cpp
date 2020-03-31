@@ -6,7 +6,6 @@ using std::cout;
 
 AnimalType::AnimalType() {
     name = nullptr;
-    setNameFromString("");
     lifetime = 0;
     status = safe;
 }
@@ -38,7 +37,7 @@ AnimalType::~AnimalType() {
 }
 
 void AnimalType::print() {
-    cout << name << " " << lifetime << " " << printStatus();
+    cout << (name ? name : "<unknown>") << " " << lifetime << " " << printStatus();
 }
 
 const char * AnimalType::printStatus() {
@@ -51,6 +50,10 @@ const char * AnimalType::printStatus() {
 
 void AnimalType::setNameFromString(const char * _name) {
     delete[] name;
-    name = new char[strlen(_name) + 1];
-    strcpy(name, _name);
+    if (_name) {
+        name = new char[strlen(_name) + 1];
+        strcpy(name, _name);
+    } else {
+        name = nullptr;
+    }
 }

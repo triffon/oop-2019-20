@@ -30,7 +30,7 @@ Animal::~Animal() {
 }
 
 void Animal::print() {
-    std::cout << name << " " << age << " ";
+    std::cout << (name ? name : "<unknown>") << " " << age << " ";
     type.print();
 }
 
@@ -60,6 +60,10 @@ void Animal::setType(AnimalType & _type) {
 
 void Animal::setNameFromString(const char * _name) {
     delete[] name;
-    name = new char[strlen(_name) + 1];
-    strcpy(name, _name);
+    if (_name) {
+        name = new char[strlen(_name) + 1];
+        strcpy(name, _name);
+    } else {
+        name = nullptr;
+    }
 }
