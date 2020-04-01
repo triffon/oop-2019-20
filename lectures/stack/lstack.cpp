@@ -42,6 +42,42 @@ int LinkedStack::peek() const {
 }
 
 LinkedStack::~LinkedStack() {
+    erase();
+}
+
+void LinkedStack::erase() {
     while (!empty())
         pop();
+}
+
+LinkedStack::LinkedStack(LinkedStack const& other) {
+    copy(other);
+}
+
+LinkedStack& LinkedStack::operator=(LinkedStack const& other) {
+    if (this != &other) {
+        erase();
+        copy(other);
+    }
+    return *this;
+}
+
+void LinkedStack::copy(LinkedStack const& other) {
+    /*
+    while (!empty())
+        push(other.pop());
+    */
+   if (other.top == nullptr) {
+       top = nullptr;
+   } else {
+       // other.top != nullptr
+       StackElement *lastCopied = top = new StackElement{other.top->data}, *copyFrom = other.top->next;
+       while (copyFrom != nullptr) {
+           lastCopied = lastCopied->next = new StackElement{copyFrom->data};
+           copyFrom = copyFrom->next;
+       }
+       // copyFrom == nullptr
+       // приключваме веригата
+       lastCopied->next = nullptr;
+   }
 }

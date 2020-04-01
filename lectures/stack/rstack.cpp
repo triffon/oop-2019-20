@@ -48,18 +48,36 @@ void ResizingStack::resize() {
     // удвояваме капацитета
     unsigned newCapacity = capacity * 2;
     std::clog << "Разширяваме стека до капацитет " << newCapacity << std::endl;
+    // запазваме си стария указател
+    int *olda = a;
     // заделяме памет за новия стек
-    int *newa = new int[newCapacity];
+    a = new int[newCapacity];
     // копираме елементите от стария стек
-    for(int i = 0; i < capacity; i++)
-        newa[i] = a[i];
+    copy(olda);
     capacity = newCapacity;
     // унищожаваме стария масив
-    delete[] a;
-    // насочваме указателя към новия
-    a = newa;
+    delete[] olda;
 }
 
 ResizingStack::~ResizingStack() {
     delete[] a;
+}
+
+ResizingStack::ResizingStack(ResizingStack const& other) : top(other.top), capacity(other.capacity) {
+    copy(other.a);
+}
+
+ResizingStack& ResizingStack::operator=(ResizingStack const& other) {
+    if (this != &other) {
+        delete[] a;
+        top = other.top;
+        capacity = other.capacity;
+        copy(other.a);
+    }
+    return *this;
+}
+
+void ResizingStack::copy(int* othera) {
+   for(int i = 0; i < capacity; i++)
+        a[i] = othera[i];
 }
