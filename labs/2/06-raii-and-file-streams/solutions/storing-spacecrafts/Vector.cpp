@@ -49,30 +49,6 @@ void Vector::clear()
 }
 
 
-int Vector::size() const
-{
-    return m_size;
-}
-
-
-int Vector::capacity() const
-{
-    return m_capacity;
-}
-
-
-elem_t& Vector::at(int index)
-{
-    return m_arr[index];
-}
-
-
-const elem_t& Vector::at(int index) const
-{
-    return m_arr[index];
-}
-
-
 void Vector::push_back(const elem_t& element)
 {
     if (m_size >= m_capacity)
@@ -103,6 +79,26 @@ void Vector::reserve(int capacity)
         delete[] m_arr;
         m_arr = new_arr;
     }
+}
+
+
+void Vector::serialize(std::ofstream& out) const
+{
+    out.write((const char*) &m_size, sizeof(m_size));
+    out.write((const char*) &m_capacity, sizeof(m_capacity));
+    for (int i = 0; i < m_size; i++)
+        m_arr[i].serialize(out);
+}
+
+
+void Vector::deserialize(std::ifstream& in)
+{
+    clear();
+    in.read((char*) &m_size, sizeof(m_size));
+    in.read((char*) &m_capacity, sizeof(m_capacity));
+    m_arr = new elem_t[m_capacity];
+    for (int i = 0; i < m_size; i++)
+        m_arr[i] = elem_t(in);
 }
 
 
