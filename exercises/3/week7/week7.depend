@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1585799057 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week7\main.cpp
+	<iostream>
+	<istream>
+	<ostream>
+	<fstream>
+
