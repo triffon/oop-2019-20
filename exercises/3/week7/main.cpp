@@ -10,17 +10,18 @@ void binaryVsTextFileDemo(){
     fstream file("BinVsText");
     /// Binary - copies the bytes to the specified location without any conversions
     file.read((char*) &data, sizeof(int));
-    cout << data << endl;
+
+    cout << hex << data << endl;
 
     file.seekg(0,ios::beg);
     /// Text - looks at the argument of >> operator and converts the bytes
     file >> data;
-    cout << data << endl;
+    cout << dec << data << endl;
 }
 
 void ifstreamDemo()
 {
-    char buff[64]; /// buffer for storing data read from the file
+    char buff[5]; /// buffer for storing data read from the file
 
     /// opens file only for reading
     ifstream fin("input.txt");
@@ -29,18 +30,20 @@ void ifstreamDemo()
     /// reads data into a buffer up to size n
     /// good for reading binary data
     fin.read(buff,4);
-    cout << buff << endl;
 
-    /// reads data into a buffer up to size n-1  or until delimeter is found('\n' by default). Delimeter is not extracted from the input buffer and appends terminating char '0'
+    cout << "read: " << buff << endl;
+
+    /// reads data into a buffer up to size n-1  or until delimeter is found('\n' by default).
+    /// Delimeter is not extracted from the input buffer and appends terminating char '0'
     /// good for reading unformatted plain text data
     fin.get(buff,5);
-    cout << buff << endl;
+    cout << "get: " << buff << endl;
 
     /// reads data into a buffer up to size n-1  or until delimeter is found('\n' by default). Delimeter is extracted from the input buffer and discarded and appends terminating char '0'
     /// Makes an error if delimeter is not found
     /// good for reading unformatted plain text data up to a specific delimeter
     fin.getline(buff,5);
-    cout << buff << endl;
+    cout << "getline: " << buff << endl;
     ///tellg/seekg
     ///every input character stream consists of a internal buffer(array) and a current index to get from
     /// tellg - returns the get index
@@ -83,6 +86,6 @@ void ofstreamDemo(){
 int main(){
     //ifstreamDemo();
     //ofstreamDemo();
-    binaryVsTextFileDemo();
+    //binaryVsTextFileDemo();
     return 0;
 }
