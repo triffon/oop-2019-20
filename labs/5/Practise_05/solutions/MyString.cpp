@@ -12,16 +12,20 @@ public:
         symbols = nullptr;
     }
 
-    MyString(MyString& origin) {
-        symbols = new char[strlen(origin.symbols)];
-        strcpy(symbols, origin.symbols);
+    MyString(const MyString& origin) {
+        symbols = new char[strlen(origin.getSymbols())];
+        strcpy(symbols, origin.getSymbols());
     }
 
-    MyString& operator=(MyString& origin) {
-        if (this != &p) {
+    const char* getSymbols() const {
+        return symbols;
+    }
+
+    MyString& operator=(const MyString& origin) {
+        if (this != &origin) {
             delete[] symbols;
-            symbols = new char[strlen(origin.symbols) + 1];
-            strcpy(symbols, origin.symbols);
+            symbols = new char[strlen(origin.getSymbols()) + 1];
+            strcpy(symbols, origin.getSymbols());
         }
 
         return *this;

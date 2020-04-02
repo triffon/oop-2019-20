@@ -8,34 +8,57 @@ class Time {
     int hour;
     int minute;
 
+    void setHour(int hour) {
+        if (hour >= 0 && hour <= 23) {
+            this->hour = hour;
+        } else {
+            this->hour = 0;
+        }
+    }
+
+    void setMinute(int minute) {
+        if (minute >= 0 && minute <= 60) {
+            this->minute = minute;
+        } else {
+            this->minute = 0;
+        }
+    }
+
 public:
     Time() {
-        hour = 0;
-        minute = 0;
+        setHour(0);
+        setMinute(0);
     }
 
     Time(int hour, int minute) {
-        this->hour = hour;
-        this->minute = minute;
+        setHour(hour);
+        setMinute(minute);
+    }
+
+    int getHour() const {
+        return hour;
+    }
+
+    int getMinute() const {
+        return minute;
     }
 
     Time operator+(const Time& t) {
-        Time time;
-        time.hour = (this->hour + t.hour + (this->minute + t.minute) / 60 ) % 24;
-        time.minute = (this->minute + t.minute) % 60;
-        return time;
+        int newHour = (hour + t.getHour() + (minute + t.getMinute()) / 60 ) % 24;
+        int newMinute = (minute + t.getMinute()) % 60;
+        Time result(newHour, newMinute);
+        return result;
     }
 
     Time operator+(int hour) {
-        Time time;
-        time.hour = (t.hour + hour) % 24;
-        time.minute = t.minute;
-        return time;
+        int newHour = (this->hour + hour) % 24;
+        Time result(newHour, this->minute);
+        return result;
     }
 
     Time& operator=(const Time& t) {
-        this->hour = t.hour;
-        this->minute = t.minute;
+        this->hour = t.getHour();
+        this->minute = t.getMinute();
         return *this;
     }
 
@@ -50,10 +73,9 @@ public:
 };
 
 Time operator+(int hour, const Time& t) {
-    Time time;
-    time.hour = (t.hour + hour) % 24;
-    time.minute = t.minute;
-    return time;
+    int newHour = (t.getHour() + hour) % 24;
+    Time result(newHour, t.getMinute());
+    return result;
 }
 
 int main() {
