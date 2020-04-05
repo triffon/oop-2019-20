@@ -48,3 +48,43 @@
   * [**Member Initializer Lists**](https://www.youtube.com/watch?v=1nfuYMXjZsA)
   
 ---
+## Seminar 05
+  * Продължение на задачата от семинар 4
+### Youtube линкове по материала:
+  * [**Conditional and Action Breakpoints in C++**](https://www.youtube.com/watch?v=9ncNA6Co2Nk)
+
+---
+## Seminar 06
+  * Какво е поток?
+  * Какво са файловете
+  * Как да четем и пишем от/в текстови файл
+  * Четене на N числа от файл и съставяне на обекти от тях
+  * Справяне с неотворени файлове и грешки възникнали повреме на работа с потока
+  * Добри практики
+### Youtube линкове по материала:
+  * [**Reading and Writing to Files**](https://www.youtube.com/watch?v=Iho2EdJgusQ)
+  * [**Working with Files**](https://www.youtube.com/watch?v=HcONWqVyvlg)
+
+---
+## Seminar 07
+  * Какво е бинарен файл?
+  * Къде се ползват бинарите файлове
+  * Как да четем и пишем от/в бинарни файлове
+  * Какво наричаме сериализиране и десериализиране
+  * Добри практики
+### Youtube линкове по материала:
+  * [**Reading and Writing Binary Files**](https://www.youtube.com/watch?v=BpxULagsPLs)
+
+---
+## Seminar 08
+  * Какво е namespace и как да си напишем свой
+  * Вложени namespace
+  * Как да си разширим std namespace
+  * Статични полета и методи
+  * Error handling oldschool style
+  * Error handling new style - exceptions
+### Youtube линкове по материала:
+  * [**Namespaces in C++**](https://www.youtube.com/watch?v=ts1Eek5w7ZA)
+  * [**Local Static in C++ - Материал по УП**](https://www.youtube.com/watch?v=f7mtWD9GdJ4)
+  * [**Static in C++**](https://www.youtube.com/watch?v=f3FVU-iwNuA)
+  * [**Static for Classes and Structs in C++**](https://www.youtube.com/watch?v=V-BFlMrBtqQ)
