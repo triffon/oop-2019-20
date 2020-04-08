@@ -1,6 +1,7 @@
 #include <iostream>
-#include <iomanip>
 #include <fstream>
+
+#include "student.h"
 
 void printTextFile(char const* filename) {
     std::ifstream fi(filename);
@@ -72,6 +73,13 @@ void testSafeRead() {
         std::cout << "Неуспешно прочитане на числото" << std::endl;
 }
 
+void changeTextFile(char const* filename) {
+    std::fstream file(filename);
+    char line[100];
+    file.getline(line, 100);
+    file << "#include <cmath>\n//";
+}
+
 int main() {
 //    testistream();
     // testSafeRead();
@@ -79,8 +87,11 @@ int main() {
     // printBinaryFile("build/files");
     // writeBottlesSong("bottles10.txt");
     // writeBottlesSong("bottles100.txt", 100);
+    /*
     countInBinary("numbers.bin", 100);
     countInBinary("numbers.bin", 50, 30);
     printBinaryFile("numbers.bin");
+    */
+    // changeTextFile("main.cpp");
     return 0;
 }
