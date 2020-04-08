@@ -80,6 +80,85 @@ void changeTextFile(char const* filename) {
     file << "#include <cmath>\n//";
 }
 
+unsigned readStudents(Student* students) {
+    char more;
+    unsigned count = 0;
+    do {
+        std::clog << "Въведете Ф№, оценка и име на един ред, разделени с интервали:" << std::endl;
+        std::cin >> students[count++];
+        std::clog << "Ще въвеждате ли още? [y/n]";
+        more = std::cin.get();
+    } while (more == 'y' || more == 'Y');
+    return count;
+}
+
+void writeStudentsToFile(Student* students, unsigned count, char const* textFile) {
+    std::clog << "Записваме " << count << " студенти във файла " << textFile << std::endl;
+    std::ofstream text(textFile);
+    text << count << std::endl;
+    for(int i = 0; i < count; i++)
+        text << students[i];
+}
+
+// максимален брой студенти = n (4 байта = sizeof(unsigned))
+// масив от n студенти от тип Student, така че Ф№ X да е на позиция X - 40000
+void writeStudentsToBook(char const* textFile, char const* bookFile) {
+    std::ifstream text(textFile);
+    std::ofstream book(bookFile, std::ios::out | std::ios::binary );
+    unsigned count;
+    text >> count;
+    Student student;
+    const unsigned MAX_STUDENTS = 1000;
+    // заглавната част на главната книга
+    // TODO: да се запише интервала от Ф№, които са записани в книгата
+    book.write((const char*)&MAX_STUDENTS, sizeof(unsigned));
+    for(int i = 0; i < count; i++) {
+        text >> student;
+        student.write(book);
+    }
+}
+
+bool increaseGrade(char const* bookFile, unsigned fn) {
+    std::fstream book(bookFile, std::ios::in | std::ios::out | std::ios::binary );
+    Student s;
+    s.read(book, fn);
+    if (!book || s.fn != fn)
+        return false;
+    std::clog << "Прочетена оценка: " << s.grade << std::endl;
+    s.grade = std::min( 6.0, s.grade + 1 );
+    s.write(book);
+    std::clog << "Записана оценка: " << s.grade << std::endl;
+    return book.good();
+}
+
+void SUSI() {
+    Student students[1000];
+    /*
+    unsigned count = readStudents(students);
+    writeStudentsToFile(students, count, "students.txt");
+    writeStudentsToBook("students.txt", "main.bk");
+    */
+    std::clog << "На кой студент да повишим оценката? ";
+    unsigned fn;
+    std::cin >> fn;
+    bool success = increaseGrade("main.bk", fn);
+    std::clog << "Увеличаването ";
+    if (!success)
+        std::clog << "НЕ ";
+    std::clog << "беше успешно!" << std::endl;
+
+    /*
+    Student fmi[8][1000];
+    // fmi[0][0], fmi[0][1], ... fmi[0][999], fmi[1][0], fmi[1][1], ... fmi[7][999]
+    */
+}
+
+/*
+void readFMI(Student fmi[][1000], unsinged specCount) {
+    // sizeof(fmi[0])
+}
+*/
+
 int main() {
 //    testistream();
     // testSafeRead();
@@ -93,5 +172,6 @@ int main() {
     printBinaryFile("numbers.bin");
     */
     // changeTextFile("main.cpp");
+    SUSI();
     return 0;
 }

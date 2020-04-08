@@ -4,6 +4,7 @@
 #include <iostream>
 
 const unsigned MAX_NAME = 100;
+const unsigned FN_START = 40000;
 
 // TODO: да се направи на клас
 struct Student {
@@ -13,11 +14,14 @@ struct Student {
 
     // неформатиран изход
     void write(std::ostream& os) {
+        // отиваме на позиция fn - FN_START
+        os.seekp( (fn - FN_START) * sizeof(Student) + sizeof(unsigned) );
         os.write((char const*)this, sizeof(Student));
     }
 
     // неформатиран вход
-    void read(std::istream& is) {
+    void read(std::istream& is, unsigned fn = 0) {
+        is.seekg( (fn - FN_START) * sizeof(Student) + sizeof(unsigned) );
         is.read((char*)this, sizeof(Student));
     }
 };
@@ -29,7 +33,8 @@ std::ostream& operator<<(std::ostream& os, Student const& s) {
 
 // форматиран вход
 std::istream& operator>>(std::istream& is, Student& s) {
-    return (is >> s.fn >> s.grade).getline(s.name, MAX_NAME);
+    char space;
+    return (is >> s.fn >> s.grade).get(space).getline(s.name, MAX_NAME);
 }
 
 #endif
