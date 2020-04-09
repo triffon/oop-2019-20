@@ -1,13 +1,13 @@
 # depslib dependency file v1.0
-1586411632 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week8\main.cpp
+1586435555 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week8\main.cpp
 	<iostream>
 	<fstream>
 	"Student.h"
 
-1586411466 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week8\src\student.cpp
+1586412787 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week8\src\student.cpp
 	"Student.h"
 	<cstring>
 
-1586411447 c:\users\kamen\documents\oop-2019-20\exercises\3\week8\include\student.h
+1586438902 c:\users\kamen\documents\oop-2019-20\exercises\3\week8\include\student.h
 	<iostream>
 
