@@ -21,11 +21,11 @@ int main()
 {
 	for ( int i = 0; i < 42; i++ )
 		printf( "value of errno : %d | mapped string : %s\n",
-		i, std::strerror( i ) ); // std::strerror е функция, която по подадено число, връща error message 
+		i, std::strerror( i ) ); // std::strerror is function which return const char* message by passing a number - int error message
 
 	double num = std::log( -1.0 );
 
-	if ( errno == EDOM ) // прихващаме грешка за невалиден параметър на функция
+	if ( errno == EDOM ) // catching the error which is responsible for wrong argument of function
 	{
 
 		printf( "value of errno : %d | log(-1) failed: %s\n",
