@@ -42,7 +42,7 @@ const char * Animal::getName() {
     return name;
 }
 
-int Animal::getAge() {
+double Animal::getAge() {
     return age;
 }
 
@@ -54,7 +54,7 @@ void Animal::setName(const char * _name) {
     setNameFromString(_name);
 }
 
-void Animal::setAge(int _age) {
+void Animal::setAge(double _age) {
     age = _age;
 }
 

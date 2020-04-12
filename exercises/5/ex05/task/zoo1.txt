@@ -1,0 +1,12 @@
+3.5
+2
+type 1
+33
+Safe
+name 1
+13
+type 2
+45
+Endangered
+animal 2
+10
