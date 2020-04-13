@@ -12,6 +12,9 @@ public:
 
     void serialize(std::ofstream& out) const;
 
+    inline const char* getName() const { return name; }
+    inline int getYear() const { return year; }
+
 private:
     void copy(const Spacecraft& other);
     void clear();
@@ -19,3 +22,5 @@ private:
     int year;
     char* name;
 };
+
+std::ostream& operator<<(std::ostream& out, const Spacecraft& obj);

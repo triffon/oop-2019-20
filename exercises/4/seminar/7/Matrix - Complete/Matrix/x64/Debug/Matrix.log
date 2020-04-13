@@ -1,0 +1,3 @@
+﻿D:\visual studio\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(459,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (Matrix.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  matrix.cpp
+  Matrix.vcxproj -> C:\Users\dtrz\Desktop\7\Matrix - Complete\x64\Debug\Matrix - Complete.exe

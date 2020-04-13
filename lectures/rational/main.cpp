@@ -33,6 +33,9 @@ void testRationals() {
     q.printnl();
     // !!! q.denom = 0;
     // q.printnl();
+    std::cout << "q = " << q << std::endl;
+    std::cin >> q;
+    std::cout << "q = " << q << std::endl;
 }
 
 void testRatExp() {
@@ -56,7 +59,7 @@ void testRationalPoint() {
 }
 
 int main(int, char**) {
-    // testRationals();
+    testRationals();
     // testRatExp();
-    testRationalPoint();
+    // testRationalPoint();
 }

@@ -1,0 +1,12 @@
+4.5
+2
+Type 1
+57
+Safe
+Animal 1
+12
+Type 1
+57
+Safe
+New Animal 1
+11

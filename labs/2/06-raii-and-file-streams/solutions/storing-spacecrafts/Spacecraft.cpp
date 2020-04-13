@@ -66,3 +66,9 @@ void Spacecraft::serialize(std::ofstream& out) const
     out.write((const char*) &len, sizeof(len));
     out.write((const char*) name, len);
 }
+
+
+std::ostream& operator<<(std::ostream& out, const Spacecraft& obj)
+{
+    return out << obj.getYear() << " " << obj.getName();
+}

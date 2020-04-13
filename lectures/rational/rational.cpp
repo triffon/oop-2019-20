@@ -15,7 +15,7 @@ Rational::Rational(long n, unsigned long d) {
         d = 1;
     }
     if (n == 0)
-    d = 1;
+        d = 1;
     unsigned long g = std::gcd(std::abs(n), d);
     numer = n / g;
     denom = d / g;
@@ -28,7 +28,8 @@ Rational::Rational(Rational const& r) : numer(r.numer), denom(r.denom) {
 
 inline void Rational::print() const {
     // TODO: по желание да извежда q = преди числото
-     std::cout << numer << '/' << denom;
+    // std::cout << numer << '/' << denom;
+    std::cout << *this;
 }
 
 void Rational::printnl() const {
@@ -46,6 +47,7 @@ double Rational::toDouble() const {
 void Rational::read() {
     // 1/2
     // int cin = 2;
+    /*
     unsigned n;
     std::cin >> n;
     numer = n;
@@ -53,7 +55,8 @@ void Rational::read() {
     std::cin.get(); // прескачаме символа '/'
     std::cin >> denom;
     std::clog << "[LOG] numer = " << numer << std::endl;
-    std::clog << "[LOG] denom = " << denom << std::endl;
+    std::clog << "[LOG] denom = " << denom << std::endl;*/
+    std::cin >> *this;
 }
 
 Rational multiply(Rational const& p, Rational const& q) {
@@ -76,4 +79,13 @@ Rational subtract(Rational const& p, Rational const& q) {
     return Rational(p.getNumerator() * q.getDenominator() -
                     q.getNumerator() * p.getDenominator(),
                     p.getDenominator() * q.getDenominator());
+}
+
+std::ostream& operator<<(std::ostream& o, Rational const& r) {
+    return o << r.numer << '/' << r.denom << std::endl;
+}
+std::istream& operator>>(std::istream& i, Rational& r) {
+    char c;
+    return i >> r.numer >> c >> r.denom;
+    // TODO: да се направи така, че да съкращава дробите
 }

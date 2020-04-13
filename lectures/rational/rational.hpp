@@ -1,6 +1,8 @@
 #ifndef __RATIONAL_HPP
 #define __RATIONAL_HPP
 
+#include <iostream>
+
 class Rational;
 class Rational;
 class Rational;
@@ -25,6 +27,9 @@ public:
   void printnl() const;
   double toDouble() const;
 
+  friend std::ostream& operator<<(std::ostream&, Rational const&); /* { ... } */
+  friend std::istream& operator>>(std::istream&, Rational&);
+
   void read();
 };
 
@@ -32,5 +37,8 @@ Rational multiply(Rational const& p, Rational const& q);
 Rational divide(Rational const& p, Rational const& q);
 Rational add(Rational const& p, Rational const& q);
 Rational subtract(Rational const& p, Rational const& q);
+
+std::ostream& operator<<(std::ostream&, Rational const&);
+std::istream& operator>>(std::istream&, Rational&);
 
 #endif
