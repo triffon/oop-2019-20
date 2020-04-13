@@ -4,7 +4,7 @@
 
 namespace apple
 {
-	void function1( const char* string )
+	void f1( const char* string )
 	{
 		std::cout << string << std::endl;
 	}

@@ -1,8 +1,13 @@
 #include <iostream> //includes <exception>
+// More information for exceptions:
+// https://en.cppreference.com/w/cpp/error
+// https://en.cppreference.com/w/cpp/error/exception
+// https://en.cppreference.com/w/cpp/language/noexcept_spec
 
 void fun_throw()
 {
 	long int var = 42;
+	//int var = 42;
 	throw var;
 
 	std::cout << "will we get here?!\n";
@@ -23,6 +28,8 @@ int division( int a, int b )
 
 	return a / b;
 }
+
+// TODO: class with throw exception into the constructor
 
 int main()
 {
@@ -45,7 +52,7 @@ int main()
 
 		fun_throw1();
 	}
-	catch ( long int e )
+	catch ( long int e ) // catch clause will be compare by type of exception
 	{
 
 		std::cout << "caught long int : " << e << '\n';
@@ -62,16 +69,16 @@ int main()
 
 		std::cout << "division(10,0) =" << division( 10, 0 );
 	}
-	catch ( std::exception& e )
-	{
-
-		std::cout << "std::exception : "
-			<< e.what() << '\n';
-	}
 	catch ( std::logic_error& e )
 	{
 
 		std::cout << "std::logic_error : "
+			<< e.what() << '\n';
+	}
+	catch ( std::exception& e )
+	{
+
+		std::cout << "std::exception : "
 			<< e.what() << '\n';
 	}
 
