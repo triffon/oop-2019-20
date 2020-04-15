@@ -10,4 +10,4 @@
 ## Задача 2
 Да се реализират класовете от диаграмата:
 
-![fd](https://drive.google.com/uc?export=view&id=1KP-1mQYLUkSryO34th9ybzQN3o9cNP88)
+![](http://snakea.info/old/inheritance.svg)
