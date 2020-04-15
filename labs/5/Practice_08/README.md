@@ -11,3 +11,5 @@
 Да се реализират класовете от диаграмата:
 
 ![](http://snakea.info/old/inheritance.svg)
+
+enum Taste { SWEET, SOUR, SALT, BITTER, SAVORY };
