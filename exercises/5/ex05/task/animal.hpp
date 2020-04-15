@@ -14,16 +14,16 @@ public:
     void print();
 
     const char * getName();
-    int getAge();
+    double getAge();
     AnimalType & getType();
 
     void setName(const char *);
-    void setAge(int);
+    void setAge(double);
     void setType(AnimalType &);
 
 private:
     char * name;
-    int age;
+    double age;
     AnimalType type;
     void setNameFromString(const char *);
 
