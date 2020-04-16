@@ -11,7 +11,7 @@ For example:
   Expression: “[()]{}{[()()]()}”
   Output: Balanced
 
-The reason is because there are equal number of the same opening parenthes as closing parenthes and the are properly matched.
+The reason is because there are equal number of the same opening parenthes as closing parenthes and they are properly matched.
 For example: ({)} - there are equal number of the same opening parenthes as closing parenthes but they are not in proper 
 arrangement.
 
