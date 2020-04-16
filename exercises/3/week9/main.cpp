@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Human.h"
+#include "Centaur.h"
 using namespace std;
 
 /// Simple inheritance demo(data is inherited)
@@ -29,11 +30,25 @@ void polymorphismDemo(){
     /// Dynamic polymorphism , when invoking virtual functions it calls the appropriate for the instantiated type
     /// the other functions(non virtual) are still checked statically(the ones in Animal)
     ptr->wakeUp();
+    cout << "-----------" << endl;
     ptr2->wakeUp();
+    /// Virtual destructors are used to call the appropriate desctructor
+    Animal * a2 = new Human();
+    delete a2;
+    cout << "+++++++++++++++++++" << endl;
+}
+void virtualInheritanceDemo(){
+    Centaur c;
+    /// getAge and setAge appear only once(in Animal) so there is no ambiguity
+    c.setAge(12);
+    cout << c.getAge() << endl;
+
+    c.wakeUp();
 }
 int main()
 {
     /// simpleInheritanceDemo();
     /// polymorphismDemo();
+    /// virtualInheritanceDemo();
     return 0;
 }

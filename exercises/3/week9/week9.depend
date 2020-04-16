@@ -1,7 +1,8 @@
 # depslib dependency file v1.0
-1586995200 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week9\main.cpp
+1587046282 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week9\main.cpp
 	<iostream>
 	"Human.h"
+	"Centaur.h"
 
 1586978395 c:\users\kamen\documents\oop-2019-20\exercises\3\week9\include\container.h
 
@@ -14,17 +15,32 @@
 1586978425 c:\users\kamen\documents\oop-2019-20\exercises\3\week9\include\other.h
 	"Container.h"
 
-1586995084 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week9\src\animal.cpp
+1586996177 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week9\src\animal.cpp
 	"Animal.h"
 	<iostream>
 
-1586994543 c:\users\kamen\documents\oop-2019-20\exercises\3\week9\include\animal.h
+1587043306 c:\users\kamen\documents\oop-2019-20\exercises\3\week9\include\animal.h
 
-1586995260 c:\users\kamen\documents\oop-2019-20\exercises\3\week9\include\human.h
+1587045802 c:\users\kamen\documents\oop-2019-20\exercises\3\week9\include\human.h
 	"Animal.h"
 
-1586995248 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week9\src\human.cpp
+1587044038 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week9\src\human.cpp
 	"Human.h"
 	<iostream>
 	<cstring>
+
+1587046336 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week9\src\horse.cpp
+	"Horse.h"
+	<iostream>
+
+1587045788 c:\users\kamen\documents\oop-2019-20\exercises\3\week9\include\horse.h
+	"Animal.h"
+
+1587046190 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week9\src\centaur.cpp
+	"Centaur.h"
+	<iostream>
+
+1587045857 c:\users\kamen\documents\oop-2019-20\exercises\3\week9\include\centaur.h
+	"Horse.h"
+	"Human.h"
 
