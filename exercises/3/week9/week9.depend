@@ -1,0 +1,30 @@
+# depslib dependency file v1.0
+1586995200 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week9\main.cpp
+	<iostream>
+	"Human.h"
+
+1586978395 c:\users\kamen\documents\oop-2019-20\exercises\3\week9\include\container.h
+
+1586978270 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week9\src\container.cpp
+	"Container.h"
+
+1586978327 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week9\src\other.cpp
+	"Other.h"
+
+1586978425 c:\users\kamen\documents\oop-2019-20\exercises\3\week9\include\other.h
+	"Container.h"
+
+1586995084 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week9\src\animal.cpp
+	"Animal.h"
+	<iostream>
+
+1586994543 c:\users\kamen\documents\oop-2019-20\exercises\3\week9\include\animal.h
+
+1586995260 c:\users\kamen\documents\oop-2019-20\exercises\3\week9\include\human.h
+	"Animal.h"
+
+1586995248 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week9\src\human.cpp
+	"Human.h"
+	<iostream>
+	<cstring>
+
