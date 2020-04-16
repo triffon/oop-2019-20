@@ -5,13 +5,16 @@
 ### Задачи:
 - Да си напишем темплейтен Stack.
 - Решете следната задача с помощта на Stack-a, който имплементирахме: 
-- Check if expression of parentheses is balanced 
+- Check if expression of parentheses is balanced
+ 
 For example: 
   Expression: “[()]{}{[()()]()}”
   Output: Balanced
+
 The reason is because there are equal number of the same opening parenthes as closing parenthes and the are properly matched.
 For example: ({)} - there are equal number of the same opening parenthes as closing parenthes but they are not in proper 
 arrangement.
+
 For example:
   Exprssion: “[(])”
   Output: Not balanced
