@@ -22,6 +22,9 @@ public:
     void insert(size_t index, const Elem_t& element);
     void erase(size_t index);
     void reserve(size_t capacity);
+    
+    template <typename Pred>
+    void sort(Pred comparator);
 
     // Operators
     Elem_t& operator[](size_t index);
@@ -43,7 +46,7 @@ private:
     // Data members
     size_t m_size;
     size_t m_capacity;
-    Elem_t** m_arr;
+    Elem_t* m_arr;
 };
 
 template <typename Elem_t>

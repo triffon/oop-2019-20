@@ -48,7 +48,7 @@ void Vector<Elem_t>::copy(const Vector<Elem_t>& other)
 {
     m_size = other.m_size;
     m_capacity = other.m_capacity;
-    m_arr = new Elem_t*[m_capacity];
+    m_arr = new Elem_t[m_capacity];
     for (size_t i = 0; i < m_size; i++)
         m_arr[i] = other.m_arr[i];
 }
@@ -57,9 +57,6 @@ void Vector<Elem_t>::copy(const Vector<Elem_t>& other)
 template <typename Elem_t>
 void Vector<Elem_t>::clear()
 {
-    for (size_t i = 0; i < m_size; i++)
-        delete m_arr[i];
-    
     delete[] m_arr;
     m_arr = nullptr;
 }
@@ -68,14 +65,14 @@ void Vector<Elem_t>::clear()
 template <typename Elem_t>
 Elem_t& Vector<Elem_t>::at(size_t index)
 {
-    return *m_arr[index];
+    return m_arr[index];
 }
 
 
 template <typename Elem_t>
 const Elem_t& Vector<Elem_t>::at(size_t index) const
 {
-    return *m_arr[index];
+    return m_arr[index];
 }
 
 
@@ -85,7 +82,7 @@ void Vector<Elem_t>::push_back(const Elem_t& element)
     if (m_size >= m_capacity)
         reserve(RESIZE_FACTOR * m_capacity);
     
-    m_arr[m_size] = new Elem_t(element);
+    m_arr[m_size] = element;
     ++m_size;
 }
 
@@ -105,7 +102,7 @@ void Vector<Elem_t>::insert(size_t index, const Elem_t& element)
     for (size_t i = m_size; i > index; i--)
         std::swap(m_arr[i], m_arr[i - 1]);
 
-    m_arr[index] = new Elem_t(element);
+    m_arr[index] = element;
     ++m_size;
 }
 
@@ -131,13 +128,28 @@ void Vector<Elem_t>::reserve(size_t capacity)
     while (capacity > m_capacity)
         m_capacity *= RESIZE_FACTOR;
 
-    Elem_t** new_arr = new Elem_t*[m_capacity];
+    Elem_t* new_arr = new Elem_t[m_capacity];
 
     for (size_t i = 0; i < m_size; i++)
         new_arr[i] = m_arr[i];
 
     delete[] m_arr;
     m_arr = new_arr;
+}
+
+
+template <typename Elem_t>
+template <typename Pred>
+void Vector<Elem_t>::sort(Pred comparator)
+{
+    for (size_t i = 0; i < m_size - 1; i++) {
+        size_t minIndex = i;
+        for (size_t j = i + 1; j < m_size; j++)
+            if (comparator(at(j), at(minIndex)))
+                minIndex = j;
+        if (minIndex != i)
+            std::swap(m_arr[i], m_arr[minIndex]);
+    }
 }
 
 
