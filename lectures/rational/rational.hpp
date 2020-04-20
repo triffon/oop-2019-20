@@ -30,6 +30,8 @@ public:
   friend std::ostream& operator<<(std::ostream&, Rational const&); /* { ... } */
   friend std::istream& operator>>(std::istream&, Rational&);
 
+  bool operator==(Rational const&) const;
+
   void read();
 };
 

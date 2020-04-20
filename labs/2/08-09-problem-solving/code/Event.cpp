@@ -2,6 +2,19 @@
 #include <iostream>
 #include "Event.hpp"
 
+Event::Event(std::ifstream& in)
+{
+    size_t len;
+    in.read((char*) &len, sizeof(len));
+    m_name = new char[len];
+    in.read(m_name, len);
+    in.read((char*) &m_date, sizeof(m_date));
+    in.read((char*) &m_totalSeats, sizeof(m_totalSeats));
+    in.read((char*) &m_takenSeats, sizeof(m_takenSeats));
+    in.read((char*) &m_price, sizeof(m_price));
+}
+
+
 Event::Event(const char* name, time_t date, size_t seats, double price)
     : m_name(new char[strlen(name) + 1])
     , m_date(date)
@@ -91,4 +104,25 @@ void Event::setPrice(double newPrice)
     if (newPrice > 0) {
         m_price = newPrice;
     }
+}
+
+
+void Event::serialize(std::ofstream& out) const
+{
+    size_t len = strlen(m_name) + 1;
+    out.write((const char*) &len, sizeof(len));
+    out.write((const char*) m_name, len);
+    out.write((const char*) &m_date, sizeof(m_date));
+    out.write((const char*) &m_totalSeats, sizeof(m_totalSeats));
+    out.write((const char*) &m_takenSeats, sizeof(m_takenSeats));
+    out.write((const char*) &m_price, sizeof(m_price));
+}
+
+
+std::ostream& operator<<(std::ostream& out, const Event& obj)
+{
+    out << obj.getName() << " for $" << obj.getPrice()
+        << ". There are " << obj.getFreeSeats() << " seats left. "
+        << "The event will be held on " << obj.getDateString();
+    return out;
 }

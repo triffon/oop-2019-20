@@ -3,7 +3,7 @@
 #include <cstring>
 using namespace std;
 /// order of instantiation is in the following order
-/// Base class, member data(initialization list or default value in header), constructor of current object
+/// Base class constructor, member data(initialization list or default value in header), constructor of current object
 /// Here we tell the program to call the Animal(int) constructor with age as argument
 Human::Human(char * name, int age):Animal(age)
 {
@@ -30,4 +30,5 @@ char * Human::getName()const{
 Human::~Human()
 {
     cout << "Human::~Human()" << endl;
+    delete[] name;
 }

@@ -8,7 +8,9 @@
 /// protected inheritance: public -> protected , protected -> protected
 /// private inheritance: public -> private, protected -> private
 /// private data is still inherited but it is not accessible(if you have for example a public getter/setter you can still use it)
-class Human : public Animal
+
+/// Virtual inheritance allow us to fight the diamond problem and instantiate only one animal and avoid ambiguity
+class Human : virtual public Animal
 {
     public:
         Human(char * name=nullptr,int age=0);

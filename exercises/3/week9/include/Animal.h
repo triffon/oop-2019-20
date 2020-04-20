@@ -14,9 +14,11 @@ class Animal
         /// Sometimes when we can't provide an implementation we can force the children of the class to provide such
         /// This is called pure virtual function
         /// virtual void wakeUp()=0;
-        /// Important!!! When a class has at least one pure virtual function it is called abstract class and is not allow to make instances from it
+        /// Important!!! When a class has at least one pure virtual function
+        /// it is called abstract class and is not allow to make instances from it
 
-        /// The destructor is virtual so when we call delete on Animal * it will call the destructor for the instantiated type
+        /// The destructor is virtual so when we call delete on Animal * it will call the destructor
+        /// for the instantiated type
         /// This will allow us to handle dynamically allocated data in the children
         virtual ~Animal();
 

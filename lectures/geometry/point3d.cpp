@@ -14,7 +14,7 @@ double Point3D::distanceToOrigin() const {
 }
 
 double Point3D::distanceTo(Point3D const& other) const {
-    Point2D q1(getP().distanceToOrigin(), getZ()),
+    DPoint2D q1(getP().distanceToOrigin(), getZ()),
             q2(other.getP().distanceToOrigin(), other.getZ());
     return q1.distanceTo(q2);
     // TODO: да се реализира distanceTo чрез distanceTo

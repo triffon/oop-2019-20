@@ -8,22 +8,34 @@
 class System
 {
 public:
+    enum Order {
+        PRICE_ASC,
+        PRICE_DESC,
+        MOST_RECENT,
+        LEAST_RECENT
+    };
+
     System(const System& other) = delete;
     System& operator=(const System& other) = delete;
     ~System();
 
     static System& i();
 
-    void createAccount(const Account& acc);
-    void createEvent(const Event& event);
+    bool createAccount(const Account& acc);
+    bool createEvent(const Event& event);
+    bool buyTicket(const char* accName, const char* eventName, size_t count = 1);
+    void displayEvents(Order order = MOST_RECENT);
+    void run();
 
-    Pair<bool, Ticket> buyTicket(const char* eventName);
+    bool serialize() const;
+    bool deserialize();
+    Event* getEv(const char* name) const;
 
 private:
-    Account* getAcc(const char* nickname);
-    Event* getEv(const char* name);
     System();
+    Account* getAcc(const char* nickname);
+    void displayHelp() const;
 
-    Vector<Account> accs;
     Vector<Event*> events;
+    Vector<Account> accs;
 };

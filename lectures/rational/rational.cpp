@@ -82,10 +82,15 @@ Rational subtract(Rational const& p, Rational const& q) {
 }
 
 std::ostream& operator<<(std::ostream& o, Rational const& r) {
-    return o << r.numer << '/' << r.denom << std::endl;
+    return o << r.numer << '/' << r.denom;
 }
 std::istream& operator>>(std::istream& i, Rational& r) {
     char c;
     return i >> r.numer >> c >> r.denom;
     // TODO: да се направи така, че да съкращава дробите
+}
+
+bool Rational::operator==(Rational const& r) const {
+    return getNumerator() == r.getNumerator() &&
+           getDenominator() == r.getDenominator();
 }
