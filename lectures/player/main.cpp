@@ -27,6 +27,25 @@ void testHero() {
     Hero h2("Гандалф Сивия", 45, 10);
     std::cout << h1;
     std::cout << h2;
+    Player p = h2;
+    std::cout << p;
+    Hero& h3 = h2;
+    Player* pp = &h3;
+    std::cout << (*pp);
+    Player& rp = h1;
+    std::cout << rp;
+    rp = h2; // Player::operator=
+    std::cout << rp;
+    std::cout << h1;
+    h1 = h2; // Hero::operator=
+    std::cout << h1;
+
+    Player p2("Катнис Евърдийн", 55);
+    Hero h4 = (Hero const&)p2;
+    std::cout << h4;
+    // !!! pp = &p2;
+    Hero* ph = (Hero*)pp;
+    std::cout << *ph << std::endl;
 }
 
 int main() {
