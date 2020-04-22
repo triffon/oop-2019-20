@@ -89,6 +89,7 @@
   * [**Static in C++**](https://www.youtube.com/watch?v=f3FVU-iwNuA)
   * [**Static for Classes and Structs in C++**](https://www.youtube.com/watch?v=V-BFlMrBtqQ)
 
+---
 ## Seminar 09
   * Модификатор за достъп **protected**
   * Видове наследяване
@@ -98,6 +99,7 @@
 ### Youtube линкове по материала:
   * [**Inheritance in C++**](https://www.youtube.com/watch?v=X8nYM8wdNRE)
 
+---
 ## Additional Seminar - git and Github
   * Какво е git и Github, разликата между тях
   * Основни действия в локално хранилище - git init, git add, git commit, git log, git branch, git checkout, git merge
@@ -111,6 +113,7 @@
   * [**Introduction to Git**](https://www.notion.so/Introduction-to-Git-ac396a0697704709a12b6a0e545db049)
   * Има и много, много други в интернет. Само трябва да ги потърсите :)
 
+---
 ## Seminar 10
   * Предефиниране на функции
   * Разлика между **overload/override**
@@ -126,17 +129,20 @@
   * [**Virtual Destructors in C++**](https://www.youtube.com/watch?v=jELbKhGkEi0&t)
   * [**Virtual Functions in C++**](https://www.youtube.com/watch?v=oIV2KchSyGQ)
 
+---
 ## Seminar 11
   * Протоколни класове **interface**
   * Полиморфични колекции
   * Механизма зад виртуалните методи
   * Цената на виртуалните методи
 
+---
 ## Seminar 12
   * Множествено наследяване, представяне в паметта
   * Виртуално наследяване
   * "Диамантен проблем"
 
+---
 ## Seminar 13
   Предефиниране на оператори. Част първа :
   * Aритметични оператори, op= срещу op
@@ -153,6 +159,7 @@
   * Оператори за достъп
   * Оператор за изикване като функция
 
+---
 ## Seminar 14
   * Шаблнни функци, шаблнни класове
   * Инстанциране на шаблон
@@ -161,6 +168,7 @@
   * Преглед на **STL**
   * Запознаване с класовете **std::string, std::vector**
 
+---
 ## Seminar 15
 **Design patterns :**
   * Посредник **Proxy**
@@ -171,6 +179,7 @@
   * Преобразуване на типа в C++ стил **C++ casting**
   * Специфични запазени думи от новите стандарти, свързани с ООП
 
+---
 ## Seminar 16 // ако изобщо има
   * Принципът **RAII**
   * Умни указатели **smart pointers**
