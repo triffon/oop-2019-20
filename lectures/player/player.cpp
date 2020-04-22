@@ -17,8 +17,8 @@ void Player::setName(char const* n) {
     strcpy(name, n);
 }
 
-void Player::print() const {
-    std::cout << "Играчът " << getName() << " има " << getScore() << " точки" << std::endl;
+void Player::print(std::ostream& os) const {
+    os << "Играчът " << getName() << " има " << getScore() << " точки";
 }
 
 Player::Player(Player const& p) : name(nullptr), score(p.score) {
@@ -35,4 +35,9 @@ Player& Player::operator=(Player const& p) {
         score = p.score;
     }
     return *this;
+}
+
+std::ostream& operator<<(std::ostream& os, Player const& p) {
+    p.print(os);
+    return os << std::endl;
 }

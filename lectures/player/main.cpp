@@ -1,5 +1,6 @@
 #include <iostream>
 #include "player.hpp"
+#include "hero.hpp"
 
 void anonymousPrint(Player p) {
     p.setName("Анонимен");
@@ -21,7 +22,15 @@ void testPlayer() {
     // !!! p1.~Player();
 }
 
+void testHero() {
+    Hero h1;
+    Hero h2("Гандалф Сивия", 45, 10);
+    std::cout << h1;
+    std::cout << h2;
+}
+
 int main() {
-    testPlayer();
+    // testPlayer();
+    testHero();
     return 0;
 }
