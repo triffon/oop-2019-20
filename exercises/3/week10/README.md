@@ -34,7 +34,7 @@ Pretty much tells us what a language should be able to do to be considered as an
 
 ## Solid principles
 * Single-responsibility principle  
-  * A class must be responsible for one thing only.  
+  * Every software entity(class or function) must be responsible for one thing only.  
 * Open–closed principle  
   * Every software component(class, functions,library) should be open for extension but closed for modification.  
 * Liskov substitution principle  
@@ -51,8 +51,8 @@ Accessed using only the class name and the scope resolution operator ::.
 ```
 MyClass::staticMember;
 MyClass::staticFunction();
-myObject::staticMember;
-myObject::staticFunction();
+myObject.staticMember;
+myObject.staticFunction();
 ``` 
 ## Design Patterns
 * Singleton
