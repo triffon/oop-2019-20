@@ -8,7 +8,7 @@ class Singleton
         static Singleton* instance;
         /// The data of the singleton that holds. Could be anything. I am using int for simplicity
         int data;
-        /// Private constructor to prevent instancing.
+        /// Private constructor to prevent instancing from the outside world.
         Singleton();
 
     public:

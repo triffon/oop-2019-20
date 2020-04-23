@@ -5,7 +5,7 @@ Singleton* Singleton::instance = 0;
 
 Singleton* Singleton::getInstance()
 {
-    if (instance == 0)
+    if (instance == nullptr)
     {
         instance = new Singleton();
     }
