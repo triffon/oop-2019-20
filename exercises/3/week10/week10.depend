@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1587600689 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week10\src\singleton.cpp
+	"Singleton.h"
+
+1587601058 c:\users\kamen\documents\oop-2019-20\exercises\3\week10\include\singleton.h
+
+1587601137 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week10\main.cpp
+	<iostream>
+	"Singleton.h"
+
+1587603650 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week10\src\fish.cpp
+	"Fish.h"
+
+1587603636 c:\users\kamen\documents\oop-2019-20\exercises\3\week10\include\fish.h
+
