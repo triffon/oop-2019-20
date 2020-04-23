@@ -34,15 +34,15 @@ Pretty much tells us what a language should be able to do to be considered as an
 
 ## Solid principles
 * Single-responsibility principle  
-  *A class must be responsible for one thing only.  
+  * A class must be responsible for one thing only.  
 * Open–closed principle  
-  *Every software component(class, functions,library) should be open for extension but closed for modification.  
+  * Every software component(class, functions,library) should be open for extension but closed for modification.  
 * Liskov substitution principle  
-  *Objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program.  
+  * Objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program.  
 * Interface segregation principle  
-  *Many small specific interfaces are better than one big general-purpose interface.  
+  * Many small specific interfaces are better than one big general-purpose interface.  
 *  Dependency inversion principle  
-  *You should use/depend on abstractions(interfaces) not on concrete realisations of the abstractions.  
+  * You should use/depend on abstractions(interfaces) not on concrete realisations of the abstractions.  
 A set of good practices to create good software architecture. 
 
 ## Static functions and variables
