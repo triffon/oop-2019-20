@@ -7,6 +7,7 @@ class Centaur : public Human, Horse
 {
     public:
         Centaur();
+        virtual Centaur * clone();
         virtual void wakeUp();
         virtual ~Centaur();
 

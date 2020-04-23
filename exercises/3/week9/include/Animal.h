@@ -1,9 +1,10 @@
 #ifndef ANIMAL_H
 #define ANIMAL_H
-
-class Animal
+#include "Cloneable.h"
+class Animal : public Cloneable
 {
     public:
+        virtual Animal * clone();
         Animal(int age=0);
         /// These trivial getters and setters are inherited in all of the child classes
         void setAge(int age);

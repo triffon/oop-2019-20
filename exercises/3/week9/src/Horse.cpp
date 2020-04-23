@@ -5,6 +5,9 @@ Horse::Horse()
 {
     cout << "Horse::Horse()" << endl;
 }
+Horse * Horse::clone(){
+    return new Horse();
+};
 void Horse::wakeUp(){
     Animal::wakeUp();
     cout << "Running in the linear field" << endl;

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1587046282 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week9\main.cpp
+1587649278 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week9\main.cpp
 	<iostream>
 	"Human.h"
 	"Centaur.h"
@@ -15,32 +15,38 @@
 1586978425 c:\users\kamen\documents\oop-2019-20\exercises\3\week9\include\other.h
 	"Container.h"
 
-1586996177 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week9\src\animal.cpp
+1587654633 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week9\src\animal.cpp
 	"Animal.h"
 	<iostream>
 
-1587043306 c:\users\kamen\documents\oop-2019-20\exercises\3\week9\include\animal.h
+1587654299 c:\users\kamen\documents\oop-2019-20\exercises\3\week9\include\animal.h
+	"Cloneable.h"
 
-1587045802 c:\users\kamen\documents\oop-2019-20\exercises\3\week9\include\human.h
+1587654482 c:\users\kamen\documents\oop-2019-20\exercises\3\week9\include\human.h
 	"Animal.h"
 
-1587044038 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week9\src\human.cpp
+1587654639 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week9\src\human.cpp
 	"Human.h"
 	<iostream>
 	<cstring>
 
-1587046336 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week9\src\horse.cpp
+1587654601 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week9\src\horse.cpp
 	"Horse.h"
 	<iostream>
 
-1587045788 c:\users\kamen\documents\oop-2019-20\exercises\3\week9\include\horse.h
+1587647567 c:\users\kamen\documents\oop-2019-20\exercises\3\week9\include\horse.h
 	"Animal.h"
 
-1587046190 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week9\src\centaur.cpp
+1587654651 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week9\src\centaur.cpp
 	"Centaur.h"
 	<iostream>
 
-1587045857 c:\users\kamen\documents\oop-2019-20\exercises\3\week9\include\centaur.h
+1587654505 c:\users\kamen\documents\oop-2019-20\exercises\3\week9\include\centaur.h
 	"Horse.h"
 	"Human.h"
+
+1587647086 source:c:\users\kamen\documents\oop-2019-20\exercises\3\week9\src\cloneable.cpp
+	"Cloneable.h"
+
+1587647078 c:\users\kamen\documents\oop-2019-20\exercises\3\week9\include\cloneable.h
 

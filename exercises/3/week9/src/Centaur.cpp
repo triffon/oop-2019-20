@@ -12,6 +12,9 @@ void Centaur::wakeUp(){
     Human::wakeUp();
     Horse::wakeUp();
 };
+Centaur * Centaur::clone(){
+    return new Centaur(*this);
+};
 /// Animal destructor is called only once
 Centaur::~Centaur()
 {
