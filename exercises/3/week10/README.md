@@ -7,7 +7,7 @@ In C++ we will write:
 Student : public Human
 ```
 ## Composition
-Composition is basically putting something as member data. Data is usually an undivisible part of the object that contains it.   Thus we are responsible for its deallocation.(look for agregation below)  
+Composition is basically putting something as member data. Data is usually an undivisible part of the object that contains it.  Thus we are responsible for its deallocation.(look for agregation below)  
 When we encounter "has a/an" or "is part of" type of relationships we usually use composition.  
 ### Example:
 Car "has an" engine
