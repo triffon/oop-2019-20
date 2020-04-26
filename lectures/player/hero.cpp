@@ -1,9 +1,9 @@
 #include "hero.hpp"
 
-Hero::Hero(char const* n, unsigned s, unsigned lvl) : level(lvl) {
-    // !!!    Player(n, s);
-    setName(n);
-    setScore(s);
+Hero::Hero(char const* n, unsigned s, unsigned lvl) : level(lvl), Player(n, s) {
+    // !!! Player(n, s);
+    // !!! setName(n);
+    // !!! setScore(s);
 }
 
 void Hero::print(std::ostream& os) const {
