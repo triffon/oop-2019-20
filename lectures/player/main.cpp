@@ -56,6 +56,13 @@ void testSuperHero() {
     std::cout << sh;
     sh.stopUsingPower();
     std::cout << sh;
+
+    SuperHero shdefault;
+    std::cout << shdefault;
+    shdefault.usePower();
+    std::cout << shdefault;
+    shdefault.stopUsingPower();
+    std::cout << shdefault;
 }
 
 int main() {
