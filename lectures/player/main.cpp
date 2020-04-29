@@ -106,6 +106,9 @@ void testBattle() {
         std::cout << "Нищо, следващия път дано има победител" << std::endl;
     int x = 3;
     // !!! battle(gandalf, x);
+    Player katniss("Катнис Евърдийн", 55);
+    // !!! battle(gandalf, katniss);
+    // !!! battle(gandalf, Player("име", 100));
 }
 
 int main() {
