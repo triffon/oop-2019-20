@@ -1,16 +1,9 @@
 #pragma once
 #include "ShapeContainer.h"
-#include <string>
 
-class ConsoleHandler
+namespace ConsoleHandler
 {
-public:
-	ConsoleHandler(std::string fileName);
+	void CreateVectorFromFile(ShapeContainer& vec, char* fileName);
 
-public:
-	void start();
-
-private:
-	ShapeContainer shapes;
 };
 

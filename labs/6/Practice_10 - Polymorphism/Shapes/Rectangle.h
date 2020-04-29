@@ -8,8 +8,8 @@ public:
 	Rectangle(Point2D bottom, Point2D upper);
 
 public:
-	double getPerimeter() const override;
-	Shape* clone();
+	virtual double getPerimeter() const override;
+	virtual Shape* clone() override;
 
 private:
 	Point2D bottomLeft;
