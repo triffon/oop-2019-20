@@ -42,3 +42,12 @@ std::ostream& operator<<(std::ostream& os, SuperHero const& sh) {
     sh.print(os);
     return os << std::endl;
 }
+
+SuperHero::~SuperHero() {
+    delete[] power;
+}
+
+SuperHero::SuperHero(SuperHero const& sh) 
+    : Hero(sh), power(nullptr), levelBoost(sh.levelBoost), usingPower(sh.usingPower) {
+    setPower(sh.power);
+}
