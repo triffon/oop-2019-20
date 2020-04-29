@@ -51,3 +51,16 @@ SuperHero::SuperHero(SuperHero const& sh)
     : Hero(sh), power(nullptr), levelBoost(sh.levelBoost), usingPower(sh.usingPower) {
     setPower(sh.power);
 }
+
+SuperHero& SuperHero::operator=(SuperHero const& sh) {
+    if (&sh != this) {
+        Hero::operator=(sh);
+        // !!! *this = (Hero const&)sh;
+        // (Hero&)*this = sh;
+        // *(Hero*)this = sh;
+        levelBoost = sh.levelBoost;
+        usingPower = sh.usingPower;
+        setPower(sh.power);
+    }
+    return *this;
+}

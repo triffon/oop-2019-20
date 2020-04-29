@@ -13,7 +13,7 @@ public:
               char const* p = "<мистериозна>",
               unsigned lvlBoost = 1);
     SuperHero(SuperHero const&);
-
+    SuperHero& operator=(SuperHero const&);
     ~SuperHero();
 
     char const* getPower() const { return power; }

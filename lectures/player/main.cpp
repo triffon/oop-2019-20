@@ -66,6 +66,9 @@ void testSuperHero() {
 
     SuperHero sh2 = sh;
     std::cout << sh2;
+
+    shdefault = sh;
+    std::cout << shdefault;
 }
 
 int main() {
