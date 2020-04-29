@@ -1,0 +1,4 @@
+triangle 0 0 0 3 2 0
+circle 0 0 1
+rect 0 0 2 2
+triangle 1 2 3 4 5 6

@@ -6,6 +6,7 @@ class Horse : virtual public Animal
 {
     public:
         Horse();
+        virtual Horse * clone();
         virtual void wakeUp();
         virtual ~Horse();
 

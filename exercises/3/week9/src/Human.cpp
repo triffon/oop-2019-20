@@ -17,6 +17,12 @@ void Human::setName(const char * name){
         strcpy(this->name, name);
     }
 }
+Human::Human(Human& other):Animal(age){
+    setName(other.name);
+};
+Human * Human::clone(){
+    return new Human(*this);
+};
 void Human::wakeUp(){
     /// We can call functions from our parents
     /// Pretty useful if you want to add functionality to a function without rewriting it

@@ -1,4 +1,7 @@
-build/
-.vscode/
+**build/
+**.vscode/
 *.code-workspace
 notes.txt
+**/Debug
+*.sln
+**.vs/

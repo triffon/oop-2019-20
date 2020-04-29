@@ -45,10 +45,20 @@ void virtualInheritanceDemo(){
 
     c.wakeUp();
 }
+void virtualInheritanceArrayDemo(){
+    Animal ** arr = new Animal * [3];
+    arr[0] = new Human();
+    arr[1] = new Animal();
+    arr[2] = new Horse();
+    delete arr[2];
+    arr[2] = arr[1]->clone();
+}
+
 int main()
 {
     /// simpleInheritanceDemo();
     /// polymorphismDemo();
     /// virtualInheritanceDemo();
+    /// virtualInheritanceArrayDemo();
     return 0;
 }

@@ -13,8 +13,9 @@
 class Human : virtual public Animal
 {
     public:
+        Human(Human& other);
         Human(char * name=nullptr,int age=0);
-
+        virtual Human * clone();
         virtual void wakeUp();
         /// trivial getters and setters
         void setName(const char * name);

@@ -36,11 +36,13 @@
 		</Compiler>
 		<Unit filename="include/Animal.h" />
 		<Unit filename="include/Centaur.h" />
+		<Unit filename="include/Cloneable.h" />
 		<Unit filename="include/Horse.h" />
 		<Unit filename="include/Human.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Animal.cpp" />
 		<Unit filename="src/Centaur.cpp" />
+		<Unit filename="src/Cloneable.cpp" />
 		<Unit filename="src/Horse.cpp" />
 		<Unit filename="src/Human.cpp" />
 		<Extensions>
