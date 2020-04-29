@@ -29,7 +29,7 @@ public:
 
     void setName(char const* n);
 
-    void print(std::ostream& os = std::cout) const;
+    virtual void print(std::ostream& os = std::cout) const;
 };
 
 std::ostream& operator<<(std::ostream& os, Player const& p);

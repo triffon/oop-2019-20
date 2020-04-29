@@ -24,7 +24,6 @@ public:
     void usePower()       { usingPower = true;  }
     void stopUsingPower() { usingPower = false; }
 
+// ! private:
     void print(std::ostream& os = std::cout) const;
 };
-
-std::ostream& operator<<(std::ostream& os, SuperHero const& sh);

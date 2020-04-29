@@ -71,8 +71,7 @@ void testSuperHero() {
     std::cout << shdefault;
 }
 
-template <typename Hero1Type, typename Hero2Type>
-Hero* battle(Hero1Type& h1, Hero2Type& h2, unsigned prize = 1) {
+Hero* battle(Hero& h1, Hero& h2, unsigned prize = 1) {
     std::cout << "Епична битка между:" << std::endl;
     std::cout << h1 << h2;
     std::cout << "FIGHT!" << std::endl;
@@ -107,6 +106,7 @@ void testBattle() {
     int x = 3;
     // !!! battle(gandalf, x);
     Player katniss("Катнис Евърдийн", 55);
+    katniss.print();
     // !!! battle(gandalf, katniss);
     // !!! battle(gandalf, Player("име", 100));
 }

@@ -38,11 +38,6 @@ void SuperHero::setPower(char const* p) {
     strcpy(power, p);
 }
 
-std::ostream& operator<<(std::ostream& os, SuperHero const& sh) {
-    sh.print(os);
-    return os << std::endl;
-}
-
 SuperHero::~SuperHero() {
     delete[] power;
 }
