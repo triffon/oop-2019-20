@@ -71,9 +71,44 @@ void testSuperHero() {
     std::cout << shdefault;
 }
 
+Hero* battle(Hero& h1, Hero& h2, unsigned prize = 1) {
+    std::cout << "Епична битка между:" << std::endl;
+    std::cout << h1 << h2;
+    std::cout << "FIGHT!" << std::endl;
+    Hero* winner = nullptr;
+    if (h1.getLevel() > h2.getLevel())
+        winner = &h1;
+    else if (h1.getLevel() < h2.getLevel())
+        winner = &h2;
+    if (winner != nullptr) {
+        winner->addPoints(prize);
+        std::cout << "Победител е: " << *winner;
+    } else
+        std::cout << "Няма победител!";
+    return winner;
+}
+
+void testBattle() {
+    Hero gandalf("Гандалф Сивия", 45, 10);
+    SuperHero superman("Супермен", 60, 5, "летене", 10);
+    Hero* winner = battle(gandalf, superman, 100);
+    if (winner != nullptr)
+        std::cout << "Слава за " << *winner;
+    else
+        std::cout << "Нищо, следващия път дано има победител" << std::endl;
+    std::cout << "Супермен си слага наметалото!" << std::endl;
+    superman.usePower();
+    winner = battle(gandalf, superman, 200);
+    if (winner != nullptr)
+        std::cout << "Слава за " << *winner;
+    else
+        std::cout << "Нищо, следващия път дано има победител" << std::endl;
+}
+
 int main() {
     // testPlayer();
     // testHero();
-    testSuperHero();
+    // testSuperHero();
+    testBattle();
     return 0;
 }
