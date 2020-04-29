@@ -1,6 +1,7 @@
 #include <iostream>
 #include "player.hpp"
 #include "hero.hpp"
+#include "superhero.hpp"
 
 void anonymousPrint(Player p) {
     p.setName("Анонимен");
@@ -48,8 +49,18 @@ void testHero() {
     std::cout << *ph << std::endl;
 }
 
+void testSuperHero() {
+    SuperHero sh("Супермен", 60, 5, "летене", 10);
+    std::cout << sh;
+    sh.usePower();
+    std::cout << sh;
+    sh.stopUsingPower();
+    std::cout << sh;
+}
+
 int main() {
     // testPlayer();
-    testHero();
+    // testHero();
+    testSuperHero();
     return 0;
 }
