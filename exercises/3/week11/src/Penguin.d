@@ -1,5 +1,5 @@
-src/main.o: src/main.cpp /usr/include/stdc-predef.h src/include/Crow.h \
- src/include/Bird.h src/include/Penguin.h /usr/include/c++/9/iostream \
+src/Penguin.o: src/Penguin.cpp /usr/include/stdc-predef.h \
+ src/include/Penguin.h src/include/Bird.h /usr/include/c++/9/iostream \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/os_defines.h \
  /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
@@ -136,11 +136,9 @@ src/main.o: src/main.cpp /usr/include/stdc-predef.h src/include/Crow.h \
 
 /usr/include/stdc-predef.h:
 
-src/include/Crow.h:
+src/include/Penguin.h:
 
 src/include/Bird.h:
-
-src/include/Penguin.h:
 
 /usr/include/c++/9/iostream:
 
