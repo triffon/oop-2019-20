@@ -28,13 +28,20 @@ git remote add origin url
 git remote
 ```
 ## Pushing
-The process of uploading your changes to a remoet repository
+The process of uploading your changes to a remote repository
 ```
 git push origin master
 ```
+## Utils
 Another very useful command for checking the state of your repository:
 ```
 git status
+```
+See all the commits, their order and where are currenlty the branches:
+```
+git log
+# for every branch the commits in a graph
+git log --graph --all
 ```
 Important files:
 * .gitignore
