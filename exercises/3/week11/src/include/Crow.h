@@ -4,7 +4,7 @@
 class Crow:public Bird{
 public:
 	void fly();
-}
+};
 
 
 #endif /* CROW_H */

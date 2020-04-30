@@ -4,6 +4,6 @@
 class Bird{
 public:
 	virtual void fly()=0;
-}
+};
 
 #endif
