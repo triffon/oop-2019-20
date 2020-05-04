@@ -25,10 +25,11 @@ public:
 */
 
     unsigned getScore() const { return score; }
+    void addPoints(unsigned pts) { score += pts; }
 
     void setName(char const* n);
 
-    void print(std::ostream& os = std::cout) const;
+    virtual void print(std::ostream& os = std::cout) const;
 };
 
 std::ostream& operator<<(std::ostream& os, Player const& p);

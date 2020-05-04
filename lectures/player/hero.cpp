@@ -10,8 +10,3 @@ void Hero::print(std::ostream& os) const {
     Player::print(os);
     os << " и е герой на ниво " << getLevel();
 }
-
-std::ostream& operator<<(std::ostream& os, Hero const& h) {
-    h.print(os);
-    return os << std::endl;
-}

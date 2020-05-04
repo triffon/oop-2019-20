@@ -3,7 +3,6 @@
 
 int main()
 {
-	ConsoleHandler handler("shapes.txt");
-	handler.start();
+
 
 }
