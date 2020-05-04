@@ -327,7 +327,7 @@ void StringTests::runAllTests()
 	operatorPlusWorksWithCharArrayAsFirstArgument();
 	operatorPlusWorksWithCharArrayAsSecondArgument();
 
-	operatorEqualsEqualsWorksWithAnotherString();
+	/*operatorEqualsEqualsWorksWithAnotherString();
 	operatorEqualsEqualsWorksWithCharAsFirstArgument();
 	operatorEqualsEqualsWorksWithCharAsSecondArgument();
 	operatorEqualsEqualsWorksWithCharArrayAsFirstArgument();
@@ -339,6 +339,6 @@ void StringTests::runAllTests()
 	operatorLessThanOrEqualsWorksWithAnotherString();
 	operatorMoreThanWorksWithAnotherString();
 	operatorMoreThanOrEqualsWorksWithAnotherString();
-
+	*/
 	serializationAndDesializationWorks();
 }
