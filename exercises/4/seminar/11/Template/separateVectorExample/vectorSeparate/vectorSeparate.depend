@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1588578284 source:c:\users\dtrz\desktop\11\template\separatevectorexample\vectorseparate\main.cpp
+	<iostream>
+	"Vector.h"
+
+1588578925 c:\users\dtrz\desktop\11\template\separatevectorexample\vectorseparate\vector.h
+	<iostream>
+
