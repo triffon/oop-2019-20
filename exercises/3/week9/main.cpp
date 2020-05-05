@@ -1,6 +1,6 @@
 #include <iostream>
-#include "Human.h"
-#include "Centaur.h"
+#include "include/Human.h"
+#include "include/Centaur.h"
 using namespace std;
 
 /// Simple inheritance demo(data is inherited)
