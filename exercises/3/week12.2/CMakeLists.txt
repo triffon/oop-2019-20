@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 2.8.9)
-project(KamenProject)
+#Exports compile commands for auto completion
+set( CMAKE_EXPORT_COMPILE_COMMANDS ON )
+
+project(ProjectName)
  
 #Bring the headers, such as Student.h into the project
 include_directories(include)
@@ -10,4 +13,4 @@ include_directories(include)
 #However, the file(GLOB...) allows for wildcard additions:
 file(GLOB SOURCES "src/*.cpp")
  
-add_executable(testStudent ${SOURCES})
+add_executable(ProjectName ${SOURCES})
