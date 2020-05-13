@@ -3,6 +3,7 @@
 #include "player.hpp"
 #include "hero.hpp"
 #include "superhero.hpp"
+#include "bot.hpp"
 
 void anonymousPrint(Player p) {
     p.setName("Анонимен");
@@ -157,11 +158,17 @@ void testDestructors() {
     }
 }
 
+void testBot() {
+    Bot hal("HAL 9000", 5, "α-β", 0.3, 7);
+    std::cout << hal;
+}
+
 int main() {
     // testPlayer();
     // testHero();
     // testSuperHero();
     // testBattle();
-    testDestructors();
+    // testDestructors();
+    testBot();
     return 0;
 }
