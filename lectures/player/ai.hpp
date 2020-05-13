@@ -20,4 +20,6 @@ public:
     void print(std::ostream& os = std::cout) const;
 };
 
+std::ostream& operator<<(std::ostream& os, AI const& p);
+
 #endif

@@ -10,3 +10,8 @@ void Bot::print(std::ostream& os) const {
     os << " и е бот с трудност " << getDifficulty() << " с ";
     AI::print(os);
 }
+
+std::ostream& operator<<(std::ostream& os, Bot const& b) {
+    // разрешава нееднозначността
+    return os << (Player const&)b;
+}

@@ -161,6 +161,18 @@ void testDestructors() {
 void testBot() {
     Bot hal("HAL 9000", 5, "α-β", 0.3, 7);
     std::cout << hal;
+
+    Player* pp = &hal;
+    std::cout << *pp;
+
+    AI* ai = &hal;
+    std::cout << *ai;
+
+    Player pcopy = hal;
+    std::cout << pcopy;
+
+    AI aicopy = hal;
+    std::cout << aicopy;
 }
 
 int main() {

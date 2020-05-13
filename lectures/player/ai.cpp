@@ -35,3 +35,8 @@ void AI::setAlgorithm(char const* _algo) {
 void AI::print(std::ostream& os) const {
     os << "изкуствен интелект с алогритъм " << getAlgorithm() << " с праг " << getThreshold();
 }
+
+std::ostream& operator<<(std::ostream& os, AI const& ai) {
+    ai.print(os);
+    return os << std::endl;
+}
