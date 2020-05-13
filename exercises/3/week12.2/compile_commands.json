@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week12.2/build",
+  "command": "/usr/bin/c++   -I/home/kanitkameh/Documents/oop-2019-20/exercises/3/week12.2/include    -o CMakeFiles/ProjectName.dir/src/Crow.cpp.o -c /home/kanitkameh/Documents/oop-2019-20/exercises/3/week12.2/src/Crow.cpp",
+  "file": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week12.2/src/Crow.cpp"
+},
+{
+  "directory": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week12.2/build",
+  "command": "/usr/bin/c++   -I/home/kanitkameh/Documents/oop-2019-20/exercises/3/week12.2/include    -o CMakeFiles/ProjectName.dir/src/Penguin.cpp.o -c /home/kanitkameh/Documents/oop-2019-20/exercises/3/week12.2/src/Penguin.cpp",
+  "file": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week12.2/src/Penguin.cpp"
+},
+{
+  "directory": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week12.2/build",
+  "command": "/usr/bin/c++   -I/home/kanitkameh/Documents/oop-2019-20/exercises/3/week12.2/include    -o CMakeFiles/ProjectName.dir/src/main.cpp.o -c /home/kanitkameh/Documents/oop-2019-20/exercises/3/week12.2/src/main.cpp",
+  "file": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week12.2/src/main.cpp"
+}
+]

@@ -3,7 +3,7 @@
 
 #include "player.hpp"
 
-class Hero : public Player {
+class Hero : virtual public Player {
     // ниво на Hero
     unsigned level;
 public:
@@ -11,6 +11,7 @@ public:
 
     virtual unsigned getLevel() const { return level; }
 
+    void printDirect(std::ostream& os = std::cout) const;
     void print(std::ostream& os = std::cout) const;
 };
 

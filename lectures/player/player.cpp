@@ -26,6 +26,7 @@ Player::Player(Player const& p) : name(nullptr), score(p.score) {
 }
 
 Player::~Player() {
+    std::clog << "~Player()" << std::endl;
     delete[] name;
 }
 
