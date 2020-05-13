@@ -46,11 +46,11 @@ void testHero() {
     std::cout << h1;
 
     Player p2("Катнис Евърдийн", 55);
-    Hero h4 = (Hero const&)p2;
-    std::cout << h4;
+    // !!! Hero h4 = (Hero const&)p2;
+    // !!! std::cout << h4;
     // !!! pp = &p2;
-    Hero* ph = (Hero*)pp;
-    std::cout << *ph << std::endl;
+    // !!! Hero* ph = (Hero*)pp;
+    // !!! std::cout << *ph << std::endl;
 }
 
 void testSuperHero() {

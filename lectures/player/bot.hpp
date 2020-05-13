@@ -4,7 +4,7 @@
 #include "player.hpp"
 #include "ai.hpp"
 
-class Bot : public Player, public AI {
+class Bot : virtual public Player, public AI {
     unsigned difficulty;
 
 public:

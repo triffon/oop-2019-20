@@ -3,7 +3,7 @@
 
 #include "player.hpp"
 
-class Hero : public Player {
+class Hero : virtual public Player {
     // ниво на Hero
     unsigned level;
 public:
