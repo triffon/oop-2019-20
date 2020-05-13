@@ -137,8 +137,23 @@ void testDestructors() {
         // !!! Player* pp = new SuperHero[N];
         // !!! delete[] pp;
         // https://stackoverflow.com/q/6171814
+        Player** pp = new Player*[N];
+
+        for(unsigned j = 0; j < N; j++)
+            pp[j] = new SuperHero;
+
+        for(unsigned j = 0; j < N; j++)
+            std::cout << *pp[j];
+
+        for(unsigned j = 0; j < N; j++)
+            delete pp[j];
+
+        delete[] pp;
+    
+        /*
         Player* pp = new SuperHero;
         delete pp;
+        */
     }
 }
 
