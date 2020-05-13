@@ -1,4 +1,5 @@
 #include <iostream>
+#include <typeinfo>
 #include "player.hpp"
 #include "hero.hpp"
 #include "superhero.hpp"
@@ -96,6 +97,13 @@ void testBattle() {
         std::cout << "Слава за " << *winner;
     else
         std::cout << "Нищо, следващия път дано има победител" << std::endl;
+
+    if (typeid(*winner) != typeid(Hero))
+        std::cout << "Победителят е повече от герой!" << std::endl;
+    else
+        std::cout << "Победителят е обикновен герой." << std::endl;
+
+
     std::cout << "Супермен си слага наметалото!" << std::endl;
     superman.usePower();
     winner = battle(gandalf, superman, 200);
@@ -106,15 +114,39 @@ void testBattle() {
     int x = 3;
     // !!! battle(gandalf, x);
     Player katniss("Катнис Евърдийн", 55);
-    katniss.print();
+    std::cout << katniss;
     // !!! battle(gandalf, katniss);
     // !!! battle(gandalf, Player("име", 100));
+
+    std::type_info const& ti = typeid(x);
+    std::cout << ti.name() << std::endl;
+    std::cout << typeid(1.3).name() << std::endl;
+    std::cout << typeid(gandalf).name() << std::endl;
+    std::cout << typeid(superman).name() << std::endl;
+    std::cout << typeid(winner).name() << std::endl;
+    std::cout << typeid(*winner).name() << std::endl;
+    if (typeid(*winner) != typeid(Hero))
+        std::cout << "Победителят е повече от герой!" << std::endl;
+    else
+        std::cout << "Победителят е обикновен герой." << std::endl;
+}
+
+void testDestructors() {
+    for(unsigned i = 0; i < 1E2; i++) {
+        const unsigned N = 10;
+        // !!! Player* pp = new SuperHero[N];
+        // !!! delete[] pp;
+        // https://stackoverflow.com/q/6171814
+        Player* pp = new SuperHero;
+        delete pp;
+    }
 }
 
 int main() {
     // testPlayer();
     // testHero();
     // testSuperHero();
-    testBattle();
+    // testBattle();
+    testDestructors();
     return 0;
 }
