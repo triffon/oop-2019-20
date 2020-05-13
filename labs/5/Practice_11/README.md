@@ -11,7 +11,7 @@
 	- level
 	- аrmour
 	- weapon
-* __Armour__ - интерфейс с метод _getHealth()_
+* __Armour__ - интерфейс с метод _getDefence()_
 * __ChainMail__ имплементира __Armour__ и има поле _defence_
 * __Weapon__ - интерфейс с метод _getAttack()_
 * __Ashbringer__ имплементира __Weapon__ и има поле _attack_
