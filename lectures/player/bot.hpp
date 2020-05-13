@@ -14,6 +14,7 @@ public:
 
     unsigned getDifficulty() const { return difficulty; }
 
+    void printDirect(std::ostream& os = std::cout) const;
     void print(std::ostream& os = std::cout) const;
 };
 

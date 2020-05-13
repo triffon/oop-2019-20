@@ -14,6 +14,7 @@ public:
     
     unsigned getDamage() const { return damage; }
 
+    void printDirect(std::ostream& os = std::cout) const;
     void print(std::ostream& os = std::cout) const;
 };
 
