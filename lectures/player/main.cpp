@@ -1,9 +1,11 @@
 #include <iostream>
 #include <typeinfo>
+#include <cstring>
 #include "player.hpp"
 #include "hero.hpp"
 #include "superhero.hpp"
 #include "bot.hpp"
+#include "boss.hpp"
 
 void anonymousPrint(Player p) {
     p.setName("Анонимен");
@@ -175,12 +177,31 @@ void testBot() {
     std::cout << aicopy;
 }
 
+void testBoss() {
+    Boss cyberdemon("Кибердемон", 20, 50, "RNN", 1.7, 30, 60);
+    SuperHero superman("Супермен", 60, 5, "летене", 10);
+
+    std::cout << cyberdemon;
+    // ??? std::cout << cyberdemon.getName() << std::endl;
+    // !!! std::cout << (Player const&)cyberdemon.getName() << std::endl;
+
+    Hero* winner = battle(cyberdemon, superman, 100);
+    char winnername[1000] = "[WINNER] ";
+    strcat(winnername, winner->getName());
+    winner->setName(winnername);
+    std::cout << *winner;
+
+    std::cout << ((Player const&)((Hero const&)cyberdemon)).getName() << std::endl;
+    std::cout << ((Player const&)((Bot const&)cyberdemon)).getName() << std::endl;
+}
+
 int main() {
     // testPlayer();
     // testHero();
     // testSuperHero();
     // testBattle();
     // testDestructors();
-    testBot();
+    // testBot();
+    testBoss();
     return 0;
 }
