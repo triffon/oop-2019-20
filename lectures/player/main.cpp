@@ -1,7 +1,11 @@
 #include <iostream>
+#include <typeinfo>
+#include <cstring>
 #include "player.hpp"
 #include "hero.hpp"
 #include "superhero.hpp"
+#include "bot.hpp"
+#include "boss.hpp"
 
 void anonymousPrint(Player p) {
     p.setName("Анонимен");
@@ -42,11 +46,11 @@ void testHero() {
     std::cout << h1;
 
     Player p2("Катнис Евърдийн", 55);
-    Hero h4 = (Hero const&)p2;
-    std::cout << h4;
+    // !!! Hero h4 = (Hero const&)p2;
+    // !!! std::cout << h4;
     // !!! pp = &p2;
-    Hero* ph = (Hero*)pp;
-    std::cout << *ph << std::endl;
+    // !!! Hero* ph = (Hero*)pp;
+    // !!! std::cout << *ph << std::endl;
 }
 
 void testSuperHero() {
@@ -96,6 +100,13 @@ void testBattle() {
         std::cout << "Слава за " << *winner;
     else
         std::cout << "Нищо, следващия път дано има победител" << std::endl;
+
+    if (typeid(*winner) != typeid(Hero))
+        std::cout << "Победителят е повече от герой!" << std::endl;
+    else
+        std::cout << "Победителят е обикновен герой." << std::endl;
+
+
     std::cout << "Супермен си слага наметалото!" << std::endl;
     superman.usePower();
     winner = battle(gandalf, superman, 200);
@@ -106,15 +117,91 @@ void testBattle() {
     int x = 3;
     // !!! battle(gandalf, x);
     Player katniss("Катнис Евърдийн", 55);
-    katniss.print();
+    std::cout << katniss;
     // !!! battle(gandalf, katniss);
     // !!! battle(gandalf, Player("име", 100));
+
+    std::type_info const& ti = typeid(x);
+    std::cout << ti.name() << std::endl;
+    std::cout << typeid(1.3).name() << std::endl;
+    std::cout << typeid(gandalf).name() << std::endl;
+    std::cout << typeid(superman).name() << std::endl;
+    std::cout << typeid(winner).name() << std::endl;
+    std::cout << typeid(*winner).name() << std::endl;
+    if (typeid(*winner) != typeid(Hero))
+        std::cout << "Победителят е повече от герой!" << std::endl;
+    else
+        std::cout << "Победителят е обикновен герой." << std::endl;
+}
+
+void testDestructors() {
+    for(unsigned i = 0; i < 1E2; i++) {
+        const unsigned N = 10;
+        // !!! Player* pp = new SuperHero[N];
+        // !!! delete[] pp;
+        // https://stackoverflow.com/q/6171814
+        Player** pp = new Player*[N];
+
+        for(unsigned j = 0; j < N; j++)
+            pp[j] = new SuperHero;
+
+        for(unsigned j = 0; j < N; j++)
+            std::cout << *pp[j];
+
+        for(unsigned j = 0; j < N; j++)
+            delete pp[j];
+
+        delete[] pp;
+    
+        /*
+        Player* pp = new SuperHero;
+        delete pp;
+        */
+    }
+}
+
+void testBot() {
+    Bot hal("HAL 9000", 5, "α-β", 0.3, 7);
+    std::cout << hal;
+
+    Player* pp = &hal;
+    std::cout << *pp;
+
+    AI* ai = &hal;
+    std::cout << *ai;
+
+    Player pcopy = hal;
+    std::cout << pcopy;
+
+    AI aicopy = hal;
+    std::cout << aicopy;
+}
+
+void testBoss() {
+    Boss cyberdemon("Кибердемон", 20, 50, "RNN", 1.7, 30, 60);
+    SuperHero superman("Супермен", 60, 5, "летене", 10);
+
+    std::cout << cyberdemon;
+    // ??? std::cout << cyberdemon.getName() << std::endl;
+    // !!! std::cout << (Player const&)cyberdemon.getName() << std::endl;
+
+    Hero* winner = battle(cyberdemon, superman, 100);
+    char winnername[1000] = "[WINNER] ";
+    strcat(winnername, winner->getName());
+    winner->setName(winnername);
+    std::cout << *winner;
+
+    std::cout << ((Player const&)((Hero const&)cyberdemon)).getName() << std::endl;
+    std::cout << ((Player const&)((Bot const&)cyberdemon)).getName() << std::endl;
 }
 
 int main() {
     // testPlayer();
     // testHero();
     // testSuperHero();
-    testBattle();
+    // testBattle();
+    // testDestructors();
+    // testBot();
+    testBoss();
     return 0;
 }

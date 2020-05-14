@@ -19,9 +19,10 @@ unsigned SuperHero::getLevel() const {
 }
 
 void SuperHero::print(std::ostream& os) const {
-    if (!usingPower)
+    if (!usingPower) {
         Hero::print(os);
-    else {
+        os << " със скрита суперсила";
+    } else {
         Player::print(os);
         os << " и е супергерой на ниво " << getLevel() << ", който използва суперсила " << getPower();
     }
@@ -39,6 +40,7 @@ void SuperHero::setPower(char const* p) {
 }
 
 SuperHero::~SuperHero() {
+    std::clog << "~SuperHero()" << std::endl;
     delete[] power;
 }
 
