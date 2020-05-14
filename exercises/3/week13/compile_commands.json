@@ -1,0 +1,42 @@
+[
+{
+  "directory": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week13/build",
+  "command": "/usr/bin/c++   -I/home/kanitkameh/Documents/oop-2019-20/exercises/3/week13/include    -o CMakeFiles/ProjectName.dir/src/Animal.cpp.o -c /home/kanitkameh/Documents/oop-2019-20/exercises/3/week13/src/Animal.cpp",
+  "file": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week13/src/Animal.cpp"
+},
+{
+  "directory": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week13/build",
+  "command": "/usr/bin/c++   -I/home/kanitkameh/Documents/oop-2019-20/exercises/3/week13/include    -o CMakeFiles/ProjectName.dir/src/Bird.cpp.o -c /home/kanitkameh/Documents/oop-2019-20/exercises/3/week13/src/Bird.cpp",
+  "file": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week13/src/Bird.cpp"
+},
+{
+  "directory": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week13/build",
+  "command": "/usr/bin/c++   -I/home/kanitkameh/Documents/oop-2019-20/exercises/3/week13/include    -o CMakeFiles/ProjectName.dir/src/DynamicArray.cpp.o -c /home/kanitkameh/Documents/oop-2019-20/exercises/3/week13/src/DynamicArray.cpp",
+  "file": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week13/src/DynamicArray.cpp"
+},
+{
+  "directory": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week13/build",
+  "command": "/usr/bin/c++   -I/home/kanitkameh/Documents/oop-2019-20/exercises/3/week13/include    -o CMakeFiles/ProjectName.dir/src/Human.cpp.o -c /home/kanitkameh/Documents/oop-2019-20/exercises/3/week13/src/Human.cpp",
+  "file": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week13/src/Human.cpp"
+},
+{
+  "directory": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week13/build",
+  "command": "/usr/bin/c++   -I/home/kanitkameh/Documents/oop-2019-20/exercises/3/week13/include    -o CMakeFiles/ProjectName.dir/src/SmartPointer.cpp.o -c /home/kanitkameh/Documents/oop-2019-20/exercises/3/week13/src/SmartPointer.cpp",
+  "file": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week13/src/SmartPointer.cpp"
+},
+{
+  "directory": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week13/build",
+  "command": "/usr/bin/c++   -I/home/kanitkameh/Documents/oop-2019-20/exercises/3/week13/include    -o CMakeFiles/ProjectName.dir/src/Student.cpp.o -c /home/kanitkameh/Documents/oop-2019-20/exercises/3/week13/src/Student.cpp",
+  "file": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week13/src/Student.cpp"
+},
+{
+  "directory": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week13/build",
+  "command": "/usr/bin/c++   -I/home/kanitkameh/Documents/oop-2019-20/exercises/3/week13/include    -o CMakeFiles/ProjectName.dir/src/StudentContainer.cpp.o -c /home/kanitkameh/Documents/oop-2019-20/exercises/3/week13/src/StudentContainer.cpp",
+  "file": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week13/src/StudentContainer.cpp"
+},
+{
+  "directory": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week13/build",
+  "command": "/usr/bin/c++   -I/home/kanitkameh/Documents/oop-2019-20/exercises/3/week13/include    -o CMakeFiles/ProjectName.dir/src/main.cpp.o -c /home/kanitkameh/Documents/oop-2019-20/exercises/3/week13/src/main.cpp",
+  "file": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week13/src/main.cpp"
+}
+]

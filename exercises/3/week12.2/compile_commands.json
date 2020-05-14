@@ -11,6 +11,16 @@
 },
 {
   "directory": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week12.2/build",
+  "command": "/usr/bin/c++   -I/home/kanitkameh/Documents/oop-2019-20/exercises/3/week12.2/include    -o CMakeFiles/ProjectName.dir/src/ReadCommand.cpp.o -c /home/kanitkameh/Documents/oop-2019-20/exercises/3/week12.2/src/ReadCommand.cpp",
+  "file": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week12.2/src/ReadCommand.cpp"
+},
+{
+  "directory": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week12.2/build",
+  "command": "/usr/bin/c++   -I/home/kanitkameh/Documents/oop-2019-20/exercises/3/week12.2/include    -o CMakeFiles/ProjectName.dir/src/SaveCommand.cpp.o -c /home/kanitkameh/Documents/oop-2019-20/exercises/3/week12.2/src/SaveCommand.cpp",
+  "file": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week12.2/src/SaveCommand.cpp"
+},
+{
+  "directory": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week12.2/build",
   "command": "/usr/bin/c++   -I/home/kanitkameh/Documents/oop-2019-20/exercises/3/week12.2/include    -o CMakeFiles/ProjectName.dir/src/main.cpp.o -c /home/kanitkameh/Documents/oop-2019-20/exercises/3/week12.2/src/main.cpp",
   "file": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week12.2/src/main.cpp"
 }
