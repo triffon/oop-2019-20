@@ -3,15 +3,20 @@
 
 #include "employee.hpp"
 
-class ContractEmployee : Employee {
+class ContractEmployee : public Employee {
 
 public:
     ContractEmployee();
+    ContractEmployee(const char *, const char *, double);
     ContractEmployee(ContractEmployee const &);
     ContractEmployee & operator=(ContractEmployee const &);
     ~ContractEmployee();
 
-    double getMonthlyPayment() const;
+    double getWeeklyPayment() const;
+    double getHours() const;
+    void setHours(double);
+
+    void additionalInfo() const;
 
 private:
     double hours;

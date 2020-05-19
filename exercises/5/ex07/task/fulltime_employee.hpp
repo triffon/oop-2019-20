@@ -3,14 +3,17 @@
 
 #include "employee.hpp"
 
-class FulltimeEmployee : Employee {
+class FulltimeEmployee : public Employee {
 
 public:
     FulltimeEmployee();
+    FulltimeEmployee(const char *, const char *, double);
     FulltimeEmployee(FulltimeEmployee const &);
     FulltimeEmployee & operator=(FulltimeEmployee const &);
     ~FulltimeEmployee();
 
+    double getWeeklyPayment() const;
+    void additionalInfo() const;
 };
 
 #endif

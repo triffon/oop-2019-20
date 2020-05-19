@@ -18,7 +18,9 @@ public:
         spec();
         cout << endl;
     }
-    virtual void spec() const = 0;
+    virtual void spec() const {
+        cout << "unspecified";
+    }
 
 };
 
@@ -59,6 +61,8 @@ int main() {
     ptr = &s1;
     ptr->spec();
     cout << endl;
-    
+    ptr->Shape::spec();
+    cout << endl;
+
     return 0;
 }
