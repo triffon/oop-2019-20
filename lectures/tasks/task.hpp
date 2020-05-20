@@ -26,4 +26,6 @@ public:
     virtual unsigned work(unsigned time = 1) = 0;
 };
 
+std::ostream& operator<<(std::ostream& os, Task const& t);
+
 #endif

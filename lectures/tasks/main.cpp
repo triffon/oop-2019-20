@@ -4,9 +4,9 @@
 
 void testQuickTask() {
     QuickTask trash("изхвърляне на боклука");
-    trash.print();std::cout << std::endl;
+    std::cout << trash;
     trash.work();
-    trash.print();std::cout << std::endl;
+    std::cout << trash;
 }
 
 int main() {
