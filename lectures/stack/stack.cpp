@@ -19,7 +19,7 @@ bool Stack::empty() const {
 }
 
 // включване на елемент
-void Stack::push(int x) {
+void Stack::push(int const& x) {
     assert(!full());
     a[++top] = x;
     // !!! top++ = 4;

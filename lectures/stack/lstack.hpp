@@ -3,6 +3,8 @@
 
 #include <cassert>
 
+#include "abstract_stack.hpp"
+
 template <typename T>
 struct StackElement {
     T data;
@@ -10,7 +12,7 @@ struct StackElement {
 };
 
 template <typename T>
-class LinkedStack {
+class LinkedStack : public AbstractStack<T> {
     StackElement<T>* top; // указател към двойната кутия, която е на върха на стека
 
     // friend struct StackElement<T>;

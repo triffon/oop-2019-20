@@ -1,7 +1,9 @@
 #ifndef __RSTACK_HPP
 #define __RSTACK_HPP
 
-class ResizingStack {
+#include "abstract_stack.hpp"
+
+class ResizingStack : public AbstractStack<int> {
     int* a;
     int top; // индекс на последно включения елемент в стека
     unsigned capacity; // текущ капацитет на стека
@@ -31,7 +33,7 @@ public:
     bool empty() const;
 
     // включване на елемент
-    void push(int x);
+    void push(int const& x);
 
     // изключване на елемент
     int pop();

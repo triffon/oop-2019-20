@@ -23,7 +23,7 @@ bool ResizingStack::empty() const {
 }
 
 // включване на елемент
-void ResizingStack::push(int x) {
+void ResizingStack::push(int const& x) {
     if (full())
         resize();
     a[++top] = x;

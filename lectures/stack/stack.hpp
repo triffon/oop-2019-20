@@ -2,8 +2,10 @@
 #ifndef __STACK_HPP
 #define __STACK_HPP
 
+#include "abstract_stack.hpp"
+
 const int MAX_STACK = 100;
-class Stack {
+class Stack : public AbstractStack<int> {
     int a[MAX_STACK];
     int top; // индекс на последно включения елемент в стека
 
@@ -17,7 +19,7 @@ public:
     bool empty() const;
 
     // включване на елемент
-    void push(int x);
+    void push(int const& x);
 
     // изключване на елемент
     int pop();

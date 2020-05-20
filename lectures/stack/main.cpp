@@ -4,6 +4,9 @@
 #include "rstack.hpp"
 #include "lstack.hpp"
 
+// using MyStack = Stack;
+using MyStack = ResizingStack;
+
 char toDigit(unsigned digit) {
     if (digit < 10)
         return '0' + digit;
@@ -15,7 +18,7 @@ void printInK(unsigned n, unsigned k) {
     if (n == 0) {
       std::cout << 0;
     } else {
-        Stack s;
+        MyStack s;
         while (n > 0) {
             s.push(n % k);  // добавяме поредния остатък в стека
             n /= k;
