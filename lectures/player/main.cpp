@@ -202,11 +202,21 @@ void testPrintable() {
                                 new Boss("Кибердемон", 20, 50, "RNN", 1.7, 30, 60),
                                 new Bot("HAL 9000", 5, "α-β", 0.3, 7),
                                 new AI("генетични алгоритми", .7) };
+    /* !!!
+    Printable& printablerefs[6] = {
+            *printables[0], *printables[1],
+            *printables[2], *printables[3],
+            *printables[4], *printables[5],
+    };
+    */
     const int N = sizeof(printables) / sizeof(printables[0]);
     for(int i = 0; i < N; i++) {
         printables[i]->print();
         std::cout << std::endl;
     }
+    for(int i = 0; i < N; i++)
+        delete printables[i];
+
 }
 
 int main() {

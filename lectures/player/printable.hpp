@@ -6,6 +6,6 @@
 class Printable {
 public:
     virtual void print(std::ostream& os = std::cout) const = 0;
+    virtual ~Printable() {}
 };
-
 #endif
