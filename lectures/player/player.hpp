@@ -2,10 +2,10 @@
 #define __PLAYER_HPP
 
 #include "printable.hpp"
+#include "named.hpp"
 #include <iostream>
 
-class Player : virtual public Printable {
-    char* name;
+class Player : virtual public Printable, public Named {
     unsigned score;
 
 protected:
@@ -14,12 +14,7 @@ protected:
 public:
 
     Player(char const* n = "<неизвестен>", unsigned s = 0);
-    Player(Player const&);
-    Player& operator=(Player const&);
-    virtual ~Player();
 
-    // TODO: напишете селектора така, че да не "издава" указателя
-    char const* getName() const { return name; }
 /*
     char* opponentName = opponent.getName();
     strcpy(opponentName, "PWNED!!@1!");
@@ -27,8 +22,6 @@ public:
 
     unsigned getScore() const { return score; }
     void addPoints(unsigned pts) { score += pts; }
-
-    void setName(char const* n);
 
     virtual void print(std::ostream& os = std::cout) const;
 };
