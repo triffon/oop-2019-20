@@ -1,29 +1,25 @@
-#ifndef __TASK_HPP
-#define __TASK_HPP
+#ifndef __QUICK_TASK_HPP
+#define __QUICK_TASK_HPP
 
-#include "printable.hpp"
-#include "named.hpp"
+#include "task.hpp"
 
-class Task :
-  // поддръжка на име на задачата
-  public Named, 
-  // интерфейс за извеждане
-  public Printable {
+class QuickTask : public Task {
+    bool finished;
 public:
-    Task(char const* n) : Named(n) {}
+    QuickTask(char const* n);
 
     void print(std::ostream& os = std::cout) const;
 
     // време за изпълнение на задачата
-    virtual unsigned getExecutionTime() const = 0;
+    unsigned getExecutionTime() const { return 1; }
 
     // прогрес по задачата
-    virtual unsigned getProgress() const = 0;
+    unsigned getProgress() const { return finished; }
 
     // работа по задачата
     // параметърът time указва колко време искаме да работим по задачата
     // като резултат се връща неизработените единици време
-    virtual unsigned work(unsigned time = 1) = 0;
+    unsigned work(unsigned time = 1);
 };
 
 #endif
