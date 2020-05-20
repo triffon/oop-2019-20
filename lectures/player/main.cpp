@@ -195,6 +195,20 @@ void testBoss() {
     std::cout << ((Player const&)((Bot const&)cyberdemon)).getName() << std::endl;
 }
 
+void testPrintable() {
+    Printable* printables[] = { new Player("Катнис Евърдийн", 55),
+                                new Hero("Гандалф Сивия", 45, 10),
+                                new SuperHero("Супермен", 60, 5, "летене", 10), 
+                                new Boss("Кибердемон", 20, 50, "RNN", 1.7, 30, 60),
+                                new Bot("HAL 9000", 5, "α-β", 0.3, 7),
+                                new AI("генетични алгоритми", .7) };
+    const int N = sizeof(printables) / sizeof(printables[0]);
+    for(int i = 0; i < N; i++) {
+        printables[i]->print();
+        std::cout << std::endl;
+    }
+}
+
 int main() {
     // testPlayer();
     // testHero();
@@ -202,6 +216,7 @@ int main() {
     // testBattle();
     // testDestructors();
     // testBot();
-    testBoss();
+    // testBoss();
+    testPrintable();
     return 0;
 }

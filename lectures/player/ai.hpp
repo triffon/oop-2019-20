@@ -2,8 +2,9 @@
 #define _AI_HPP
 
 #include <iostream>
+#include "printable.hpp"
 
-class AI {
+class AI : virtual public Printable {
     char* algorithm;
     double threshold;
 

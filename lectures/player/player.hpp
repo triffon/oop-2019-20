@@ -1,9 +1,10 @@
 #ifndef __PLAYER_HPP
 #define __PLAYER_HPP
 
+#include "printable.hpp"
 #include <iostream>
 
-class Player {
+class Player : virtual public Printable {
     char* name;
     unsigned score;
 
