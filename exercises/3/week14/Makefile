@@ -123,6 +123,60 @@ ProjectName/fast:
 	$(MAKE) -f CMakeFiles/ProjectName.dir/build.make CMakeFiles/ProjectName.dir/build
 .PHONY : ProjectName/fast
 
+src/ArrayStack.o: src/ArrayStack.cpp.o
+
+.PHONY : src/ArrayStack.o
+
+# target to build an object file
+src/ArrayStack.cpp.o:
+	$(MAKE) -f CMakeFiles/ProjectName.dir/build.make CMakeFiles/ProjectName.dir/src/ArrayStack.cpp.o
+.PHONY : src/ArrayStack.cpp.o
+
+src/ArrayStack.i: src/ArrayStack.cpp.i
+
+.PHONY : src/ArrayStack.i
+
+# target to preprocess a source file
+src/ArrayStack.cpp.i:
+	$(MAKE) -f CMakeFiles/ProjectName.dir/build.make CMakeFiles/ProjectName.dir/src/ArrayStack.cpp.i
+.PHONY : src/ArrayStack.cpp.i
+
+src/ArrayStack.s: src/ArrayStack.cpp.s
+
+.PHONY : src/ArrayStack.s
+
+# target to generate assembly for a file
+src/ArrayStack.cpp.s:
+	$(MAKE) -f CMakeFiles/ProjectName.dir/build.make CMakeFiles/ProjectName.dir/src/ArrayStack.cpp.s
+.PHONY : src/ArrayStack.cpp.s
+
+src/LinkedStack.o: src/LinkedStack.cpp.o
+
+.PHONY : src/LinkedStack.o
+
+# target to build an object file
+src/LinkedStack.cpp.o:
+	$(MAKE) -f CMakeFiles/ProjectName.dir/build.make CMakeFiles/ProjectName.dir/src/LinkedStack.cpp.o
+.PHONY : src/LinkedStack.cpp.o
+
+src/LinkedStack.i: src/LinkedStack.cpp.i
+
+.PHONY : src/LinkedStack.i
+
+# target to preprocess a source file
+src/LinkedStack.cpp.i:
+	$(MAKE) -f CMakeFiles/ProjectName.dir/build.make CMakeFiles/ProjectName.dir/src/LinkedStack.cpp.i
+.PHONY : src/LinkedStack.cpp.i
+
+src/LinkedStack.s: src/LinkedStack.cpp.s
+
+.PHONY : src/LinkedStack.s
+
+# target to generate assembly for a file
+src/LinkedStack.cpp.s:
+	$(MAKE) -f CMakeFiles/ProjectName.dir/build.make CMakeFiles/ProjectName.dir/src/LinkedStack.cpp.s
+.PHONY : src/LinkedStack.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -150,6 +204,33 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/ProjectName.dir/build.make CMakeFiles/ProjectName.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/test.o: src/test.cpp.o
+
+.PHONY : src/test.o
+
+# target to build an object file
+src/test.cpp.o:
+	$(MAKE) -f CMakeFiles/ProjectName.dir/build.make CMakeFiles/ProjectName.dir/src/test.cpp.o
+.PHONY : src/test.cpp.o
+
+src/test.i: src/test.cpp.i
+
+.PHONY : src/test.i
+
+# target to preprocess a source file
+src/test.cpp.i:
+	$(MAKE) -f CMakeFiles/ProjectName.dir/build.make CMakeFiles/ProjectName.dir/src/test.cpp.i
+.PHONY : src/test.cpp.i
+
+src/test.s: src/test.cpp.s
+
+.PHONY : src/test.s
+
+# target to generate assembly for a file
+src/test.cpp.s:
+	$(MAKE) -f CMakeFiles/ProjectName.dir/build.make CMakeFiles/ProjectName.dir/src/test.cpp.s
+.PHONY : src/test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -159,9 +240,18 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... ProjectName"
+	@echo "... src/ArrayStack.o"
+	@echo "... src/ArrayStack.i"
+	@echo "... src/ArrayStack.s"
+	@echo "... src/LinkedStack.o"
+	@echo "... src/LinkedStack.i"
+	@echo "... src/LinkedStack.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/test.o"
+	@echo "... src/test.i"
+	@echo "... src/test.s"
 .PHONY : help
 
 

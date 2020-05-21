@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week14",
+  "command": "/usr/bin/c++   -I/home/kanitkameh/Documents/oop-2019-20/exercises/3/week14/include    -o CMakeFiles/ProjectName.dir/src/ArrayStack.cpp.o -c /home/kanitkameh/Documents/oop-2019-20/exercises/3/week14/src/ArrayStack.cpp",
+  "file": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week14/src/ArrayStack.cpp"
+},
+{
+  "directory": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week14",
+  "command": "/usr/bin/c++   -I/home/kanitkameh/Documents/oop-2019-20/exercises/3/week14/include    -o CMakeFiles/ProjectName.dir/src/LinkedStack.cpp.o -c /home/kanitkameh/Documents/oop-2019-20/exercises/3/week14/src/LinkedStack.cpp",
+  "file": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week14/src/LinkedStack.cpp"
+},
+{
+  "directory": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week14",
+  "command": "/usr/bin/c++   -I/home/kanitkameh/Documents/oop-2019-20/exercises/3/week14/include    -o CMakeFiles/ProjectName.dir/src/main.cpp.o -c /home/kanitkameh/Documents/oop-2019-20/exercises/3/week14/src/main.cpp",
+  "file": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week14/src/main.cpp"
+},
+{
+  "directory": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week14",
+  "command": "/usr/bin/c++   -I/home/kanitkameh/Documents/oop-2019-20/exercises/3/week14/include    -o CMakeFiles/ProjectName.dir/src/test.cpp.o -c /home/kanitkameh/Documents/oop-2019-20/exercises/3/week14/src/test.cpp",
+  "file": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week14/src/test.cpp"
+}
+]
