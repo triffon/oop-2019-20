@@ -1,0 +1,75 @@
+\hypertarget{classPhysicsObj}{}\doxysection{Physics\+Obj Class Reference}
+\label{classPhysicsObj}\index{PhysicsObj@{PhysicsObj}}
+
+
+{\ttfamily \#include $<$Physics\+Obj.\+hpp$>$}
+
+
+
+Inheritance diagram for Physics\+Obj\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=150pt]{classPhysicsObj__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPhysicsObj_a85fc62a7fc60135f98cba088ffc77fcb}\label{classPhysicsObj_a85fc62a7fc60135f98cba088ffc77fcb}} 
+\mbox{\hyperlink{classPhysicsObj_a85fc62a7fc60135f98cba088ffc77fcb}{Physics\+Obj}} (sf\+::\+Vector2f pos, sf\+::\+Vector2f size=\{ 0, 0 \}, float gravity=0.\+5)
+\begin{DoxyCompactList}\small\item\em Implements the polymorphic Big\+Four. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPhysicsObj_a7aae9e540e3a53c6e38c157e0b47baf5}\label{classPhysicsObj_a7aae9e540e3a53c6e38c157e0b47baf5}} 
+{\bfseries Physics\+Obj} (const \mbox{\hyperlink{classPhysicsObj}{Physics\+Obj}} \&other)=default
+\item 
+\mbox{\Hypertarget{classPhysicsObj_a9142a4b16f5e601ebcf22a79e805363f}\label{classPhysicsObj_a9142a4b16f5e601ebcf22a79e805363f}} 
+\mbox{\hyperlink{classPhysicsObj}{Physics\+Obj}} \& {\bfseries operator=} (const \mbox{\hyperlink{classPhysicsObj}{Physics\+Obj}} \&other)=default
+\item 
+virtual void \mbox{\hyperlink{classPhysicsObj_ae98d2791fd80d331c829fcb363a23896}{update}} ()
+\item 
+void \mbox{\hyperlink{classPhysicsObj_a2c6a0325cb08f891050ddf460f71bd1e}{set\+Gravity}} (float gravity)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPhysicsObj_a8c9d9308d97f76a674270348ca4427c8}\label{classPhysicsObj_a8c9d9308d97f76a674270348ca4427c8}} 
+float {\bfseries m\+\_\+grav}
+\item 
+\mbox{\Hypertarget{classPhysicsObj_a4ef5ac3ddcf088b198e1687748366b2d}\label{classPhysicsObj_a4ef5ac3ddcf088b198e1687748366b2d}} 
+float {\bfseries m\+\_\+hspd}
+\item 
+\mbox{\Hypertarget{classPhysicsObj_ae40d73f893c6141941e75f9fbaf031e1}\label{classPhysicsObj_ae40d73f893c6141941e75f9fbaf031e1}} 
+float {\bfseries m\+\_\+vspd}
+\item 
+\mbox{\Hypertarget{classPhysicsObj_a82f5d423867202001bc737e7999bbc94}\label{classPhysicsObj_a82f5d423867202001bc737e7999bbc94}} 
+bool {\bfseries m\+\_\+grounded}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The base abstract class object of an object using Physics 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPhysicsObj_a2c6a0325cb08f891050ddf460f71bd1e}\label{classPhysicsObj_a2c6a0325cb08f891050ddf460f71bd1e}} 
+\index{PhysicsObj@{PhysicsObj}!setGravity@{setGravity}}
+\index{setGravity@{setGravity}!PhysicsObj@{PhysicsObj}}
+\doxysubsubsection{\texorpdfstring{setGravity()}{setGravity()}}
+{\footnotesize\ttfamily void Physics\+Obj\+::set\+Gravity (\begin{DoxyParamCaption}\item[{float}]{gravity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Change the object\textquotesingle{}s gravity (must be greater than 0) \mbox{\Hypertarget{classPhysicsObj_ae98d2791fd80d331c829fcb363a23896}\label{classPhysicsObj_ae98d2791fd80d331c829fcb363a23896}} 
+\index{PhysicsObj@{PhysicsObj}!update@{update}}
+\index{update@{update}!PhysicsObj@{PhysicsObj}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Physics\+Obj\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Polymorphic method that runs every frame and applies gravity 
+
+Reimplemented in \mbox{\hyperlink{classPlayer_a6912bb6e48efb5845d59f0f4582827ef}{Player}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+code/Physics\+Obj.\+hpp\item 
+code/Physics\+Obj.\+cpp\end{DoxyCompactItemize}

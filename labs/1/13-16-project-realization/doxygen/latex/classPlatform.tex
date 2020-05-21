@@ -1,0 +1,72 @@
+\hypertarget{classPlatform}{}\doxysection{Platform Class Reference}
+\label{classPlatform}\index{Platform@{Platform}}
+
+
+{\ttfamily \#include $<$Platform.\+hpp$>$}
+
+
+
+Inheritance diagram for Platform\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=142pt]{classPlatform__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPlatform_ac352830710a435a7428e848f5892f051}\label{classPlatform_ac352830710a435a7428e848f5892f051}} 
+\mbox{\hyperlink{classPlatform_ac352830710a435a7428e848f5892f051}{Platform}} (sf\+::\+Vector2f pos, sf\+::\+Vector2f size=\{ 0, 0 \})
+\begin{DoxyCompactList}\small\item\em Implements the polymorphic Big\+Four. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPlatform_a203aae18e9d00b8898b29e39023a3ecb}\label{classPlatform_a203aae18e9d00b8898b29e39023a3ecb}} 
+{\bfseries Platform} (const \mbox{\hyperlink{classPlatform}{Platform}} \&other)=default
+\item 
+\mbox{\Hypertarget{classPlatform_a5a4a7098ceaa4b7822ee995afb6d7512}\label{classPlatform_a5a4a7098ceaa4b7822ee995afb6d7512}} 
+\mbox{\hyperlink{classPlatform}{Platform}} \& {\bfseries operator=} (const \mbox{\hyperlink{classPlatform}{Platform}} \&other)=default
+\item 
+virtual \mbox{\hyperlink{classGameObj}{Game\+Obj}} $\ast$ \mbox{\hyperlink{classPlatform_ae1a8b4e517c1dc4b341c37dfb89dd0a5}{clone}} () const override
+\item 
+virtual void \mbox{\hyperlink{classPlatform_a4beef68fbdade28bba9d6799c9a76fab}{draw}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPlatform_a3a720cbf3a835d56f1cf42ed5e922e13}\label{classPlatform_a3a720cbf3a835d56f1cf42ed5e922e13}} 
+sf\+::\+Rectangle\+Shape {\bfseries m\+\_\+shape}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A solid platform represented by a rectangle 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPlatform_ae1a8b4e517c1dc4b341c37dfb89dd0a5}\label{classPlatform_ae1a8b4e517c1dc4b341c37dfb89dd0a5}} 
+\index{Platform@{Platform}!clone@{clone}}
+\index{clone@{clone}!Platform@{Platform}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classGameObj}{Game\+Obj}}$\ast$ Platform\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Polymorphic clone method \begin{DoxyReturn}{Returns}
+A pointer to a dynamically allocated polymorhic game object 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classGameObj_a36f4fc733709f04d7e9baf9f8b996d31}{Game\+Obj}}.
+
+\mbox{\Hypertarget{classPlatform_a4beef68fbdade28bba9d6799c9a76fab}\label{classPlatform_a4beef68fbdade28bba9d6799c9a76fab}} 
+\index{Platform@{Platform}!draw@{draw}}
+\index{draw@{draw}!Platform@{Platform}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Platform\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Polymorphic draw method used to draw the platform on the screen 
+
+Implements \mbox{\hyperlink{classGameObj_a54e51042566a6cd9f7fc9c6d65f8f944}{Game\+Obj}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+code/Platform.\+hpp\item 
+code/Platform.\+cpp\end{DoxyCompactItemize}

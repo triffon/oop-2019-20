@@ -1,0 +1,97 @@
+\hypertarget{classGameObj}{}\doxysection{Game\+Obj Class Reference}
+\label{classGameObj}\index{GameObj@{GameObj}}
+
+
+{\ttfamily \#include $<$Game\+Obj.\+hpp$>$}
+
+
+
+Inheritance diagram for Game\+Obj\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{classGameObj__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGameObj_a0ba4a2a704f3b863e22724be855997df}\label{classGameObj_a0ba4a2a704f3b863e22724be855997df}} 
+\mbox{\hyperlink{classGameObj_a0ba4a2a704f3b863e22724be855997df}{Game\+Obj}} (sf\+::\+Vector2f pos, sf\+::\+Vector2f size=\{ 0, 0 \})
+\begin{DoxyCompactList}\small\item\em Implements the polymorphic Big\+Four. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGameObj_a5d95e52b5d5e5204146b36a6c433d726}\label{classGameObj_a5d95e52b5d5e5204146b36a6c433d726}} 
+{\bfseries Game\+Obj} (const \mbox{\hyperlink{classGameObj}{Game\+Obj}} \&other)=default
+\item 
+\mbox{\Hypertarget{classGameObj_a75b5ef905908f00651f788e3a5546612}\label{classGameObj_a75b5ef905908f00651f788e3a5546612}} 
+\mbox{\hyperlink{classGameObj}{Game\+Obj}} \& {\bfseries operator=} (const \mbox{\hyperlink{classGameObj}{Game\+Obj}} \&other)=default
+\item 
+virtual \mbox{\hyperlink{classGameObj}{Game\+Obj}} $\ast$ \mbox{\hyperlink{classGameObj_a36f4fc733709f04d7e9baf9f8b996d31}{clone}} () const =0
+\item 
+virtual void \mbox{\hyperlink{classGameObj_a54e51042566a6cd9f7fc9c6d65f8f944}{draw}} () const =0
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{classGameObj_aaed3048b2f07e1855c8a2adaff726ad8}{get\+Position}} () const
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{classGameObj_adefe03819ed60dd5f618d065f1cfca07}{get\+Size}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGameObj_aede60d04cb8db11aabe2012d52771003}\label{classGameObj_aede60d04cb8db11aabe2012d52771003}} 
+sf\+::\+Vector2f {\bfseries m\+\_\+position}
+\item 
+\mbox{\Hypertarget{classGameObj_a9ab74f0c73970ee6ebbbee45470b57c4}\label{classGameObj_a9ab74f0c73970ee6ebbbee45470b57c4}} 
+sf\+::\+Vector2f {\bfseries m\+\_\+size}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The base abstract class Object in the game\textquotesingle{}s hierarchy 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGameObj_a36f4fc733709f04d7e9baf9f8b996d31}\label{classGameObj_a36f4fc733709f04d7e9baf9f8b996d31}} 
+\index{GameObj@{GameObj}!clone@{clone}}
+\index{clone@{clone}!GameObj@{GameObj}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classGameObj}{Game\+Obj}}$\ast$ Game\+Obj\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Polymorphic clone method \begin{DoxyReturn}{Returns}
+A pointer to a dynamically allocated polymorhic game object 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classPlayer_adc6142a1cf6a446b6864c988db2ab280}{Player}}, and \mbox{\hyperlink{classPlatform_ae1a8b4e517c1dc4b341c37dfb89dd0a5}{Platform}}.
+
+\mbox{\Hypertarget{classGameObj_a54e51042566a6cd9f7fc9c6d65f8f944}\label{classGameObj_a54e51042566a6cd9f7fc9c6d65f8f944}} 
+\index{GameObj@{GameObj}!draw@{draw}}
+\index{draw@{draw}!GameObj@{GameObj}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily virtual void Game\+Obj\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Polymorphic draw method used to draw the object on the screen 
+
+Implemented in \mbox{\hyperlink{classPlayer_a7457734b6223abbfa9e45d699b11f836}{Player}}, and \mbox{\hyperlink{classPlatform_a4beef68fbdade28bba9d6799c9a76fab}{Platform}}.
+
+\mbox{\Hypertarget{classGameObj_aaed3048b2f07e1855c8a2adaff726ad8}\label{classGameObj_aaed3048b2f07e1855c8a2adaff726ad8}} 
+\index{GameObj@{GameObj}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!GameObj@{GameObj}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Game\+Obj\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+The position of the object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameObj_adefe03819ed60dd5f618d065f1cfca07}\label{classGameObj_adefe03819ed60dd5f618d065f1cfca07}} 
+\index{GameObj@{GameObj}!getSize@{getSize}}
+\index{getSize@{getSize}!GameObj@{GameObj}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Game\+Obj\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+The size of the object 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+code/Game\+Obj.\+hpp\item 
+code/Game\+Obj.\+cpp\end{DoxyCompactItemize}
