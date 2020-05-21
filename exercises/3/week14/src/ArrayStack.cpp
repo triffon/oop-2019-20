@@ -14,7 +14,7 @@ void ArrayStack::pop(){
     current--;
 }
 int ArrayStack::peek(){
-    return arr[current-1];
+    return arr[current];
 }
 bool ArrayStack::empty(){
     return current==0;
