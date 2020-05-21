@@ -2,9 +2,9 @@
 #include <iostream>
 #include "ReadCommand.h"
 string ReadCommand::execute(vector<string> args, int count){
-	std::fstream file(args[0]);	
+	std::fstream file(args[1]);	
 	string buffer;
 	file>>buffer;
-	std::cout << buffer;
+	cout << buffer;
 	return "";
 }

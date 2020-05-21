@@ -1,3 +1,4 @@
+#include<algorithm>
 #include<cstring>
 #include<vector>
 #include"Crow.h"
@@ -30,10 +31,17 @@ vector<string> split(const string& str, const string& delim)
     return tokens;
 }
 int main(){
-	map<string,Command *> m;fillMap(m);string input;while(true){
+	map<string,Command *> m;
+	fillMap(m);
+	string input;
+	while(true){
 		cin >> input;
 		vector<string> arguments = split(input," ");
-		//m[arguments[0]]->execute(arguments,arguments.size());
-	}return 0;
+		if(count(m.begin(),m.end(),arguments[0])){
+			m[arguments[0]]->execute(arguments,arguments.size());
+		}
+		cout << "fasdfa" << endl;
+	}
+	return 0;
 }
 
