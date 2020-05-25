@@ -1,5 +1,5 @@
 #include "Entity.hpp"
 
-Entity::Entity(sf::Vector2f pos, sf::Vector2f size)
+Entity::Entity(const sf::Vector2f& pos, const sf::Vector2f& size)
     : GameObj(pos, size)
 {}

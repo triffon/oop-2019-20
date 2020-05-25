@@ -1,9 +1,16 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include <chrono>
 #include <vector>
+#include <algorithm>
 #include "GameObj.hpp"
+
+enum class Direction {
+    UP,
+    RIGHT,
+    DOWN,
+    LEFT
+};
 
 /**
  * Singleton Game class that houses all of the game's internal logic
@@ -14,7 +21,7 @@ private:
     /**
      * Singleton's default constructor
      */
-    Game() = default;
+    Game();
 
 public:
     /**
@@ -73,9 +80,25 @@ public:
     sf::Vector2u getWindowsSize() const { return m_window.getSize(); }
 
     /**
+     * Sets the window's background color
+     */
+    void setWindowBgColor(const sf::Color& bgColor) { m_bgColor = bgColor; }
+
+    /**
+     * Sets the games refresh rate
+     */
+    void setFPS(unsigned int FPS);
+
+    /**
      * The game tiles' size
      */
     static const float BLOCK_SIZE;
+
+    /**
+     * @returns The closest object of the given vector in the given direction
+     */
+    template<typename T>
+    static T* getClosest(const std::vector<T*> objects, Direction dir);
 
 private:
     // The type of the container used to store the game objects
@@ -87,11 +110,11 @@ private:
     // The window all objects get drawn on
     sf::RenderWindow m_window;
 
-    // Microseconds in one second
-    static const int MICROS_IN_SEC;
+    // New: The background color of the window
+    sf::Color m_bgColor;
 
     // Framerate at which the game runs
-    static const int FPS;
+    unsigned int m_FPS;
 
     // The target time in microseconds between each frame
     static const int REFRESH_RATE;
@@ -120,4 +143,37 @@ std::vector<T*> Game::checkCollision(const sf::Rect<float>& collisionRect) const
     }
 
     return result;
+}
+
+
+template<typename T>
+T* Game::getClosest(const std::vector<T*> objects, Direction dir)
+{
+    // New: Method used in collisions
+    if (objects.empty())
+        return nullptr;
+
+    // std::function can be thought of as something similar to "pointer to a function",
+    // even though it's quite a bit more complex
+    std::function<bool(const T*, const T*)> comparator;
+
+    // Select the correct comparator function
+    switch (dir)
+    {
+    case Direction::DOWN:
+        comparator = [](const T* obj1, const T* obj2) { return obj1->getPosition().y < obj2->getPosition().y; };
+        break;
+    case Direction::UP:
+        comparator = [](const T* obj1, const T* obj2) { return obj1->getPosition().y > obj2->getPosition().y; };
+        break;
+    case Direction::RIGHT:
+        comparator = [](const T* obj1, const T* obj2) { return obj1->getPosition().x < obj2->getPosition().x; };
+        break;
+    case Direction::LEFT:
+        comparator = [](const T* obj1, const T* obj2) { return obj1->getPosition().x > obj2->getPosition().x; };
+        break;
+    }
+
+    // STL function that returns an iterator to the minimal element using a given function to compare
+    return *std::min_element(objects.begin(), objects.end(), comparator);
 }

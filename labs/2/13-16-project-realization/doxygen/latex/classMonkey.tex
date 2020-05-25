@@ -1,0 +1,68 @@
+\hypertarget{classMonkey}{}\doxysection{Monkey Class Reference}
+\label{classMonkey}\index{Monkey@{Monkey}}
+
+
+{\ttfamily \#include $<$Monkey.\+hpp$>$}
+
+
+
+Inheritance diagram for Monkey\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=150pt]{classMonkey__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMonkey_a22fe3033ad188e02645c64677ba21996}\label{classMonkey_a22fe3033ad188e02645c64677ba21996}} 
+\mbox{\hyperlink{classMonkey_a22fe3033ad188e02645c64677ba21996}{Monkey}} (const sf\+::\+Vector2f \&pos, const sf\+::\+Vector2f \&size=\{ \mbox{\hyperlink{classGame_aa4eb432ec709f099d4d19553ab4f6a10}{Game\+::\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE}} $\ast$0.\+75f, \mbox{\hyperlink{classGame_aa4eb432ec709f099d4d19553ab4f6a10}{Game\+::\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE}} $\ast$0.\+75f \})
+\begin{DoxyCompactList}\small\item\em Implements the polymorphic Big\+Four. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMonkey_a3d28a9b8f64663887f7a51fd1bb82b94}\label{classMonkey_a3d28a9b8f64663887f7a51fd1bb82b94}} 
+{\bfseries Monkey} (const \mbox{\hyperlink{classMonkey}{Monkey}} \&other)=default
+\item 
+\mbox{\Hypertarget{classMonkey_a806e652b2f1bd9ab6bed90586545c5ec}\label{classMonkey_a806e652b2f1bd9ab6bed90586545c5ec}} 
+\mbox{\hyperlink{classMonkey}{Monkey}} \& {\bfseries operator=} (const \mbox{\hyperlink{classMonkey}{Monkey}} \&other)=default
+\item 
+virtual \mbox{\hyperlink{classGameObj}{Game\+Obj}} $\ast$ \mbox{\hyperlink{classMonkey_a89a628326b3b5611f5e4c34ee8729657}{clone}} () const override
+\item 
+virtual void \mbox{\hyperlink{classMonkey_a0d50e27af52337ed0622538746a5f4a2}{update}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classEnemy}{Enemy}} type with a more complex AI 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMonkey_a89a628326b3b5611f5e4c34ee8729657}\label{classMonkey_a89a628326b3b5611f5e4c34ee8729657}} 
+\index{Monkey@{Monkey}!clone@{clone}}
+\index{clone@{clone}!Monkey@{Monkey}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classGameObj}{Game\+Obj}}$\ast$ Monkey\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Polymorphic clone method \begin{DoxyReturn}{Returns}
+A pointer to a dynamically allocated polymorhic game object 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classGameObj_a36f4fc733709f04d7e9baf9f8b996d31}{Game\+Obj}}.
+
+\mbox{\Hypertarget{classMonkey_a0d50e27af52337ed0622538746a5f4a2}\label{classMonkey_a0d50e27af52337ed0622538746a5f4a2}} 
+\index{Monkey@{Monkey}!update@{update}}
+\index{update@{update}!Monkey@{Monkey}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Monkey\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Polymorphic method that runs every frame used for AI 
+
+Reimplemented from \mbox{\hyperlink{classPhysicsObj_ae98d2791fd80d331c829fcb363a23896}{Physics\+Obj}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+code/Monkey.\+hpp\item 
+code/Monkey.\+cpp\end{DoxyCompactItemize}

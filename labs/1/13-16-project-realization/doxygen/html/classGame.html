@@ -100,11 +100,18 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a cla
 <tr class="separator:ac2f01fe30589b80402fc664badeca2e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa10a58735b92710648476ef177b0864"><td class="memItemLeft" align="right" valign="top">sf::Vector2u&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#aaa10a58735b92710648476ef177b0864">getWindowsSize</a> () const</td></tr>
 <tr class="separator:aaa10a58735b92710648476ef177b0864"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeaa60f0e394c9f0c6149ed2cfadf8c10"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#aeaa60f0e394c9f0c6149ed2cfadf8c10">setWindowBgColor</a> (const sf::Color &amp;bgColor)</td></tr>
+<tr class="separator:aeaa60f0e394c9f0c6149ed2cfadf8c10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d1725cd33700803dbc8647ad7af3b93"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a4d1725cd33700803dbc8647ad7af3b93">setFPS</a> (unsigned int FPS)</td></tr>
+<tr class="separator:a4d1725cd33700803dbc8647ad7af3b93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:aba30b18d18acd01dcb1bd33decafa857"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classGame.html">Game</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#aba30b18d18acd01dcb1bd33decafa857">i</a> ()</td></tr>
 <tr class="separator:aba30b18d18acd01dcb1bd33decafa857"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48b6317743c5ff89dc8909a587539db8"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a48b6317743c5ff89dc8909a587539db8"><td class="memTemplItemLeft" align="right" valign="top">static T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classGame.html#a48b6317743c5ff89dc8909a587539db8">getClosest</a> (const std::vector&lt; T * &gt; objects, Direction dir)</td></tr>
+<tr class="separator:a48b6317743c5ff89dc8909a587539db8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -188,6 +195,45 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 <p>Draws all objects </p>
+
+</div>
+</div>
+<a id="a48b6317743c5ff89dc8909a587539db8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48b6317743c5ff89dc8909a587539db8">&#9670;&nbsp;</a></span>getClosest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T * Game::getClosest </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; T * &gt;&#160;</td>
+          <td class="paramname"><em>objects</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Direction&#160;</td>
+          <td class="paramname"><em>dir</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>The closest object of the given vector in the given direction </dd></dl>
 
 </div>
 </div>
@@ -305,6 +351,52 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 <p>Starts the game loop </p>
+
+</div>
+</div>
+<a id="a4d1725cd33700803dbc8647ad7af3b93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d1725cd33700803dbc8647ad7af3b93">&#9670;&nbsp;</a></span>setFPS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Game::setFPS </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>FPS</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sets the games refresh rate </p>
+
+</div>
+</div>
+<a id="aeaa60f0e394c9f0c6149ed2cfadf8c10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeaa60f0e394c9f0c6149ed2cfadf8c10">&#9670;&nbsp;</a></span>setWindowBgColor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Game::setWindowBgColor </td>
+          <td>(</td>
+          <td class="paramtype">const sf::Color &amp;&#160;</td>
+          <td class="paramname"><em>bgColor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Sets the window's background color </p>
 
 </div>
 </div>

@@ -1,5 +1,5 @@
 #include "Solid.hpp"
 
-Solid::Solid(sf::Vector2f pos, sf::Vector2f size)
+Solid::Solid(const sf::Vector2f& pos, const sf::Vector2f& size)
     : GameObj(pos, size)
 {}

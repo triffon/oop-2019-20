@@ -1,18 +1,27 @@
 #include "Player.hpp"
 #include "Game.hpp"
+#include "Solid.hpp"
+#include "Util.hpp"
 
-Player::Player(sf::Vector2f pos, sf::Vector2f size)
-    : PhysicsObj(pos, size)
-    , m_shape(m_size)
+
+const sf::Keyboard::Key KEY_LEFT  = sf::Keyboard::Key::A;
+const sf::Keyboard::Key KEY_RIGHT = sf::Keyboard::Key::D;
+const sf::Keyboard::Key KEY_JUMP  = sf::Keyboard::Key::Space;
+const float DEFAULT_ACC           = 1;
+const float DEFAULT_MAX_HSPD      = 5;
+const float DEFAULT_JUMP_FORCE    = 12.0f;
+const float DEFAULT_GRAVITY       = 0.6f;
+const float DEFAULT_HDRAG         = 0.8f;
+
+
+Player::Player(const sf::Vector2f& pos, const sf::Vector2f& size)
+    : PhysicsObj(pos, size, DEFAULT_GRAVITY)
+    , m_acc(DEFAULT_ACC)
+    , m_maxhspd(DEFAULT_MAX_HSPD)
+    , m_jumpforce(DEFAULT_JUMP_FORCE)
+    , m_hdrag(DEFAULT_HDRAG)
 {
-    m_shape.setPosition(m_position);
     m_shape.setFillColor(sf::Color::Green);
-}
-
-
-void Player::draw() const
-{
-    Game::i().draw(m_shape);
 }
 
 
@@ -21,8 +30,116 @@ void Player::update()
     // Use the Physics Object gravity
     PhysicsObj::update();
 
-    // TODO: Add code for player movement
+    // New: Added Player movement
+    // Calculate horizontal speed
+    calcHspd();
 
-    // Drawing object position change
-    m_shape.setPosition(m_position);
+    // Collide with anything horizontally
+    hcollide();
+
+    // Calculate vertical speed
+    calcVspd();
+
+    // Collide with anything upwards
+    vcollide();
+
+    // Move the player with the calculated speed
+    move({ m_hspd, m_vspd });
+}
+
+
+void Player::calcHspd()
+{
+    // Apply acceleration
+    if (sf::Keyboard::isKeyPressed(KEY_LEFT))
+        m_hspd -= m_acc;
+
+    if (sf::Keyboard::isKeyPressed(KEY_RIGHT))
+        m_hspd += m_acc;
+
+    if (m_hspd != 0) {
+        // If the player is moving apply drag
+        if (!sf::Keyboard::isKeyPressed(KEY_LEFT) && !sf::Keyboard::isKeyPressed(KEY_RIGHT)) {
+            float newHspd = m_hspd - (m_hspd > 0 ? 1 : -1) * m_hdrag;
+
+            // If the hspeed hasn't passed 0 due to drag
+            if (newHspd * m_hspd > 0)
+                m_hspd = newHspd;   // Save the calculated hspd
+            else
+                m_hspd = 0;         // Set hspd to 0 if drag has caused the player to stop completely
+        }
+
+        // Sets the min and max of hspd
+        m_hspd = Util::clamp(m_hspd, -m_maxhspd, m_maxhspd);
+    }
+}
+
+
+void Player::hcollide()
+{
+    // No collisions if the horizontal speed is 0
+    if (m_hspd == 0)
+        return;
+
+    // Create the correct collision rectangle directly
+    // next to the player right where he should move to
+    sf::Rect<float> collisionRect(getPosition(), getSize());
+    if (m_hspd > 0) {
+        collisionRect.left += collisionRect.width;
+        collisionRect.width = m_hspd;
+    } else {
+        collisionRect.left += m_hspd;
+        collisionRect.width = -m_hspd;
+    }
+
+    // Get the closest object horizontally that collides with the collision rectangle
+    Solid* closest =
+        Game::getClosest (
+            Game::i().checkCollision<Solid> (collisionRect),
+            m_hspd > 0 ? Direction::RIGHT : Direction::LEFT
+        );
+
+    // If the object is about to collide with anything solid
+    if (closest) {
+        // Move right next to the object
+        setPosition ({
+            closest->getPosition().x + (m_hspd < 0 ? closest->getSize().x : -getSize().x),
+            getPosition().y
+        });
+        m_hspd = 0;
+    }
+}
+
+
+void Player::calcVspd()
+{
+    // Apply jump force
+    if (m_grounded && sf::Keyboard::isKeyPressed(KEY_JUMP))
+        m_vspd = -m_jumpforce;
+}
+
+
+void Player::vcollide()
+{
+    // If the player is moving upwards
+    if (m_vspd < 0) {
+        // Create a collision rectangle directly above the
+        // player right where the object should move up to
+        sf::Rect<float> collisionRect (getPosition(), getSize());
+        collisionRect.top += m_vspd;
+        collisionRect.height = m_vspd;
+
+        // Get the closest object upwards that collides with the collision rectangle
+        Solid* closest = Game::getClosest(Game::i().checkCollision<Solid>(collisionRect), Direction::UP);
+
+        // If the object is about to collide with anything solid
+        if (closest) {
+            m_vspd = 0;
+            // Move up to the object
+            setPosition ({
+                getPosition().x,
+                closest->getPosition().y + closest->getSize().y
+            });
+        }
+    }
 }

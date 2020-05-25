@@ -1,0 +1,7 @@
+<map id="Coin" name="Coin">
+<area shape="rect" id="node1" title=" " alt="" coords="30,304,81,331"/>
+<area shape="rect" id="node2" href="$classCollectable.html" title=" " alt="" coords="8,229,103,256"/>
+<area shape="rect" id="node3" href="$classInteractable.html" title=" " alt="" coords="5,155,105,181"/>
+<area shape="rect" id="node4" href="$classEntity.html" title=" " alt="" coords="25,80,85,107"/>
+<area shape="rect" id="node5" href="$classGameObj.html" title=" " alt="" coords="14,5,97,32"/>
+</map>

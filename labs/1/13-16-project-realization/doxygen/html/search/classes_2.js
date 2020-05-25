@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['physicsobj_27',['PhysicsObj',['../classPhysicsObj.html',1,'']]],
-  ['platform_28',['Platform',['../classPlatform.html',1,'']]],
-  ['player_29',['Player',['../classPlayer.html',1,'']]]
+  ['enemy_46',['Enemy',['../classEnemy.html',1,'']]],
+  ['entity_47',['Entity',['../classEntity.html',1,'']]]
 ];

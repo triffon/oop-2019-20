@@ -1,5 +1,7 @@
 <map id="Solid" name="Solid">
-<area shape="rect" id="node1" title=" " alt="" coords="19,80,74,107"/>
-<area shape="rect" id="node3" href="$classPlatform.html" title=" " alt="" coords="7,155,86,181"/>
-<area shape="rect" id="node2" href="$classGameObj.html" title=" " alt="" coords="5,5,88,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="87,80,141,107"/>
+<area shape="rect" id="node3" href="$classCrate.html" title=" " alt="" coords="5,155,63,181"/>
+<area shape="rect" id="node4" href="$classDoor.html" title=" " alt="" coords="87,155,141,181"/>
+<area shape="rect" id="node5" href="$classPlatform.html" title=" " alt="" coords="165,155,244,181"/>
+<area shape="rect" id="node2" href="$classGameObj.html" title=" " alt="" coords="73,5,155,32"/>
 </map>

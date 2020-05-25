@@ -11,14 +11,14 @@ Inheritance diagram for Game\+Obj\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=228pt]{classGameObj__inherit__graph}
+\includegraphics[width=350pt]{classGameObj__inherit__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classGameObj_a0ba4a2a704f3b863e22724be855997df}\label{classGameObj_a0ba4a2a704f3b863e22724be855997df}} 
-\mbox{\hyperlink{classGameObj_a0ba4a2a704f3b863e22724be855997df}{Game\+Obj}} (sf\+::\+Vector2f pos, sf\+::\+Vector2f size=\{ 0, 0 \})
+\mbox{\Hypertarget{classGameObj_a34813131e31563c68aeb28dff1ddb677}\label{classGameObj_a34813131e31563c68aeb28dff1ddb677}} 
+\mbox{\hyperlink{classGameObj_a34813131e31563c68aeb28dff1ddb677}{Game\+Obj}} (const sf\+::\+Vector2f \&pos, const sf\+::\+Vector2f \&size)
 \begin{DoxyCompactList}\small\item\em Implements the polymorphic Big\+Four. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classGameObj_a5d95e52b5d5e5204146b36a6c433d726}\label{classGameObj_a5d95e52b5d5e5204146b36a6c433d726}} 
 {\bfseries Game\+Obj} (const \mbox{\hyperlink{classGameObj}{Game\+Obj}} \&other)=default
@@ -28,20 +28,21 @@ Inheritance diagram for Game\+Obj\+:
 \item 
 virtual \mbox{\hyperlink{classGameObj}{Game\+Obj}} $\ast$ \mbox{\hyperlink{classGameObj_a36f4fc733709f04d7e9baf9f8b996d31}{clone}} () const =0
 \item 
-virtual void \mbox{\hyperlink{classGameObj_a54e51042566a6cd9f7fc9c6d65f8f944}{draw}} () const =0
+virtual void \mbox{\hyperlink{classGameObj_a92cccc830e16cb67b2c73dd31856e47d}{draw}} () const
 \item 
 sf\+::\+Vector2f \mbox{\hyperlink{classGameObj_aaed3048b2f07e1855c8a2adaff726ad8}{get\+Position}} () const
+\item 
+void \mbox{\hyperlink{classGameObj_a328b05308a1b11e38498159ae421410f}{set\+Position}} (const sf\+::\+Vector2f \&pos)
+\item 
+void \mbox{\hyperlink{classGameObj_a1f1642209f91af4ea189f6aca8094e97}{move}} (const sf\+::\+Vector2f \&offset)
 \item 
 sf\+::\+Vector2f \mbox{\hyperlink{classGameObj_adefe03819ed60dd5f618d065f1cfca07}{get\+Size}} () const
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classGameObj_aede60d04cb8db11aabe2012d52771003}\label{classGameObj_aede60d04cb8db11aabe2012d52771003}} 
-sf\+::\+Vector2f {\bfseries m\+\_\+position}
-\item 
-\mbox{\Hypertarget{classGameObj_a9ab74f0c73970ee6ebbbee45470b57c4}\label{classGameObj_a9ab74f0c73970ee6ebbbee45470b57c4}} 
-sf\+::\+Vector2f {\bfseries m\+\_\+size}
+\mbox{\Hypertarget{classGameObj_a3e04ea78c0c49d667e652291210ae030}\label{classGameObj_a3e04ea78c0c49d667e652291210ae030}} 
+sf\+::\+Rectangle\+Shape {\bfseries m\+\_\+shape}
 \end{DoxyCompactItemize}
 
 
@@ -55,24 +56,20 @@ The base abstract class Object in the game\textquotesingle{}s hierarchy
 \doxysubsubsection{\texorpdfstring{clone()}{clone()}}
 {\footnotesize\ttfamily virtual \mbox{\hyperlink{classGameObj}{Game\+Obj}}$\ast$ Game\+Obj\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
-Polymorphic clone method \begin{DoxyReturn}{Returns}
-A pointer to a dynamically allocated polymorhic game object 
+Pure virtual clone method \begin{DoxyReturn}{Returns}
+A pointer to a dynamically allocated polymorphic game object 
 \end{DoxyReturn}
 
 
-Implemented in \mbox{\hyperlink{classPlayer_adc6142a1cf6a446b6864c988db2ab280}{Player}}, and \mbox{\hyperlink{classPlatform_ae1a8b4e517c1dc4b341c37dfb89dd0a5}{Platform}}.
+Implemented in \mbox{\hyperlink{classCoin_aee7a78c98399f44dacab4441b4cef55c}{Coin}}, \mbox{\hyperlink{classCrate_af2f3b6dbcaf63a0a93436cd8569de0a8}{Crate}}, \mbox{\hyperlink{classMonkey_a89a628326b3b5611f5e4c34ee8729657}{Monkey}}, \mbox{\hyperlink{classMushroom_aeda72704dc114fa092c255a32140afd7}{Mushroom}}, \mbox{\hyperlink{classPlayer_adc6142a1cf6a446b6864c988db2ab280}{Player}}, \mbox{\hyperlink{classPowerUp_a6765515b76fcf91e1a57ea21980d5386}{Power\+Up}}, \mbox{\hyperlink{classDoor_ac46e230d2186ca84502401262a3a2580}{Door}}, and \mbox{\hyperlink{classPlatform_ae1a8b4e517c1dc4b341c37dfb89dd0a5}{Platform}}.
 
-\mbox{\Hypertarget{classGameObj_a54e51042566a6cd9f7fc9c6d65f8f944}\label{classGameObj_a54e51042566a6cd9f7fc9c6d65f8f944}} 
+\mbox{\Hypertarget{classGameObj_a92cccc830e16cb67b2c73dd31856e47d}\label{classGameObj_a92cccc830e16cb67b2c73dd31856e47d}} 
 \index{GameObj@{GameObj}!draw@{draw}}
 \index{draw@{draw}!GameObj@{GameObj}}
 \doxysubsubsection{\texorpdfstring{draw()}{draw()}}
-{\footnotesize\ttfamily virtual void Game\+Obj\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily void Game\+Obj\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Polymorphic draw method used to draw the object on the screen 
-
-Implemented in \mbox{\hyperlink{classPlayer_a7457734b6223abbfa9e45d699b11f836}{Player}}, and \mbox{\hyperlink{classPlatform_a4beef68fbdade28bba9d6799c9a76fab}{Platform}}.
-
-\mbox{\Hypertarget{classGameObj_aaed3048b2f07e1855c8a2adaff726ad8}\label{classGameObj_aaed3048b2f07e1855c8a2adaff726ad8}} 
+Polymorphic draw method used to draw the object on the screen \mbox{\Hypertarget{classGameObj_aaed3048b2f07e1855c8a2adaff726ad8}\label{classGameObj_aaed3048b2f07e1855c8a2adaff726ad8}} 
 \index{GameObj@{GameObj}!getPosition@{getPosition}}
 \index{getPosition@{getPosition}!GameObj@{GameObj}}
 \doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
@@ -90,7 +87,19 @@ The position of the object
 \begin{DoxyReturn}{Returns}
 The size of the object 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classGameObj_a1f1642209f91af4ea189f6aca8094e97}\label{classGameObj_a1f1642209f91af4ea189f6aca8094e97}} 
+\index{GameObj@{GameObj}!move@{move}}
+\index{move@{move}!GameObj@{GameObj}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void Game\+Obj\+::move (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Moves the object by the given offset \mbox{\Hypertarget{classGameObj_a328b05308a1b11e38498159ae421410f}\label{classGameObj_a328b05308a1b11e38498159ae421410f}} 
+\index{GameObj@{GameObj}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!GameObj@{GameObj}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily void Game\+Obj\+::set\+Position (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the position of the object 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

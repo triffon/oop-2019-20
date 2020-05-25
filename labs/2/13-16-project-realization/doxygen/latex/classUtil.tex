@@ -1,0 +1,54 @@
+\hypertarget{classUtil}{}\doxysection{Util Class Reference}
+\label{classUtil}\index{Util@{Util}}
+
+
+{\ttfamily \#include $<$Util.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classUtil_ab0f34faad203db2564c4a48ccd15dbb7}\label{classUtil_ab0f34faad203db2564c4a48ccd15dbb7}} 
+{\bfseries Util} (const \mbox{\hyperlink{classUtil}{Util}} \&)=delete
+\item 
+\mbox{\Hypertarget{classUtil_ac9cab68f0be5ce4a34e14f96dee0e0e9}\label{classUtil_ac9cab68f0be5ce4a34e14f96dee0e0e9}} 
+\mbox{\hyperlink{classUtil}{Util}} \& {\bfseries operator=} (const \mbox{\hyperlink{classUtil}{Util}} \&)=delete
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\static constexpr const T \& \mbox{\hyperlink{classUtil_ac2b31bff90d0359724024226f685e5ce}{clamp}} (const T \&value, const T \&low, const T \&high)
+\begin{DoxyCompactList}\small\item\em Returns the value clamped between low and high. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Static class used for utility functions 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_ac2b31bff90d0359724024226f685e5ce}\label{classUtil_ac2b31bff90d0359724024226f685e5ce}} 
+\index{Util@{Util}!clamp@{clamp}}
+\index{clamp@{clamp}!Util@{Util}}
+\doxysubsubsection{\texorpdfstring{clamp()}{clamp()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+static constexpr const T\& Util\+::clamp (\begin{DoxyParamCaption}\item[{const T \&}]{value,  }\item[{const T \&}]{low,  }\item[{const T \&}]{high }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Returns the value clamped between low and high. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & A value of arbitrary type. \\
+\hline
+{\em low} & A lower limit of arbitrary type. \\
+\hline
+{\em high} & An upper limit of arbitrary type. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+max(value, low) if value $<$ high or min(value, high) otherwise 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+code/Util.\+hpp\end{DoxyCompactItemize}

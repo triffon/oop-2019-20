@@ -1,0 +1,52 @@
+\hypertarget{classEnemy}{}\doxysection{Enemy Class Reference}
+\label{classEnemy}\index{Enemy@{Enemy}}
+
+
+{\ttfamily \#include $<$Enemy.\+hpp$>$}
+
+
+
+Inheritance diagram for Enemy\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{classEnemy__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classEnemy_a3d6ff62708eb798ec6309f4bc7f6ca8f}\label{classEnemy_a3d6ff62708eb798ec6309f4bc7f6ca8f}} 
+\mbox{\hyperlink{classEnemy_a3d6ff62708eb798ec6309f4bc7f6ca8f}{Enemy}} (const sf\+::\+Vector2f \&pos, const sf\+::\+Vector2f \&size)
+\begin{DoxyCompactList}\small\item\em Implements the polymorphic Big\+Four. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEnemy_ad7ab8f3adac5f88cc9e1147f76c739c9}\label{classEnemy_ad7ab8f3adac5f88cc9e1147f76c739c9}} 
+{\bfseries Enemy} (const \mbox{\hyperlink{classEnemy}{Enemy}} \&other)=default
+\item 
+\mbox{\Hypertarget{classEnemy_ac2f52e614b04b267380587225f3730fa}\label{classEnemy_ac2f52e614b04b267380587225f3730fa}} 
+\mbox{\hyperlink{classEnemy}{Enemy}} \& {\bfseries operator=} (const \mbox{\hyperlink{classEnemy}{Enemy}} \&other)=default
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classEnemy_abf93f011aa296a99906e9d105002c836}{basic\+AI}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The abstract class for enemies 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEnemy_abf93f011aa296a99906e9d105002c836}\label{classEnemy_abf93f011aa296a99906e9d105002c836}} 
+\index{Enemy@{Enemy}!basicAI@{basicAI}}
+\index{basicAI@{basicAI}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{basicAI()}{basicAI()}}
+{\footnotesize\ttfamily void Enemy\+::basic\+AI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Calculates the basic AI movement changing m\+\_\+hspd, without actually moving the enemy, {\bfseries{unless a collision occurs then the object is moved.}} 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+code/Enemy.\+hpp\item 
+code/Enemy.\+cpp\end{DoxyCompactItemize}

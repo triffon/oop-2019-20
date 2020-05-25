@@ -77,29 +77,48 @@ $(function() {
 <div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classPlayer.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="classPlayer.html">Player</a> : <span class="keyword">public</span> <a class="code" href="classPhysicsObj.html">PhysicsObj</a></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="classPlayer.html#a36f60f6ce862775894c982035c55317f">Player</a>(sf::Vector2f pos, sf::Vector2f size = { <a class="code" href="classGame.html#aa4eb432ec709f099d4d19553ab4f6a10">Game::BLOCK_SIZE</a> , <a class="code" href="classGame.html#aa4eb432ec709f099d4d19553ab4f6a10">Game::BLOCK_SIZE</a> });</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="classPlayer.html#a36f60f6ce862775894c982035c55317f">Player</a>(<span class="keyword">const</span> <a class="code" href="classPlayer.html">Player</a>&amp; other) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="classPlayer.html#ac6ec46c291129a7c538deb473fee8b9f">Player</a>(<span class="keyword">const</span> sf::Vector2f&amp; pos, <span class="keyword">const</span> sf::Vector2f&amp; size = { <a class="code" href="classGame.html#aa4eb432ec709f099d4d19553ab4f6a10">Game::BLOCK_SIZE</a> , <a class="code" href="classGame.html#aa4eb432ec709f099d4d19553ab4f6a10">Game::BLOCK_SIZE</a> });</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="classPlayer.html#ac6ec46c291129a7c538deb473fee8b9f">Player</a>(<span class="keyword">const</span> <a class="code" href="classPlayer.html">Player</a>&amp; other) = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="classPlayer.html">Player</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="classPlayer.html">Player</a>&amp; other) = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classPlayer.html">Player</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classPlayer.html#adc6142a1cf6a446b6864c988db2ab280">   22</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classGameObj.html">GameObj</a>* <a class="code" href="classPlayer.html#adc6142a1cf6a446b6864c988db2ab280">clone</a>()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="classPlayer.html#a36f60f6ce862775894c982035c55317f">Player</a>(*<span class="keyword">this</span>); }</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classPlayer.html#adc6142a1cf6a446b6864c988db2ab280">   22</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classGameObj.html">GameObj</a>* <a class="code" href="classPlayer.html#adc6142a1cf6a446b6864c988db2ab280">clone</a>()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="classPlayer.html#ac6ec46c291129a7c538deb473fee8b9f">Player</a>(*<span class="keyword">this</span>); }</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classPlayer.html#a7457734b6223abbfa9e45d699b11f836">draw</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classPlayer.html#a6912bb6e48efb5845d59f0f4582827ef">update</a>() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classPlayer.html#a6912bb6e48efb5845d59f0f4582827ef">update</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// The shape that gets drawn on the screen</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    sf::RectangleShape m_shape;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;};</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">// The horizontal speed acceleration</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">float</span> m_acc;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">// The maximal horizontal speed</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">float</span> m_maxhspd;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">// The jump force</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">float</span> m_jumpforce;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">// The horizontal drag</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">float</span> m_hdrag;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// Movement script</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> calcHspd();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">// Horizontal collision script</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> hcollide();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// Jump script</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> calcVspd();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// Vertical collision script</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">void</span> vcollide();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassPlayer_html_a7457734b6223abbfa9e45d699b11f836"><div class="ttname"><a href="classPlayer.html#a7457734b6223abbfa9e45d699b11f836">Player::draw</a></div><div class="ttdeci">virtual void draw() const override</div><div class="ttdef"><b>Definition:</b> Player.cpp:13</div></div>
 <div class="ttc" id="aclassPhysicsObj_html"><div class="ttname"><a href="classPhysicsObj.html">PhysicsObj</a></div><div class="ttdef"><b>Definition:</b> PhysicsObj.hpp:8</div></div>
-<div class="ttc" id="aclassPlayer_html_a36f60f6ce862775894c982035c55317f"><div class="ttname"><a href="classPlayer.html#a36f60f6ce862775894c982035c55317f">Player::Player</a></div><div class="ttdeci">Player(sf::Vector2f pos, sf::Vector2f size={ Game::BLOCK_SIZE, Game::BLOCK_SIZE })</div><div class="ttdoc">Implements the polymorphic BigFour.</div><div class="ttdef"><b>Definition:</b> Player.cpp:4</div></div>
+<div class="ttc" id="aclassPlayer_html_ac6ec46c291129a7c538deb473fee8b9f"><div class="ttname"><a href="classPlayer.html#ac6ec46c291129a7c538deb473fee8b9f">Player::Player</a></div><div class="ttdeci">Player(const sf::Vector2f &amp;pos, const sf::Vector2f &amp;size={ Game::BLOCK_SIZE, Game::BLOCK_SIZE })</div><div class="ttdoc">Implements the polymorphic BigFour.</div><div class="ttdef"><b>Definition:</b> Player.cpp:17</div></div>
 <div class="ttc" id="aclassPlayer_html_adc6142a1cf6a446b6864c988db2ab280"><div class="ttname"><a href="classPlayer.html#adc6142a1cf6a446b6864c988db2ab280">Player::clone</a></div><div class="ttdeci">virtual GameObj * clone() const override</div><div class="ttdef"><b>Definition:</b> Player.hpp:22</div></div>
-<div class="ttc" id="aclassPlayer_html_a6912bb6e48efb5845d59f0f4582827ef"><div class="ttname"><a href="classPlayer.html#a6912bb6e48efb5845d59f0f4582827ef">Player::update</a></div><div class="ttdeci">virtual void update() override</div><div class="ttdef"><b>Definition:</b> Player.cpp:19</div></div>
+<div class="ttc" id="aclassPlayer_html_a6912bb6e48efb5845d59f0f4582827ef"><div class="ttname"><a href="classPlayer.html#a6912bb6e48efb5845d59f0f4582827ef">Player::update</a></div><div class="ttdeci">virtual void update() override</div><div class="ttdef"><b>Definition:</b> Player.cpp:28</div></div>
 <div class="ttc" id="aclassGameObj_html"><div class="ttname"><a href="classGameObj.html">GameObj</a></div><div class="ttdef"><b>Definition:</b> GameObj.hpp:8</div></div>
-<div class="ttc" id="aclassGame_html_aa4eb432ec709f099d4d19553ab4f6a10"><div class="ttname"><a href="classGame.html#aa4eb432ec709f099d4d19553ab4f6a10">Game::BLOCK_SIZE</a></div><div class="ttdeci">static const float BLOCK_SIZE</div><div class="ttdef"><b>Definition:</b> Game.hpp:78</div></div>
+<div class="ttc" id="aclassGame_html_aa4eb432ec709f099d4d19553ab4f6a10"><div class="ttname"><a href="classGame.html#aa4eb432ec709f099d4d19553ab4f6a10">Game::BLOCK_SIZE</a></div><div class="ttdeci">static const float BLOCK_SIZE</div><div class="ttdef"><b>Definition:</b> Game.hpp:95</div></div>
 <div class="ttc" id="aclassPlayer_html"><div class="ttname"><a href="classPlayer.html">Player</a></div><div class="ttdef"><b>Definition:</b> Player.hpp:9</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

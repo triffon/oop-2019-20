@@ -76,14 +76,14 @@ $(function() {
 <div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classEntity.html">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="classEntity.html">Entity</a> : <span class="keyword">public</span> <a class="code" href="classGameObj.html">GameObj</a></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="classEntity.html#a200e6667259612e4ff08382dc58bd484">Entity</a>(sf::Vector2f pos, sf::Vector2f size = { 0 , 0 });</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="classEntity.html#a200e6667259612e4ff08382dc58bd484">Entity</a>(<span class="keyword">const</span> <a class="code" href="classEntity.html">Entity</a>&amp; other) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="classEntity.html#ae45ff81fd56cf676a36a1af0c7be65c5">Entity</a>(<span class="keyword">const</span> sf::Vector2f&amp; pos, <span class="keyword">const</span> sf::Vector2f&amp; size);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="classEntity.html#ae45ff81fd56cf676a36a1af0c7be65c5">Entity</a>(<span class="keyword">const</span> <a class="code" href="classEntity.html">Entity</a>&amp; other) = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="classEntity.html">Entity</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="classEntity.html">Entity</a>&amp; other) = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classEntity.html">Entity</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassEntity_html_ae45ff81fd56cf676a36a1af0c7be65c5"><div class="ttname"><a href="classEntity.html#ae45ff81fd56cf676a36a1af0c7be65c5">Entity::Entity</a></div><div class="ttdeci">Entity(const sf::Vector2f &amp;pos, const sf::Vector2f &amp;size)</div><div class="ttdoc">Implements the polymorphic BigFour.</div><div class="ttdef"><b>Definition:</b> Entity.cpp:3</div></div>
 <div class="ttc" id="aclassEntity_html"><div class="ttname"><a href="classEntity.html">Entity</a></div><div class="ttdef"><b>Definition:</b> Entity.hpp:8</div></div>
-<div class="ttc" id="aclassEntity_html_a200e6667259612e4ff08382dc58bd484"><div class="ttname"><a href="classEntity.html#a200e6667259612e4ff08382dc58bd484">Entity::Entity</a></div><div class="ttdeci">Entity(sf::Vector2f pos, sf::Vector2f size={ 0, 0 })</div><div class="ttdoc">Implements the polymorphic BigFour.</div><div class="ttdef"><b>Definition:</b> Entity.cpp:3</div></div>
 <div class="ttc" id="aclassGameObj_html"><div class="ttname"><a href="classGameObj.html">GameObj</a></div><div class="ttdef"><b>Definition:</b> GameObj.hpp:8</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

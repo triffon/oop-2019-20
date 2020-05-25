@@ -1,6 +1,14 @@
 #include "GameObj.hpp"
+#include "Game.hpp"
 
-GameObj::GameObj(sf::Vector2f pos, sf::Vector2f size)
-    : m_position(pos)
-    , m_size(size)
-{}
+GameObj::GameObj(const sf::Vector2f& pos, const sf::Vector2f& size)
+    : m_shape(size)
+{
+    m_shape.setPosition(pos);
+}
+
+
+void GameObj::draw() const
+{
+    Game::i().draw(m_shape);
+}

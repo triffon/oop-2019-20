@@ -9,13 +9,15 @@ class PhysicsObj : public Entity
 {
 /// Implements the polymorphic BigFour
 public:
-    PhysicsObj(sf::Vector2f pos, sf::Vector2f size = { 0 , 0 }, float gravity = 0.5);
+    PhysicsObj(const sf::Vector2f& pos, const sf::Vector2f& size, float gravity = 0.5);
     PhysicsObj(const PhysicsObj& other) = default;
     PhysicsObj& operator=(const PhysicsObj& other) = default;
     virtual ~PhysicsObj() = default;
 
     /**
-     * Polymorphic method that runs every frame and applies gravity
+     * Polymorphic method that runs every frame and applies gravity to m_vspd.
+     * Note: This method doesn't actually move() the object, rather it just calculates gravity,
+     * **unless a collision occurs then the object is moved.**
      */
     virtual void update();
 
@@ -35,5 +37,5 @@ protected:
     float m_vspd;
 
     // The object is on the ground
-    bool  m_grounded;
+    bool m_grounded;
 };

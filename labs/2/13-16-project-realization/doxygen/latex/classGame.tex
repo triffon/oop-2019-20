@@ -30,11 +30,17 @@ void \mbox{\hyperlink{classGame_ae5e4744e73e37510b82fe8d7e2fac0bc}{add\+Obj}} (\
 {\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $\ast$ $>$ \mbox{\hyperlink{classGame_ac2f01fe30589b80402fc664badeca2e9}{check\+Collision}} (const sf\+::\+Rect$<$ float $>$ \&collision\+Rect) const
 \item 
 sf\+::\+Vector2u \mbox{\hyperlink{classGame_aaa10a58735b92710648476ef177b0864}{get\+Windows\+Size}} () const
+\item 
+void \mbox{\hyperlink{classGame_aeaa60f0e394c9f0c6149ed2cfadf8c10}{set\+Window\+Bg\+Color}} (const sf\+::\+Color \&bg\+Color)
+\item 
+void \mbox{\hyperlink{classGame_a4d1725cd33700803dbc8647ad7af3b93}{set\+F\+PS}} (unsigned int F\+PS)
 \end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static \mbox{\hyperlink{classGame}{Game}} \& \mbox{\hyperlink{classGame_aba30b18d18acd01dcb1bd33decafa857}{i}} ()
+\item 
+{\footnotesize template$<$typename T $>$ }\\static T $\ast$ \mbox{\hyperlink{classGame_a48b6317743c5ff89dc8909a587539db8}{get\+Closest}} (const std\+::vector$<$ T $\ast$ $>$ objects, Direction dir)
 \end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
@@ -75,7 +81,17 @@ Adds an object to the window to be rendered \mbox{\Hypertarget{classGame_afc449d
 \doxysubsubsection{\texorpdfstring{drawAll()}{drawAll()}}
 {\footnotesize\ttfamily void Game\+::draw\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Draws all objects \mbox{\Hypertarget{classGame_aaa10a58735b92710648476ef177b0864}\label{classGame_aaa10a58735b92710648476ef177b0864}} 
+Draws all objects \mbox{\Hypertarget{classGame_a48b6317743c5ff89dc8909a587539db8}\label{classGame_a48b6317743c5ff89dc8909a587539db8}} 
+\index{Game@{Game}!getClosest@{getClosest}}
+\index{getClosest@{getClosest}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{getClosest()}{getClosest()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T $\ast$ Game\+::get\+Closest (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T $\ast$ $>$}]{objects,  }\item[{Direction}]{dir }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyReturn}{Returns}
+The closest object of the given vector in the given direction 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGame_aaa10a58735b92710648476ef177b0864}\label{classGame_aaa10a58735b92710648476ef177b0864}} 
 \index{Game@{Game}!getWindowsSize@{getWindowsSize}}
 \index{getWindowsSize@{getWindowsSize}!Game@{Game}}
 \doxysubsubsection{\texorpdfstring{getWindowsSize()}{getWindowsSize()}}
@@ -111,7 +127,19 @@ Polls all kinds of user events \mbox{\Hypertarget{classGame_a1ab78f5ed0d5ea87915
 \doxysubsubsection{\texorpdfstring{run()}{run()}}
 {\footnotesize\ttfamily void Game\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Starts the game loop \mbox{\Hypertarget{classGame_a4e0f72ea563b33e31ba57f02619d5dbe}\label{classGame_a4e0f72ea563b33e31ba57f02619d5dbe}} 
+Starts the game loop \mbox{\Hypertarget{classGame_a4d1725cd33700803dbc8647ad7af3b93}\label{classGame_a4d1725cd33700803dbc8647ad7af3b93}} 
+\index{Game@{Game}!setFPS@{setFPS}}
+\index{setFPS@{setFPS}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{setFPS()}{setFPS()}}
+{\footnotesize\ttfamily void Game\+::set\+F\+PS (\begin{DoxyParamCaption}\item[{unsigned int}]{F\+PS }\end{DoxyParamCaption})}
+
+Sets the games refresh rate \mbox{\Hypertarget{classGame_aeaa60f0e394c9f0c6149ed2cfadf8c10}\label{classGame_aeaa60f0e394c9f0c6149ed2cfadf8c10}} 
+\index{Game@{Game}!setWindowBgColor@{setWindowBgColor}}
+\index{setWindowBgColor@{setWindowBgColor}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{setWindowBgColor()}{setWindowBgColor()}}
+{\footnotesize\ttfamily void Game\+::set\+Window\+Bg\+Color (\begin{DoxyParamCaption}\item[{const sf\+::\+Color \&}]{bg\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the window\textquotesingle{}s background color \mbox{\Hypertarget{classGame_a4e0f72ea563b33e31ba57f02619d5dbe}\label{classGame_a4e0f72ea563b33e31ba57f02619d5dbe}} 
 \index{Game@{Game}!updateAll@{updateAll}}
 \index{updateAll@{updateAll}!Game@{Game}}
 \doxysubsubsection{\texorpdfstring{updateAll()}{updateAll()}}

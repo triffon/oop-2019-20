@@ -10,7 +10,7 @@ class Player : public PhysicsObj
 {
 /// Implements the polymorphic BigFour
 public:
-    Player(sf::Vector2f pos, sf::Vector2f size = { Game::BLOCK_SIZE , Game::BLOCK_SIZE });
+    Player(const sf::Vector2f& pos, const sf::Vector2f& size = { Game::BLOCK_SIZE , Game::BLOCK_SIZE });
     Player(const Player& other) = default;
     Player& operator=(const Player& other) = default;
     virtual ~Player() = default;
@@ -22,16 +22,33 @@ public:
     virtual GameObj* clone() const override { return new Player(*this); }
 
     /**
-     * Polymorphic draw method used to draw the player on the screen
-     */
-    virtual void draw() const override;
-
-    /**
      * Polymorphic method that runs every frame
      */
     virtual void update() override;
 
-protected:
-    // The shape that gets drawn on the screen
-    sf::RectangleShape m_shape;
+private:
+    // The horizontal speed acceleration
+    float m_acc;
+
+    // The maximal horizontal speed
+    float m_maxhspd;
+
+    // The jump force
+    float m_jumpforce;
+
+    // The horizontal drag
+    float m_hdrag;
+
+private:
+    // Movement script
+    void calcHspd();
+
+    // Horizontal collision script
+    void hcollide();
+
+    // Jump script
+    void calcVspd();
+
+    // Vertical collision script
+    void vcollide();
 };

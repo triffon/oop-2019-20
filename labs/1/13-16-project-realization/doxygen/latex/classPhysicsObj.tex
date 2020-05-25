@@ -6,18 +6,19 @@
 
 
 
-Inheritance diagram for Physics\+Obj\+:\nopagebreak
+Inheritance diagram for Physics\+Obj\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=150pt]{classPhysicsObj__inherit__graph}
+\includegraphics[width=238pt]{classPhysicsObj__inherit__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classPhysicsObj_a85fc62a7fc60135f98cba088ffc77fcb}\label{classPhysicsObj_a85fc62a7fc60135f98cba088ffc77fcb}} 
-\mbox{\hyperlink{classPhysicsObj_a85fc62a7fc60135f98cba088ffc77fcb}{Physics\+Obj}} (sf\+::\+Vector2f pos, sf\+::\+Vector2f size=\{ 0, 0 \}, float gravity=0.\+5)
+\mbox{\Hypertarget{classPhysicsObj_a24f7c3d33ffbc58fdc3c53c4f7a88e16}\label{classPhysicsObj_a24f7c3d33ffbc58fdc3c53c4f7a88e16}} 
+\mbox{\hyperlink{classPhysicsObj_a24f7c3d33ffbc58fdc3c53c4f7a88e16}{Physics\+Obj}} (const sf\+::\+Vector2f \&pos, const sf\+::\+Vector2f \&size, float gravity=0.\+5)
 \begin{DoxyCompactList}\small\item\em Implements the polymorphic Big\+Four. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPhysicsObj_a7aae9e540e3a53c6e38c157e0b47baf5}\label{classPhysicsObj_a7aae9e540e3a53c6e38c157e0b47baf5}} 
 {\bfseries Physics\+Obj} (const \mbox{\hyperlink{classPhysicsObj}{Physics\+Obj}} \&other)=default
@@ -62,9 +63,9 @@ Change the object\textquotesingle{}s gravity (must be greater than 0) \mbox{\Hyp
 \doxysubsubsection{\texorpdfstring{update()}{update()}}
 {\footnotesize\ttfamily void Physics\+Obj\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Polymorphic method that runs every frame and applies gravity 
+Polymorphic method that runs every frame and applies gravity to m\+\_\+vspd. Note\+: This method doesn\textquotesingle{}t actually \mbox{\hyperlink{classGameObj_a1f1642209f91af4ea189f6aca8094e97}{move()}} the object, rather it just calculates gravity, {\bfseries{unless a collision occurs then the object is moved.}} 
 
-Reimplemented in \mbox{\hyperlink{classPlayer_a6912bb6e48efb5845d59f0f4582827ef}{Player}}.
+Reimplemented in \mbox{\hyperlink{classMonkey_a0d50e27af52337ed0622538746a5f4a2}{Monkey}}, \mbox{\hyperlink{classMushroom_aa65c6eaa417a01a8cd8cefd268c9d550}{Mushroom}}, and \mbox{\hyperlink{classPlayer_a6912bb6e48efb5845d59f0f4582827ef}{Player}}.
 
 
 

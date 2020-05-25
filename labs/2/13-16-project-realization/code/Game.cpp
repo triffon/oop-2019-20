@@ -1,19 +1,22 @@
-#include <thread>
+#include <cmath>
 #include "Game.hpp"
 #include "PhysicsObj.hpp"
 
 
-// Microseconds in one second
-const int   Game::MICROS_IN_SEC = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::seconds(1)).count();
+// The default refresh rate
+const unsigned int DEFAULT_FPS  = 60;
 
-// Framerate at which the game runs
-const int   Game::FPS           = 60;
-
-// The target time in microseconds between each frame
-const int   Game::REFRESH_RATE  = MICROS_IN_SEC / FPS;
+// The default background color
+const sf::Color DEFAULT_BGCOLOR = { 127, 127, 127, 255 };
 
 // The game tiles' size
 const float Game::BLOCK_SIZE    = 32;
+
+
+Game::Game()
+    : m_bgColor(DEFAULT_BGCOLOR)
+    , m_FPS(DEFAULT_FPS)
+{}
 
 
 Game::~Game()
@@ -29,6 +32,9 @@ void Game::initGame(const sf::VideoMode& vm, const char* title)
 {
     // Create a window with the specified arguments
     m_window.create(vm, title);
+
+    // New: Changed to SFML's framerate instead of our implementation
+    m_window.setFramerateLimit(m_FPS);
 }
 
 
@@ -45,11 +51,8 @@ void Game::run()
     // While the window is open
     while (m_window.isOpen())
     {
-        // Get the time at which the frame starts
-        std::chrono::time_point start = std::chrono::high_resolution_clock::now();
-
         // Clear the window
-        m_window.clear(sf::Color(128, 128, 128, 255));
+        m_window.clear(m_bgColor);
 
         // Poll user events
         pollEvents();
@@ -62,15 +65,6 @@ void Game::run()
 
         // Render the window
         m_window.display();
-
-        // Get the time at which the frame has finished rendering
-        std::chrono::time_point end = std::chrono::high_resolution_clock::now();
-        int duration = REFRESH_RATE - std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
-
-        // Make the thread sleep for a calculated amount of time to make
-        // sure the game runs at approximately the specified FPS
-        if (duration > 0)
-            std::this_thread::sleep_for(std::chrono::microseconds(duration));
     }
 }
 
@@ -113,9 +107,18 @@ void Game::drawAll()
         m_objects[i]->draw();
 }
 
+
 void Game::addObj(GameObj* obj)
 {
     // Just adds the polymorphic object
     // to our GameObject container
     m_objects.push_back(obj);
+}
+
+
+void Game::setFPS(unsigned int FPS)
+{
+    m_FPS = FPS;
+    if (m_window.isOpen())
+        m_window.setFramerateLimit(m_FPS);
 }

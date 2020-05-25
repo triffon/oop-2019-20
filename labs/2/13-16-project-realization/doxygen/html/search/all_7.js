@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['physicsobj_14',['PhysicsObj',['../classPhysicsObj.html',1,'PhysicsObj'],['../classPhysicsObj.html#a85fc62a7fc60135f98cba088ffc77fcb',1,'PhysicsObj::PhysicsObj()']]],
-  ['platform_15',['Platform',['../classPlatform.html',1,'Platform'],['../classPlatform.html#ac352830710a435a7428e848f5892f051',1,'Platform::Platform()']]],
-  ['player_16',['Player',['../classPlayer.html',1,'Player'],['../classPlayer.html#a36f60f6ce862775894c982035c55317f',1,'Player::Player()']]],
-  ['pollevents_17',['pollEvents',['../classGame.html#a8ea4777fdc751b40f778997b76ee7cf9',1,'Game']]]
+  ['monkey_23',['Monkey',['../classMonkey.html',1,'Monkey'],['../classMonkey.html#a22fe3033ad188e02645c64677ba21996',1,'Monkey::Monkey()']]],
+  ['move_24',['move',['../classGameObj.html#a1f1642209f91af4ea189f6aca8094e97',1,'GameObj']]],
+  ['mushroom_25',['Mushroom',['../classMushroom.html',1,'Mushroom'],['../classMushroom.html#a04c19bfd19948ae76bfa3c07a151bc58',1,'Mushroom::Mushroom()']]]
 ];

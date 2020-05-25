@@ -6,7 +6,8 @@
 
 
 
-Inheritance diagram for Platform\+:\nopagebreak
+Inheritance diagram for Platform\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -16,8 +17,8 @@ Inheritance diagram for Platform\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classPlatform_ac352830710a435a7428e848f5892f051}\label{classPlatform_ac352830710a435a7428e848f5892f051}} 
-\mbox{\hyperlink{classPlatform_ac352830710a435a7428e848f5892f051}{Platform}} (sf\+::\+Vector2f pos, sf\+::\+Vector2f size=\{ 0, 0 \})
+\mbox{\Hypertarget{classPlatform_ab48d1bcf0b80b34cfbc6976e40416923}\label{classPlatform_ab48d1bcf0b80b34cfbc6976e40416923}} 
+\mbox{\hyperlink{classPlatform_ab48d1bcf0b80b34cfbc6976e40416923}{Platform}} (const sf\+::\+Vector2f \&pos, const sf\+::\+Vector2f \&size)
 \begin{DoxyCompactList}\small\item\em Implements the polymorphic Big\+Four. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPlatform_a203aae18e9d00b8898b29e39023a3ecb}\label{classPlatform_a203aae18e9d00b8898b29e39023a3ecb}} 
 {\bfseries Platform} (const \mbox{\hyperlink{classPlatform}{Platform}} \&other)=default
@@ -26,15 +27,8 @@ Inheritance diagram for Platform\+:\nopagebreak
 \mbox{\hyperlink{classPlatform}{Platform}} \& {\bfseries operator=} (const \mbox{\hyperlink{classPlatform}{Platform}} \&other)=default
 \item 
 virtual \mbox{\hyperlink{classGameObj}{Game\+Obj}} $\ast$ \mbox{\hyperlink{classPlatform_ae1a8b4e517c1dc4b341c37dfb89dd0a5}{clone}} () const override
-\item 
-virtual void \mbox{\hyperlink{classPlatform_a4beef68fbdade28bba9d6799c9a76fab}{draw}} () const override
 \end{DoxyCompactItemize}
-\doxysubsection*{Protected Attributes}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\Hypertarget{classPlatform_a3a720cbf3a835d56f1cf42ed5e922e13}\label{classPlatform_a3a720cbf3a835d56f1cf42ed5e922e13}} 
-sf\+::\+Rectangle\+Shape {\bfseries m\+\_\+shape}
-\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
 
 
 \doxysubsection{Detailed Description}
@@ -53,16 +47,6 @@ A pointer to a dynamically allocated polymorhic game object
 
 
 Implements \mbox{\hyperlink{classGameObj_a36f4fc733709f04d7e9baf9f8b996d31}{Game\+Obj}}.
-
-\mbox{\Hypertarget{classPlatform_a4beef68fbdade28bba9d6799c9a76fab}\label{classPlatform_a4beef68fbdade28bba9d6799c9a76fab}} 
-\index{Platform@{Platform}!draw@{draw}}
-\index{draw@{draw}!Platform@{Platform}}
-\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
-{\footnotesize\ttfamily void Platform\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
-
-Polymorphic draw method used to draw the platform on the screen 
-
-Implements \mbox{\hyperlink{classGameObj_a54e51042566a6cd9f7fc9c6d65f8f944}{Game\+Obj}}.
 
 
 

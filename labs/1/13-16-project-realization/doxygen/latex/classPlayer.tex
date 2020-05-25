@@ -6,7 +6,8 @@
 
 
 
-Inheritance diagram for Player\+:\nopagebreak
+Inheritance diagram for Player\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -16,8 +17,8 @@ Inheritance diagram for Player\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classPlayer_a36f60f6ce862775894c982035c55317f}\label{classPlayer_a36f60f6ce862775894c982035c55317f}} 
-\mbox{\hyperlink{classPlayer_a36f60f6ce862775894c982035c55317f}{Player}} (sf\+::\+Vector2f pos, sf\+::\+Vector2f size=\{ \mbox{\hyperlink{classGame_aa4eb432ec709f099d4d19553ab4f6a10}{Game\+::\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE}}, \mbox{\hyperlink{classGame_aa4eb432ec709f099d4d19553ab4f6a10}{Game\+::\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE}} \})
+\mbox{\Hypertarget{classPlayer_ac6ec46c291129a7c538deb473fee8b9f}\label{classPlayer_ac6ec46c291129a7c538deb473fee8b9f}} 
+\mbox{\hyperlink{classPlayer_ac6ec46c291129a7c538deb473fee8b9f}{Player}} (const sf\+::\+Vector2f \&pos, const sf\+::\+Vector2f \&size=\{ \mbox{\hyperlink{classGame_aa4eb432ec709f099d4d19553ab4f6a10}{Game\+::\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE}}, \mbox{\hyperlink{classGame_aa4eb432ec709f099d4d19553ab4f6a10}{Game\+::\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE}} \})
 \begin{DoxyCompactList}\small\item\em Implements the polymorphic Big\+Four. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPlayer_a93e83d153207eb4810ccd2d529ca0431}\label{classPlayer_a93e83d153207eb4810ccd2d529ca0431}} 
 {\bfseries Player} (const \mbox{\hyperlink{classPlayer}{Player}} \&other)=default
@@ -27,16 +28,9 @@ Inheritance diagram for Player\+:\nopagebreak
 \item 
 virtual \mbox{\hyperlink{classGameObj}{Game\+Obj}} $\ast$ \mbox{\hyperlink{classPlayer_adc6142a1cf6a446b6864c988db2ab280}{clone}} () const override
 \item 
-virtual void \mbox{\hyperlink{classPlayer_a7457734b6223abbfa9e45d699b11f836}{draw}} () const override
-\item 
 virtual void \mbox{\hyperlink{classPlayer_a6912bb6e48efb5845d59f0f4582827ef}{update}} () override
 \end{DoxyCompactItemize}
-\doxysubsection*{Protected Attributes}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\Hypertarget{classPlayer_a6dea4d783474e89843051961d983ed7f}\label{classPlayer_a6dea4d783474e89843051961d983ed7f}} 
-sf\+::\+Rectangle\+Shape {\bfseries m\+\_\+shape}
-\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
 
 
 \doxysubsection{Detailed Description}
@@ -55,16 +49,6 @@ A pointer to a dynamically allocated polymorhic game object
 
 
 Implements \mbox{\hyperlink{classGameObj_a36f4fc733709f04d7e9baf9f8b996d31}{Game\+Obj}}.
-
-\mbox{\Hypertarget{classPlayer_a7457734b6223abbfa9e45d699b11f836}\label{classPlayer_a7457734b6223abbfa9e45d699b11f836}} 
-\index{Player@{Player}!draw@{draw}}
-\index{draw@{draw}!Player@{Player}}
-\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
-{\footnotesize\ttfamily void Player\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
-
-Polymorphic draw method used to draw the player on the screen 
-
-Implements \mbox{\hyperlink{classGameObj_a54e51042566a6cd9f7fc9c6d65f8f944}{Game\+Obj}}.
 
 \mbox{\Hypertarget{classPlayer_a6912bb6e48efb5845d59f0f4582827ef}\label{classPlayer_a6912bb6e48efb5845d59f0f4582827ef}} 
 \index{Player@{Player}!update@{update}}
