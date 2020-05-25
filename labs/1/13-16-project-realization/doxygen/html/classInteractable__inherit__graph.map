@@ -1,9 +1,0 @@
-<map id="Interactable" name="Interactable">
-<area shape="rect" id="node1" title=" " alt="" coords="81,155,181,181"/>
-<area shape="rect" id="node4" href="$classCollectable.html" title=" " alt="" coords="27,229,122,256"/>
-<area shape="rect" id="node7" href="$classPushable.html" title=" " alt="" coords="146,229,227,256"/>
-<area shape="rect" id="node2" href="$classEntity.html" title=" " alt="" coords="101,80,161,107"/>
-<area shape="rect" id="node3" href="$classGameObj.html" title=" " alt="" coords="89,5,172,32"/>
-<area shape="rect" id="node5" href="$classCoin.html" title=" " alt="" coords="5,304,56,331"/>
-<area shape="rect" id="node6" href="$classPowerUp.html" title=" " alt="" coords="80,304,160,331"/>
-</map>
