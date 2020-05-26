@@ -7,7 +7,7 @@ class A {
 
 public:
     A & operator[](int);
-    void f1() const;
+    void f1();
     int x;
 
 };
@@ -17,8 +17,8 @@ A & A::operator[](int i) {
     return *this;
 }
 
-void A::f1() const {
-    //(*this).operator[](12);
+void A::f1() {
+    (*this).operator[](12);
 };
 
 int main() {

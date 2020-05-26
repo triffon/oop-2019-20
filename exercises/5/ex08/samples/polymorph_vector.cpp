@@ -16,7 +16,7 @@ using std::endl;
 class Object {
 
 public:
-    virtual void print() const = 0;
+    virtual void print() = 0;
 
 };
 
@@ -25,7 +25,7 @@ class Int : public Object {
 
 public:
     Int(int);
-    void print() const;
+    void print();
 
 private:
     int x;
@@ -34,7 +34,7 @@ private:
 
 Int::Int(int _x) : x(_x) {}
 
-void Int::print() const {
+void Int::print() {
     cout << x << endl;
 }
 
@@ -43,7 +43,7 @@ class Double : public Object {
 
 public:
     Double(double);
-    void print() const;
+    void print();
 
 private:
     double x;
@@ -52,7 +52,7 @@ private:
 
 Double::Double(double _x) : x(_x) {}
 
-void Double::print() const {
+void Double::print() {
     cout << x << endl;
 }
 
@@ -61,7 +61,7 @@ class Char : public Object {
 
 public:
     Char(char);
-    void print() const;
+    void print();
 
 private:
     char x;
@@ -70,7 +70,7 @@ private:
 
 Char::Char(char _x) : x(_x) {}
 
-void Char::print() const {
+void Char::print() {
     cout << x << endl;
 }
 
@@ -80,17 +80,16 @@ void Char::print() const {
 class PolyVector : public Vector<void *>, public Object {
 
 public:
-    void print() const;
+    void print();
 
 };
 
-void PolyVector::print() const {
+void PolyVector::print() {
     for (int i = 0; i < size(); ++i) {
         Object * ptr;
-        // TODO:
-        // ptr = (Object *)(get(i));
-        // ptr->print();
-        cout << i << " ";
+        //ptr = (Object *)(get(i));
+        ptr = (Object *)((*this)[i]);
+        ptr->print();
     }
 }
 
