@@ -5,7 +5,20 @@
 const char NAME[] = "изхвърляне на боклука";
 
 TEST_CASE("Бърза задача с име се извежда коректно") {
+    // QuickTask qt(nullptr);
     QuickTask qt(NAME);
+    /*
+    try {
+      new char[100000000000];
+    } catch (std::bad_alloc const&) {
+        std::cerr << "Невъзможност за заделяне на памет!";
+    }
+    */
+
+    char* large = new (std::nothrow) char[100000000000];
+    if (large == nullptr)
+        std::cerr << "Невъзможност за заделяне на памет!";
+
     std::ostringstream os;
     
     /*
