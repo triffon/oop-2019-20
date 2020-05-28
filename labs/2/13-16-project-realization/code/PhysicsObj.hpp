@@ -5,7 +5,7 @@
 /**
  * The base abstract class object of an object using Physics
  */
-class PhysicsObj : public Entity
+class PhysicsObj : virtual public Entity
 {
 /// Implements the polymorphic BigFour
 public:

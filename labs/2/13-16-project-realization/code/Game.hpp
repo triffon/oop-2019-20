@@ -110,7 +110,7 @@ private:
     // The window all objects get drawn on
     sf::RenderWindow m_window;
 
-    // New: The background color of the window
+    // The background color of the window
     sf::Color m_bgColor;
 
     // Framerate at which the game runs
@@ -124,7 +124,6 @@ private:
 template<typename T>
 std::vector<T*> Game::checkCollision(const sf::Rect<float>& collisionRect) const
 {
-    // New: This method now returns a vector of all collided objects
     std::vector<T*> result;
 
     // Iterates through all game objects
@@ -149,7 +148,6 @@ std::vector<T*> Game::checkCollision(const sf::Rect<float>& collisionRect) const
 template<typename T>
 T* Game::getClosest(const std::vector<T*> objects, Direction dir)
 {
-    // New: Method used in collisions
     if (objects.empty())
         return nullptr;
 

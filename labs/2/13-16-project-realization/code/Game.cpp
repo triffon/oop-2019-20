@@ -4,7 +4,7 @@
 
 
 // The default refresh rate
-const unsigned int DEFAULT_FPS  = 60;
+const unsigned int DEFAULT_FPS  = 30;
 
 // The default background color
 const sf::Color DEFAULT_BGCOLOR = { 127, 127, 127, 255 };
@@ -33,7 +33,7 @@ void Game::initGame(const sf::VideoMode& vm, const char* title)
     // Create a window with the specified arguments
     m_window.create(vm, title);
 
-    // New: Changed to SFML's framerate instead of our implementation
+    // Changed to SFML's framerate instead of our implementation
     m_window.setFramerateLimit(m_FPS);
 }
 

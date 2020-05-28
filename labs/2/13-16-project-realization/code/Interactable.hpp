@@ -5,7 +5,7 @@
 /**
  * Abstract class representing interactable game objects
  */
-class Interactable : public Entity
+class Interactable : virtual public Entity
 {
 // Implements the polymorphic BigFour
 public:

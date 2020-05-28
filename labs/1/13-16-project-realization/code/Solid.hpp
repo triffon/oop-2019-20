@@ -5,7 +5,7 @@
 /**
  * The abstract solid object class
  */
-class Solid : public GameObj
+class Solid : virtual public GameObj
 {
 /// Implements the polymorphic BigFour
 public:

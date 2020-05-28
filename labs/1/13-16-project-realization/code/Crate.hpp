@@ -2,11 +2,13 @@
 
 #include "Solid.hpp"
 #include "Game.hpp"
+#include "PhysicsObj.hpp"
+#include "Pushable.hpp"
 
 /**
  * Class representing a box object that can be pushed around
  */
-class Crate : public Solid // TODO: Inherit PhysicsObj and Pushable
+class Crate : public Solid, public PhysicsObj, public Pushable
 {
 /// Implements the polymorphic BigFour
 public:

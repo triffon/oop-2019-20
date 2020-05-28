@@ -30,7 +30,6 @@ void Player::update()
     // Use the Physics Object gravity
     PhysicsObj::update();
 
-    // New: Added Player movement
     // Calculate horizontal speed
     calcHspd();
 
