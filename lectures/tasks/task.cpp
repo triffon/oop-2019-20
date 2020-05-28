@@ -1,6 +1,8 @@
+#include <cassert>
 #include "task.hpp"
 
 void Task::print(std::ostream& os) const {
+    assert(os.good());
     os << "задача '" << getName() << "'";
 }
 

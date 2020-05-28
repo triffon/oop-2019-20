@@ -14,6 +14,9 @@ public:
 
     void print(std::ostream& os = std::cout) const;
 
+    // завършена ли е задачата?
+    bool isFinished() { return getExecutionTime() == getProgress(); }
+
     // време за изпълнение на задачата
     virtual unsigned getExecutionTime() const = 0;
 

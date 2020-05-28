@@ -1,14 +1,13 @@
-#include <iostream>
+#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 
+#include "quicktask_tests.hpp"
+/*
+
+// Пример за непрехванато изключение
 #include "quicktask.hpp"
 
-void testQuickTask() {
-    QuickTask trash("изхвърляне на боклука");
-    std::cout << trash;
-    trash.work();
-    std::cout << trash;
-}
-
 int main() {
-    testQuickTask();
+    QuickTask qt(nullptr);
+    qt.print();
 }
+*/
