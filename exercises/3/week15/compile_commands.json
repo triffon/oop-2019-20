@@ -1,37 +1,37 @@
 [
 {
   "directory": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week15",
-  "command": "/usr/bin/c++   -I/home/kanitkameh/Documents/oop-2019-20/exercises/3/week15/include    -o CMakeFiles/runTests.dir/src/Animal.cpp.o -c /home/kanitkameh/Documents/oop-2019-20/exercises/3/week15/src/Animal.cpp",
+  "command": "/usr/bin/c++   -I/home/kanitkameh/Documents/oop-2019-20/exercises/3/week15/include -I/usr/include/gmock    -o CMakeFiles/runTests.dir/src/Animal.cpp.o -c /home/kanitkameh/Documents/oop-2019-20/exercises/3/week15/src/Animal.cpp",
   "file": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week15/src/Animal.cpp"
 },
 {
   "directory": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week15",
-  "command": "/usr/bin/c++   -I/home/kanitkameh/Documents/oop-2019-20/exercises/3/week15/include    -o CMakeFiles/runTests.dir/src/Food.cpp.o -c /home/kanitkameh/Documents/oop-2019-20/exercises/3/week15/src/Food.cpp",
+  "command": "/usr/bin/c++   -I/home/kanitkameh/Documents/oop-2019-20/exercises/3/week15/include -I/usr/include/gmock    -o CMakeFiles/runTests.dir/src/Food.cpp.o -c /home/kanitkameh/Documents/oop-2019-20/exercises/3/week15/src/Food.cpp",
   "file": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week15/src/Food.cpp"
 },
 {
   "directory": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week15",
-  "command": "/usr/bin/c++   -I/home/kanitkameh/Documents/oop-2019-20/exercises/3/week15/include    -o CMakeFiles/runTests.dir/tests/AnimalTest.cpp.o -c /home/kanitkameh/Documents/oop-2019-20/exercises/3/week15/tests/AnimalTest.cpp",
+  "command": "/usr/bin/c++   -I/home/kanitkameh/Documents/oop-2019-20/exercises/3/week15/include -I/usr/include/gmock    -o CMakeFiles/runTests.dir/tests/AnimalTest.cpp.o -c /home/kanitkameh/Documents/oop-2019-20/exercises/3/week15/tests/AnimalTest.cpp",
   "file": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week15/tests/AnimalTest.cpp"
 },
 {
   "directory": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week15",
-  "command": "/usr/bin/c++   -I/home/kanitkameh/Documents/oop-2019-20/exercises/3/week15/include    -o CMakeFiles/runTests.dir/tests/tests.cpp.o -c /home/kanitkameh/Documents/oop-2019-20/exercises/3/week15/tests/tests.cpp",
+  "command": "/usr/bin/c++   -I/home/kanitkameh/Documents/oop-2019-20/exercises/3/week15/include -I/usr/include/gmock    -o CMakeFiles/runTests.dir/tests/tests.cpp.o -c /home/kanitkameh/Documents/oop-2019-20/exercises/3/week15/tests/tests.cpp",
   "file": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week15/tests/tests.cpp"
 },
 {
   "directory": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week15",
-  "command": "/usr/bin/c++   -I/home/kanitkameh/Documents/oop-2019-20/exercises/3/week15/include    -o CMakeFiles/ProjectName.dir/src/Animal.cpp.o -c /home/kanitkameh/Documents/oop-2019-20/exercises/3/week15/src/Animal.cpp",
+  "command": "/usr/bin/c++   -I/home/kanitkameh/Documents/oop-2019-20/exercises/3/week15/include -I/usr/include/gmock    -o CMakeFiles/ProjectName.dir/src/Animal.cpp.o -c /home/kanitkameh/Documents/oop-2019-20/exercises/3/week15/src/Animal.cpp",
   "file": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week15/src/Animal.cpp"
 },
 {
   "directory": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week15",
-  "command": "/usr/bin/c++   -I/home/kanitkameh/Documents/oop-2019-20/exercises/3/week15/include    -o CMakeFiles/ProjectName.dir/src/Food.cpp.o -c /home/kanitkameh/Documents/oop-2019-20/exercises/3/week15/src/Food.cpp",
+  "command": "/usr/bin/c++   -I/home/kanitkameh/Documents/oop-2019-20/exercises/3/week15/include -I/usr/include/gmock    -o CMakeFiles/ProjectName.dir/src/Food.cpp.o -c /home/kanitkameh/Documents/oop-2019-20/exercises/3/week15/src/Food.cpp",
   "file": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week15/src/Food.cpp"
 },
 {
   "directory": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week15",
-  "command": "/usr/bin/c++   -I/home/kanitkameh/Documents/oop-2019-20/exercises/3/week15/include    -o CMakeFiles/ProjectName.dir/src/main.cpp.o -c /home/kanitkameh/Documents/oop-2019-20/exercises/3/week15/src/main.cpp",
+  "command": "/usr/bin/c++   -I/home/kanitkameh/Documents/oop-2019-20/exercises/3/week15/include -I/usr/include/gmock    -o CMakeFiles/ProjectName.dir/src/main.cpp.o -c /home/kanitkameh/Documents/oop-2019-20/exercises/3/week15/src/main.cpp",
   "file": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week15/src/main.cpp"
 }
 ]

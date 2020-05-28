@@ -7,13 +7,15 @@ set( CMAKE_EXPORT_COMPILE_COMMANDS ON )
 
 project(ProjectName)
 
+#Setting path to gmock
+set(GMOCK_INCLUDE_DIRS /usr/include/gmock)
+set(GMOCK_BOTH_LIBRARIES /usr/lib/libgmock.a /usr/lib/libgmock_main.a /usr/lib/libgtest.a /usr/lib/libgtest_main.a)
+
 #Locate GTest
 find_package(GTest REQUIRED)
 
-#Add GTest to the included dirs
-include_directories(${GTEST_INCLUDE_DIRS})
-#Bring the headers, such as Student.h into the project
-include_directories(include)
+#Add GTest and include/ to the included dirs
+include_directories(include ${GTEST_INCLUDE_DIRS} ${GMOCK_INCLUDE_DIRS})
 #Can manually add the sources using the set command as follows:
 #set(SOURCES src/mainapp.cpp src/Student.cpp)
  
@@ -30,4 +32,5 @@ list(FILTER SOURCES EXCLUDE REGEX "src/main.cpp")
 add_executable(runTests ${SOURCES} ${TESTS})
 
 #Link libraries for the gtest
-target_link_libraries(runTests ${GTEST_LIBRARIES} pthread)
+target_link_libraries(runTests ${GMOCK_BOTH_LIBRARIES} pthread)
+
