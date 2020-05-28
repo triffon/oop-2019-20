@@ -14,5 +14,9 @@ public:
     Pushable& operator=(const Pushable& other) = default;
     virtual ~Pushable() = default;
 
-    // TODO: Override and implement interact(...)
+    /**
+     * Virtual method that's called when an object interacts with this object.
+     * @param interactor is the object that is interacting with the current object
+     */
+    virtual void interact(GameObj& interactor) override;
 };

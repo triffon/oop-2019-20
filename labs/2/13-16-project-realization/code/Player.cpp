@@ -1,7 +1,9 @@
+#include <iostream>
 #include "Player.hpp"
 #include "Game.hpp"
 #include "Solid.hpp"
 #include "Util.hpp"
+#include "Collectable.hpp"
 
 
 const sf::Keyboard::Key KEY_LEFT  = sf::Keyboard::Key::A;
@@ -15,11 +17,14 @@ const float DEFAULT_HDRAG         = 0.8f;
 
 
 Player::Player(const sf::Vector2f& pos, const sf::Vector2f& size)
-    : PhysicsObj(pos, size, DEFAULT_GRAVITY)
+    : GameObj(pos, size)
+    , Entity(pos, size)
+    , PhysicsObj(pos, size, DEFAULT_GRAVITY)
     , m_acc(DEFAULT_ACC)
     , m_maxhspd(DEFAULT_MAX_HSPD)
     , m_jumpforce(DEFAULT_JUMP_FORCE)
     , m_hdrag(DEFAULT_HDRAG)
+    , m_score(0)
 {
     m_shape.setFillColor(sf::Color::Green);
 }
@@ -33,17 +38,39 @@ void Player::update()
     // Calculate horizontal speed
     calcHspd();
 
-    // Collide with anything horizontally
-    hcollide();
-
     // Calculate vertical speed
     calcVspd();
+
+    // Interact with objects
+    activateInteractables();
+
+    // Collide with anything horizontally
+    hcollide();
 
     // Collide with anything upwards
     vcollide();
 
     // Move the player with the calculated speed
     move({ m_hspd, m_vspd });
+}
+
+
+void Player::activateInteractables()
+{
+    sf::Rect<float> collisionRect(getPosition(), getSize());
+    collisionRect.left += m_hspd;
+    collisionRect.top += m_vspd;
+
+    std::vector<Interactable*> vec = Game::i().checkCollision<Interactable>(collisionRect);
+    for (size_t i = 0; i < vec.size(); i++)
+        vec[i]->interact(*this);
+}
+
+
+void Player::addScore(size_t points)
+{
+    m_score += points;
+    std::cout << "Player score: " << m_score << std::endl;
 }
 
 

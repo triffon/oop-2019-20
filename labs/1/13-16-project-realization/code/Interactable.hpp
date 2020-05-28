@@ -14,5 +14,9 @@ public:
     Interactable& operator=(const Interactable& other) = default;
     virtual ~Interactable() = default;
 
-    // TODO: Add interact(...) method
+    /**
+     * Pure virtual method that's called when an object interacts with this object.
+     * @param interactor is the object that is interacting with the current object
+     */
+    virtual void interact(GameObj& interactor) = 0;
 };

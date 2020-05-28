@@ -1,7 +1,9 @@
 #include "Mushroom.hpp"
 
 Mushroom::Mushroom(const sf::Vector2f& pos, const sf::Vector2f& size)
-    : Enemy(pos, size)
+    : GameObj(pos, size)
+    , Entity(pos, size)
+    , Enemy(pos, size)
 {
     m_shape.setFillColor(sf::Color::Red);
 }

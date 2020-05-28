@@ -23,5 +23,9 @@ public:
      */
     virtual GameObj* clone() const override { return new Crate(*this); }
 
-    // TODO: Implement pushing
+    /**
+     * Polymorphic method that runs every frame and applies PhysicsObj::update()
+     * as well as moving the Crate with the current m_hspd and m_vspd
+     */
+    virtual void update() override;
 };

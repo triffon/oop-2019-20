@@ -122,3 +122,17 @@ void Game::setFPS(unsigned int FPS)
     if (m_window.isOpen())
         m_window.setFramerateLimit(m_FPS);
 }
+
+
+void Game::removeObj(const GameObj& obj)
+{
+    // Search the target object, delete and erase it from the vector
+    for (size_t i = 0; i < m_objects.size(); i++) {
+        // Compare the target's address and the stored pointer (address)
+        if (&obj == m_objects[i]) {
+            delete m_objects[i];
+            m_objects.erase(m_objects.begin() + i);
+            return;
+        }
+    }
+}

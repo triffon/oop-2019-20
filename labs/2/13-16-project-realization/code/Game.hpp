@@ -75,6 +75,13 @@ public:
     std::vector<T*> checkCollision(const sf::Rect<float>& collisionRect) const;
 
     /**
+     * @returns All objects of the template type that are
+     * in collision with the specified GameObj
+     */
+    template<typename T>
+    std::vector<T*> checkCollision(const GameObj& obj) const;
+
+    /**
      * @returns The window's size (excluding the border)
      */
     sf::Vector2u getWindowsSize() const { return m_window.getSize(); }
@@ -99,6 +106,11 @@ public:
      */
     template<typename T>
     static T* getClosest(const std::vector<T*> objects, Direction dir);
+
+    /**
+     * Removes an object from the game, given it's reference
+     */
+    void removeObj(const GameObj& obj);
 
 private:
     // The type of the container used to store the game objects
@@ -142,6 +154,13 @@ std::vector<T*> Game::checkCollision(const sf::Rect<float>& collisionRect) const
     }
 
     return result;
+}
+
+
+template<typename T>
+std::vector<T*> Game::checkCollision(const GameObj& obj) const
+{
+    return checkCollision<T>(sf::Rect<float>(obj.getPosition(), obj.getSize()));
 }
 
 
