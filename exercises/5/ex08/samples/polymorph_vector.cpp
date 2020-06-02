@@ -17,6 +17,7 @@ class Object {
 
 public:
     virtual void print() = 0;
+    virtual Object & operator++() = 0;
 
 };
 
@@ -26,6 +27,8 @@ class Int : public Object {
 public:
     Int(int);
     void print();
+    Int & operator++();
+    Int operator++(int);
 
 private:
     int x;
@@ -38,23 +41,41 @@ void Int::print() {
     cout << x << endl;
 }
 
+Int & Int::operator++() {
+    ++x;
+    return *this;
+}
+
+Int Int::operator++(int) {
+    Int ret(*this);
+
+    ++x;
+
+    return ret;
+}
+
 // Double
 class Double : public Object {
 
 public:
     Double(double);
     void print();
+    Double & operator++();
 
 private:
     double x;
 
 };
 
-Double::Double(double _x) : x(_x) {}
+Double::Double(double _x) : x(_x) {
+    ++x;
+}
 
 void Double::print() {
     cout << x << endl;
 }
+
+Double & Double::operator++() {}
 
 // Char
 class Char : public Object {
@@ -62,17 +83,22 @@ class Char : public Object {
 public:
     Char(char);
     void print();
+    Char & operator++();
 
 private:
     char x;
 
 };
 
-Char::Char(char _x) : x(_x) {}
+Char::Char(char _x) : x(_x) {
+    ++x;
+}
 
 void Char::print() {
     cout << x << endl;
 }
+
+Char & Char::operator++() {}
 
 //typedef Vector<Object *> PolyVector;
 
@@ -81,6 +107,7 @@ class PolyVector : public Vector<void *>, public Object {
 
 public:
     void print();
+    PolyVector & operator++();
 
 };
 
@@ -91,6 +118,10 @@ void PolyVector::print() {
         ptr = (Object *)((*this)[i]);
         ptr->print();
     }
+}
+
+PolyVector & PolyVector::operator++() {
+    // TODO: increment all data in vector
 }
 
 // Main
@@ -127,6 +158,15 @@ int main() {
     }
 
     vo.print();
+
+    Int i1(10);
+    i1.print();
+    ++i1;
+    i1.print();
+    i1++;
+    i1.print();
+    (i1++).print();
+    (++i1).print();
 
     return 0;
 }
