@@ -4,10 +4,19 @@
 #include "task.hpp"
 
 class RepeatTask : public Task {
+    Task const* currentTask;
+    unsigned repetitionProgress;
+    unsigned repetitionCount;
 public:
     RepeatTask(char const* n, unsigned rc, Task const& rt);
 
     void print(std::ostream& os = std::cout) const;
+
+    // колко пъти е повторило задачата до момента
+    unsigned getRepetitionProgress() const { return repetitionProgress; }
+
+    // колко пъти общо ще повтаряме задачата
+    unsigned getRepetitionCount() const { return repetitionCount; }
 
     // време за изпълнение на задачата
     unsigned getExecutionTime() const { return 1; }

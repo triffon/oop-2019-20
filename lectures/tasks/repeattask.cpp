@@ -1,7 +1,9 @@
 #include "repeattask.hpp"
 
-RepeatTask::RepeatTask(char const* n, unsigned rc, Task const& rt) : Task(n) {
-    throw "Не е реализиран!";
+RepeatTask::RepeatTask(char const* n, unsigned rc, Task const& rt)
+    : Task(n), repetitionCount(rc), repetitionProgress(0), currentTask(&rt) {
+    if (repetitionCount == 0)
+        throw "Опит за създаване на повтаряща се задача (RepeatTask) с 0 на брой повторения";
 }
 
 void RepeatTask::print(std::ostream& os) const {}
