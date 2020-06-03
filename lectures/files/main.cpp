@@ -159,6 +159,19 @@ void readFMI(Student fmi[][1000], unsinged specCount) {
 }
 */
 
+bool compareBinaryFiles(const char* filename1, const char* filename2, unsigned skipHeader = 0) {
+    std::ifstream f1(filename1, std::ios::binary);
+    std::ifstream f2(filename2, std::ios::binary);
+    f1.seekg(skipHeader);
+    f2.seekg(skipHeader);
+
+    while (!f1.eof() && !f2.eof()) {
+        if (f1.get() != f2.get())
+          return false;
+    }
+    return f1.eof() && f2.eof();
+}
+
 int main() {
 //    testistream();
     // testSafeRead();
