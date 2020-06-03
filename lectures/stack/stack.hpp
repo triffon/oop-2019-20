@@ -4,8 +4,8 @@
 
 #include "abstract_stack.hpp"
 
-const int MAX_STACK = 100;
 class Stack : public AbstractStack<int> {
+    static const unsigned MAX_STACK = 100;
     int a[MAX_STACK];
     int top; // индекс на последно включения елемент в стека
 

@@ -5,13 +5,15 @@
 
 class QuickTask : public Task {
     bool finished;
+
+    static const unsigned QUICKTASK_EXECUTION_TIME;
 public:
     QuickTask(char const* n);
 
     void print(std::ostream& os = std::cout) const;
 
     // време за изпълнение на задачата
-    unsigned getExecutionTime() const { return 1; }
+    unsigned getExecutionTime() const { return QUICKTASK_EXECUTION_TIME; }
 
     // прогрес по задачата
     unsigned getProgress() const { return finished; }
