@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week16",
+  "command": "/usr/bin/c++   -I/home/kanitkameh/Documents/oop-2019-20/exercises/3/week16/include -I/usr/include/gmock    -o CMakeFiles/runTests.dir/src/DivisionByZeroException.cpp.o -c /home/kanitkameh/Documents/oop-2019-20/exercises/3/week16/src/DivisionByZeroException.cpp",
+  "file": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week16/src/DivisionByZeroException.cpp"
+},
+{
+  "directory": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week16",
+  "command": "/usr/bin/c++   -I/home/kanitkameh/Documents/oop-2019-20/exercises/3/week16/include -I/usr/include/gmock    -o CMakeFiles/runTests.dir/tests/main.cpp.o -c /home/kanitkameh/Documents/oop-2019-20/exercises/3/week16/tests/main.cpp",
+  "file": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week16/tests/main.cpp"
+},
+{
+  "directory": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week16",
+  "command": "/usr/bin/c++   -I/home/kanitkameh/Documents/oop-2019-20/exercises/3/week16/include -I/usr/include/gmock    -o CMakeFiles/ProjectName.dir/src/DivisionByZeroException.cpp.o -c /home/kanitkameh/Documents/oop-2019-20/exercises/3/week16/src/DivisionByZeroException.cpp",
+  "file": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week16/src/DivisionByZeroException.cpp"
+},
+{
+  "directory": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week16",
+  "command": "/usr/bin/c++   -I/home/kanitkameh/Documents/oop-2019-20/exercises/3/week16/include -I/usr/include/gmock    -o CMakeFiles/ProjectName.dir/src/main.cpp.o -c /home/kanitkameh/Documents/oop-2019-20/exercises/3/week16/src/main.cpp",
+  "file": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week16/src/main.cpp"
+}
+]
