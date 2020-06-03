@@ -1,12 +1,12 @@
 #include "doctest.h"
 #include "../repeattask.hpp"
 
-RepeatTask createTestTask() {
+RepeatTask createTestRepeatTask() {
     return RepeatTask("лекции по ООП", 15, SimpleTask("лекция по ООП", 3));
 }
 
 TEST_CASE("Повтаряща се задача с име, по която не е работено, се извежда коректно") {
-    RepeatTask rt = createTestTask();
+    RepeatTask rt = createTestRepeatTask();
     std::ostringstream os;
     rt.print(os);
     CHECK_NE ( os.str(), "");
@@ -14,20 +14,20 @@ TEST_CASE("Повтаряща се задача с име, по която не 
 }
 
 TEST_CASE("Повтарящата се задача при създаване не е завършена") {
-    RepeatTask rt = createTestTask();
+    RepeatTask rt = createTestRepeatTask();
     CHECK_EQ( rt.getProgress(), 0);
     CHECK( !rt.isFinished() );
 }
 
 TEST_CASE("Повтарящата се задача не се завършва при работа 0 единици време") {
-    RepeatTask rt = createTestTask();
+    RepeatTask rt = createTestRepeatTask();
     CHECK_EQ( rt.work(0), 0 );
     CHECK_EQ( rt.getProgress(), 0);
     CHECK( !rt.isFinished() );
 }
 
 TEST_CASE("Работа по повтаряща се задача на стъпки по 1 единица време") {
-    RepeatTask rt = createTestTask();
+    RepeatTask rt = createTestRepeatTask();
     for(int i = 0; i < rt.getExecutionTime(); i++) {
         CHECK_EQ( rt.getProgress(), i );
         CHECK_EQ( rt.work(1), 0 );
@@ -40,7 +40,7 @@ TEST_CASE("Работа по повтаряща се задача на стъп�
 }
 
 TEST_CASE("Работа по повтаряща се задача на различни стъпки време") {
-    RepeatTask rt = createTestTask();
+    RepeatTask rt = createTestRepeatTask();
 
     // частична работа по първото повторение
     CHECK_EQ( rt.work(2), 0 );

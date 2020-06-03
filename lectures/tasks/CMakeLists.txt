@@ -5,7 +5,7 @@ include(CTest)
 enable_testing()
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(tasks main.cpp task.cpp quicktask.cpp simpletask.cpp ../common/named.cpp)
+add_executable(tasks main.cpp task.cpp quicktask.cpp simpletask.cpp repeattask.cpp ../common/named.cpp)
 include_directories(../common tests)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})

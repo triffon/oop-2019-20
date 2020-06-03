@@ -2,12 +2,12 @@
 #include "doctest.h"
 #include "../simpletask.hpp"
 
-SimpleTask createTestTask() {
+SimpleTask createTestSimpleTask() {
     return SimpleTask("писане на проект по C++", 6);
 }
 
 TEST_CASE("Проста задача с име, по която не е работено, се извежда коректно") {
-    SimpleTask st = createTestTask();
+    SimpleTask st = createTestSimpleTask();
     std::ostringstream os;
     st.print(os);
     CHECK_NE ( os.str(), "");
@@ -15,20 +15,20 @@ TEST_CASE("Проста задача с име, по която не е рабо
 }
 
 TEST_CASE("Простата задача при създаване не е завършена") {
-    SimpleTask st = createTestTask();
+    SimpleTask st = createTestSimpleTask();
     CHECK_EQ( st.getProgress(), 0);
     CHECK( !st.isFinished() );
 }
 
 TEST_CASE("Простата задача не се завършва при работа 0 единици време") {
-    SimpleTask st = createTestTask();
+    SimpleTask st = createTestSimpleTask();
     CHECK_EQ( st.work(0), 0 );
     CHECK_EQ( st.getProgress(), 0);
     CHECK( !st.isFinished() );
 }
 
 TEST_CASE("Работа по проста задача на стъпки по 1 единица време") {
-    SimpleTask st = createTestTask();
+    SimpleTask st = createTestSimpleTask();
     for(int i = 0; i < st.getExecutionTime(); i++) {
         CHECK_EQ( st.getProgress(), i );
         CHECK_EQ( st.work(1), 0 );
@@ -41,7 +41,7 @@ TEST_CASE("Работа по проста задача на стъпки по 1 
 }
 
 TEST_CASE("Работа по проста задача на различни стъпки време") {
-    SimpleTask st = createTestTask();
+    SimpleTask st = createTestSimpleTask();
     CHECK_EQ( st.work(2), 0 );
     CHECK_EQ( st.getProgress(), 2 );
 

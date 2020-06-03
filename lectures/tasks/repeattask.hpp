@@ -1,21 +1,19 @@
-#ifndef __SIMPLETASK_HPP
-#define __SIMPLETASK_HPP
+#ifndef __REPEATTASK_HPP
+#define __REPEATTASK_HPP
 
 #include "task.hpp"
 
-class SimpleTask : public Task {
-    unsigned executionTime;
-    unsigned progress;
+class RepeatTask : public Task {
 public:
-    SimpleTask(char const* n, unsigned et);
+    RepeatTask(char const* n, unsigned rc, Task const& rt);
 
     void print(std::ostream& os = std::cout) const;
 
     // време за изпълнение на задачата
-    unsigned getExecutionTime() const { return executionTime; }
+    unsigned getExecutionTime() const { return 1; }
 
     // прогрес по задачата
-    unsigned getProgress() const { return progress; }
+    unsigned getProgress() const { return 0; }
 
     // работа по задачата
     // параметърът time указва колко време искаме да работим по задачата
