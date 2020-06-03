@@ -2,6 +2,7 @@
 
 #include "quicktask_tests.hpp"
 #include "simpletask_tests.hpp"
+#include "repeattask_tests.hpp"
 
 /*
 // Пример за непрехванато изключение

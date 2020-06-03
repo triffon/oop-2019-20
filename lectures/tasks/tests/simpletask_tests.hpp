@@ -6,7 +6,7 @@ SimpleTask createTestTask() {
     return SimpleTask("писане на проект по C++", 6);
 }
 
-TEST_CASE("Проста задача с име се извежда коректно") {
+TEST_CASE("Проста задача с име, по която не е работено, се извежда коректно") {
     SimpleTask st = createTestTask();
     std::ostringstream os;
     st.print(os);
