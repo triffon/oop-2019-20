@@ -8,6 +8,10 @@ class QuickTask : public Task {
 
     static const unsigned QUICKTASK_EXECUTION_TIME;
 public:
+/*
+    static char const* getTaskTypeStatic() { return "Quick task"; } 
+    char const* getTaskTypeVirtual() { return "Quick task"; }
+*/
     QuickTask(char const* n);
 
     void print(std::ostream& os = std::cout) const;

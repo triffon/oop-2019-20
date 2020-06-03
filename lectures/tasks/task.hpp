@@ -10,6 +10,10 @@ class Task :
   // интерфейс за извеждане
   public Printable {
 public:
+/*
+    static char const* getTaskTypeStatic() { return "Abstract task"; } 
+    virtual char const* getTaskTypeVirtual() { return "Abstract task"; } 
+*/
     Task(char const* n) : Named(n) {}
 
     void print(std::ostream& os = std::cout) const;
