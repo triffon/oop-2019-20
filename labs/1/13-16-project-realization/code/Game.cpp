@@ -4,7 +4,7 @@
 
 
 // The default refresh rate
-const unsigned int DEFAULT_FPS  = 60;
+const unsigned int DEFAULT_FPS  = 30;
 
 // The default background color
 const sf::Color DEFAULT_BGCOLOR = { 127, 127, 127, 255 };
@@ -33,7 +33,7 @@ void Game::initGame(const sf::VideoMode& vm, const char* title)
     // Create a window with the specified arguments
     m_window.create(vm, title);
 
-    // New: Changed to SFML's framerate instead of our implementation
+    // Changed to SFML's framerate instead of our implementation
     m_window.setFramerateLimit(m_FPS);
 }
 
@@ -121,4 +121,18 @@ void Game::setFPS(unsigned int FPS)
     m_FPS = FPS;
     if (m_window.isOpen())
         m_window.setFramerateLimit(m_FPS);
+}
+
+
+void Game::removeObj(const GameObj& obj)
+{
+    // Search the target object, delete and erase it from the vector
+    for (size_t i = 0; i < m_objects.size(); i++) {
+        // Compare the target's address and the stored pointer (address)
+        if (&obj == m_objects[i]) {
+            delete m_objects[i];
+            m_objects.erase(m_objects.begin() + i);
+            return;
+        }
+    }
 }

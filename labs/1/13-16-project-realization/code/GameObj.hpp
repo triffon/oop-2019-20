@@ -46,7 +46,7 @@ public:
     sf::Vector2f getSize() const { return m_shape.getSize(); }
 
 protected:
-    // New: Moved the m_shape to the base class GameObj
+    // Moved the m_shape to the base class GameObj
     // The rectangle of the object containing its position and size
     // it's also used to render the object to the screen via draw()
     sf::RectangleShape m_shape;

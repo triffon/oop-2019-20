@@ -16,8 +16,7 @@ public:
 
 protected:
     /**
-     * Calculates the basic AI movement changing m_hspd, without actually moving the enemy,
-     * **unless a collision occurs then the object is moved.**
+     * Calculates the basic AI movement changing m_hspd, without actually moving the enemy.
      */
     void basicAI();
 };

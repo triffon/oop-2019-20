@@ -14,5 +14,17 @@ public:
     Collectable& operator=(const Collectable& other) = default;
     virtual ~Collectable() = default;
 
-    // TODO: Implement the default interact(...) method - destroying self
+    /**
+     * Polymorphic method that's called when an object interacts with this object.
+     * By default this method removes the current collectable object from the game
+     * using the Game::i().removeObj(*this) method.
+     * @param interactor is the object that is interacting with the current object
+     */
+    virtual void interact(GameObj& interactor) override;
+
+    /**
+     * By default calls the interact(interactor) method
+     * @param interactor is the object that is collecting the current object
+     */
+    void collect(GameObj& interactor) { interact(interactor); }
 };

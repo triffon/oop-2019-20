@@ -5,7 +5,7 @@
 /**
  * Abstract class representing interactable game objects
  */
-class Interactable : public Entity
+class Interactable : virtual public Entity
 {
 // Implements the polymorphic BigFour
 public:
@@ -14,5 +14,9 @@ public:
     Interactable& operator=(const Interactable& other) = default;
     virtual ~Interactable() = default;
 
-    // TODO: Add interact(...) method
+    /**
+     * Pure virtual method that's called when an object interacts with this object.
+     * @param interactor is the object that is interacting with the current object
+     */
+    virtual void interact(GameObj& interactor) = 0;
 };

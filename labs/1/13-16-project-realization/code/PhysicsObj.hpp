@@ -5,7 +5,7 @@
 /**
  * The base abstract class object of an object using Physics
  */
-class PhysicsObj : public Entity
+class PhysicsObj : virtual public Entity
 {
 /// Implements the polymorphic BigFour
 public:
@@ -16,8 +16,7 @@ public:
 
     /**
      * Polymorphic method that runs every frame and applies gravity to m_vspd.
-     * Note: This method doesn't actually move() the object, rather it just calculates gravity,
-     * **unless a collision occurs then the object is moved.**
+     * Note: This method doesn't actually move() the object, rather it just calculates gravity.
      */
     virtual void update();
 
@@ -25,6 +24,16 @@ public:
      * Change the object's gravity (must be greater than 0)
      */
     void setGravity(float gravity) { m_grav = gravity > 0 ? gravity : 0; }
+
+    /**
+     * @returns the object's current horizontal speed
+     */
+    float getHspd() const { return m_hspd; }
+
+    /**
+     * @returns the object's current vertical speed
+     */
+    float getVspd() const { return m_vspd; }
 
 protected:
     // Gravity acceleration

@@ -34,10 +34,7 @@ void PhysicsObj::update()
         if (closest) {
             // Stop the object from falling any further
             m_grounded = true;
-            m_vspd = 0;
-
-            // Move the object on top of that object
-            setPosition({ getPosition().x, closest->getPosition().y - getSize().y });
+            m_vspd = closest->getPosition().y - getSize().y - getPosition().y;
         }
     } else {
         // The object is moving upwards -> he's not grounded

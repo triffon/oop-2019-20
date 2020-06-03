@@ -2,6 +2,7 @@
 #include "Game.hpp"
 #include "Platform.hpp"
 #include "Player.hpp"
+#include "Coin.hpp"
 #include "Crate.hpp"
 
 int main()
@@ -24,7 +25,13 @@ int main()
 
     Game::i().addObj( new Player({ Game::i().getWindowsSize().x / 2.0f, 0.0f }) );
 
-    Game::i().addObj( new Crate({ 15 * Game::BLOCK_SIZE, 14 * Game::BLOCK_SIZE }) );
+    Game::i().addObj( new Coin({ 15 * Game::BLOCK_SIZE, 14 * Game::BLOCK_SIZE }) );
+    Game::i().addObj( new Coin({ 13 * Game::BLOCK_SIZE, 14 * Game::BLOCK_SIZE }) );
+    Game::i().addObj( new Coin({ 17 * Game::BLOCK_SIZE, 13 * Game::BLOCK_SIZE }) );
+
+    Game::i().addObj( new Crate({ 19 * Game::BLOCK_SIZE, 1 * Game::BLOCK_SIZE }) );
+    Game::i().addObj( new Crate({ 20 * Game::BLOCK_SIZE, 2 * Game::BLOCK_SIZE }) );
+    Game::i().addObj( new Crate({ 22 * Game::BLOCK_SIZE, 3 * Game::BLOCK_SIZE }) );
 
     Game::i().run();
 

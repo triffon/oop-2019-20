@@ -26,6 +26,12 @@ public:
      */
     virtual void update() override;
 
+    /**
+     * Adds points to the player's score
+     * @param score is the amount of points to be added
+     */
+    void addScore(size_t points);
+
 private:
     // The horizontal speed acceleration
     float m_acc;
@@ -39,6 +45,9 @@ private:
     // The horizontal drag
     float m_hdrag;
 
+    // Player's score
+    size_t m_score;
+
 private:
     // Movement script
     void calcHspd();
@@ -51,4 +60,7 @@ private:
 
     // Vertical collision script
     void vcollide();
+
+    // Method to check for collectables
+    void activateInteractables();
 };
