@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week4",
+  "command": "/usr/bin/c++   -I/home/kanitkameh/Documents/oop-2019-20/exercises/3/week4/include -I/usr/include/gmock    -o CMakeFiles/ProjectName.dir/src/DynamicArray.cpp.o -c /home/kanitkameh/Documents/oop-2019-20/exercises/3/week4/src/DynamicArray.cpp",
+  "file": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week4/src/DynamicArray.cpp"
+},
+{
+  "directory": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week4",
+  "command": "/usr/bin/c++   -I/home/kanitkameh/Documents/oop-2019-20/exercises/3/week4/include -I/usr/include/gmock    -o CMakeFiles/ProjectName.dir/src/Faculty.cpp.o -c /home/kanitkameh/Documents/oop-2019-20/exercises/3/week4/src/Faculty.cpp",
+  "file": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week4/src/Faculty.cpp"
+},
+{
+  "directory": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week4",
+  "command": "/usr/bin/c++   -I/home/kanitkameh/Documents/oop-2019-20/exercises/3/week4/include -I/usr/include/gmock    -o CMakeFiles/ProjectName.dir/src/Student.cpp.o -c /home/kanitkameh/Documents/oop-2019-20/exercises/3/week4/src/Student.cpp",
+  "file": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week4/src/Student.cpp"
+},
+{
+  "directory": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week4",
+  "command": "/usr/bin/c++   -I/home/kanitkameh/Documents/oop-2019-20/exercises/3/week4/include -I/usr/include/gmock    -o CMakeFiles/ProjectName.dir/src/main.cpp.o -c /home/kanitkameh/Documents/oop-2019-20/exercises/3/week4/src/main.cpp",
+  "file": "/home/kanitkameh/Documents/oop-2019-20/exercises/3/week4/src/main.cpp"
+}
+]
