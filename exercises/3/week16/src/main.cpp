@@ -13,7 +13,7 @@ float customExceptionDivide(float a, float b){
 void customExceptionsDemo(){
 	float result = 314;
 	try{
-		result = customExceptionDivide(14.0,0.0);
+		result = customExceptionDivide(14.0,1.0);
 		//This code is executed if everything went fine(without exceptions)
 		cout << "division went fine, result is " << result << endl;
 		
@@ -46,7 +46,7 @@ float errorCodeDivide(float a, float b){
 	return a/b;
 }
 void errorCodeDemo(){
-	float division = errorCodeDivide(14.0,0.0);
+	float division = errorCodeDivide(-5.0,1.0);
 	if(division==-5){
 		cout << "Division by zero error code" << endl;
 	} else {
@@ -58,14 +58,14 @@ float divide(float a, float b){
 	if(b==0)
 		//Execution of current function stops and an exception is thrown
 		//The calling function should handle the exception or rethrow it to its parent(this is done implicitly)
-		throw 69;
+		throw -5;
 	return a/b;
 }
 void exceptionDemo(){
 	float result = 314;
 	//When executing a code that may throw exception we write it in a try section
 	try{
-		result = divide(14.0,0.0);
+		result = divide(-5.0,1.0);
 		//This code is executed if everything went fine(without exceptions)
 		cout << "division went fine, result is " << result << endl;
 		//We can do nested try catch blocks
