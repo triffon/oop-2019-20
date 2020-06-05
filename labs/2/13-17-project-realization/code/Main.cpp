@@ -29,9 +29,9 @@ int main()
     Game::i().addObj( new Coin({ 13 * Game::BLOCK_SIZE, 14 * Game::BLOCK_SIZE }) );
     Game::i().addObj( new Coin({ 17 * Game::BLOCK_SIZE, 13 * Game::BLOCK_SIZE }) );
 
-    Game::i().addObj( new Crate({ 19 * Game::BLOCK_SIZE, 1 * Game::BLOCK_SIZE }) );
-    Game::i().addObj( new Crate({ 20 * Game::BLOCK_SIZE, 2 * Game::BLOCK_SIZE }) );
-    Game::i().addObj( new Crate({ 22 * Game::BLOCK_SIZE, 3 * Game::BLOCK_SIZE }) );
+    Game::i().addObj( new Crate({ 17 * Game::BLOCK_SIZE, -15 * Game::BLOCK_SIZE }) );
+    Game::i().addObj( new Crate({ 20 * Game::BLOCK_SIZE, -8 * Game::BLOCK_SIZE }) );
+    Game::i().addObj( new Crate({ 24 * Game::BLOCK_SIZE, -3 * Game::BLOCK_SIZE }) );
 
     Game::i().run();
 

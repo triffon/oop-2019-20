@@ -6,27 +6,45 @@
 #include "Collectable.hpp"
 
 
-const sf::Keyboard::Key KEY_LEFT  = sf::Keyboard::Key::A;
-const sf::Keyboard::Key KEY_RIGHT = sf::Keyboard::Key::D;
-const sf::Keyboard::Key KEY_JUMP  = sf::Keyboard::Key::Space;
-const float DEFAULT_ACC           = 1;
-const float DEFAULT_MAX_HSPD      = 5;
-const float DEFAULT_JUMP_FORCE    = 12.0f;
-const float DEFAULT_GRAVITY       = 0.6f;
-const float DEFAULT_HDRAG         = 0.8f;
+const sf::Keyboard::Key KEY_LEFT   = sf::Keyboard::Key::A;
+const sf::Keyboard::Key KEY_RIGHT  = sf::Keyboard::Key::D;
+const sf::Keyboard::Key KEY_JUMP   = sf::Keyboard::Key::Space;
+const float DEFAULT_ACC            = 1;
+const float DEFAULT_MAX_HSPD       = 5;
+const float DEFAULT_JUMP_FORCE     = 12.0f;
+const float DEFAULT_GRAVITY        = 0.6f;
+const float DEFAULT_HDRAG          = 0.8f;
+const size_t ID                    = 0;
+const sf::Color DEFAULT_COLOR      = sf::Color::Green;
 
 
 Player::Player(const sf::Vector2f& pos, const sf::Vector2f& size)
     : GameObj(pos, size)
     , Entity(pos, size)
     , PhysicsObj(pos, size, DEFAULT_GRAVITY)
+    , Solid(pos, size)
     , m_acc(DEFAULT_ACC)
     , m_maxhspd(DEFAULT_MAX_HSPD)
     , m_jumpforce(DEFAULT_JUMP_FORCE)
     , m_hdrag(DEFAULT_HDRAG)
     , m_score(0)
 {
-    m_shape.setFillColor(sf::Color::Green);
+    m_shape.setFillColor(DEFAULT_COLOR);
+}
+
+
+Player::Player(std::ifstream& in)
+    : GameObj(in)
+    , Entity(in)
+    , PhysicsObj(in)
+    , Solid(in)
+{
+    in.read((char*) &m_acc, sizeof(m_acc));
+    in.read((char*) &m_maxhspd, sizeof(m_maxhspd));
+    in.read((char*) &m_jumpforce, sizeof(m_jumpforce));
+    in.read((char*) &m_hdrag, sizeof(m_hdrag));
+    in.read((char*) &m_score, sizeof(m_score));
+    m_shape.setFillColor(DEFAULT_COLOR);
 }
 
 
@@ -71,6 +89,27 @@ void Player::addScore(size_t points)
 {
     m_score += points;
     std::cout << "Player score: " << m_score << std::endl;
+}
+
+
+void Player::seriallize(std::ofstream& file) const
+{
+    size_t id = getSaveId();
+    file.write((const char*) &id, sizeof(id));
+
+    PhysicsObj::seriallize(file);
+
+    file.write((const char*) &m_acc, sizeof(m_acc));
+    file.write((const char*) &m_maxhspd, sizeof(m_maxhspd));
+    file.write((const char*) &m_jumpforce, sizeof(m_jumpforce));
+    file.write((const char*) &m_hdrag, sizeof(m_hdrag));
+    file.write((const char*) &m_score, sizeof(m_score));
+}
+
+
+size_t Player::getSaveId()
+{
+    return ID;
 }
 
 

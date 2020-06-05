@@ -2,6 +2,8 @@
 #include "Player.hpp"
 
 const size_t Coin::REWARD = 10;
+const size_t ID = 1;
+const sf::Color DEFAULT_COLOR = sf::Color::Yellow;
 
 
 Coin::Coin(const sf::Vector2f& pos, const sf::Vector2f& size)
@@ -9,7 +11,16 @@ Coin::Coin(const sf::Vector2f& pos, const sf::Vector2f& size)
     , Entity(pos, size)
     , Collectable(pos, size)
 {
-    m_shape.setFillColor(sf::Color::Yellow);
+    m_shape.setFillColor(DEFAULT_COLOR);
+}
+
+
+Coin::Coin(std::ifstream& in)
+    : GameObj(in)
+    , Entity(in)
+    , Collectable(in)
+{
+    m_shape.setFillColor(DEFAULT_COLOR);
 }
 
 
@@ -19,4 +30,19 @@ void Coin::interact(GameObj& interactor)
         p->addScore(REWARD);
         Collectable::interact(interactor);
     }
+}
+
+
+size_t Coin::getSaveId()
+{
+    return ID;
+}
+
+
+void Coin::seriallize(std::ofstream& file) const
+{
+    size_t id = getSaveId();
+    file.write((const char*) &id, sizeof(id));
+
+    Collectable::seriallize(file);
 }

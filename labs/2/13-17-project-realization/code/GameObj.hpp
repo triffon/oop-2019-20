@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <fstream>
 
 /**
  * The base abstract class Object in the game's hierarchy
@@ -10,6 +11,7 @@ class GameObj
 /// Implements the polymorphic BigFour
 public:
     GameObj(const sf::Vector2f& pos, const sf::Vector2f& size);
+    GameObj(std::ifstream& in);
     GameObj(const GameObj& other) = default;
     GameObj& operator=(const GameObj& other) = default;
     virtual ~GameObj() = default;
@@ -44,6 +46,11 @@ public:
      * @returns The size of the object
      */
     sf::Vector2f getSize() const { return m_shape.getSize(); }
+
+    /**
+     * Save the current object to a binary file
+     */
+    virtual void seriallize(std::ofstream& file) const;
 
 protected:
     // Moved the m_shape to the base class GameObj

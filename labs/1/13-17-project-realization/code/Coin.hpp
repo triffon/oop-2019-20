@@ -11,6 +11,7 @@ class Coin : public Collectable
 /// Implements the polymorphic BigFour
 public:
     Coin(const sf::Vector2f& pos, const sf::Vector2f& size = { Game::BLOCK_SIZE * 0.5f , Game::BLOCK_SIZE * 0.5f });
+    Coin(std::ifstream& in);
     Coin(const Coin& other) = default;
     Coin& operator=(const Coin& other) = default;
     virtual ~Coin() = default;
@@ -26,6 +27,16 @@ public:
      * @param interactor is the object that is interacting with the current object
      */
     virtual void interact(GameObj& interactor) override;
+
+    /**
+     * Coin's ID used for savefiles
+     */
+    static size_t getSaveId();
+
+    /**
+     * Save the current object to a binary file
+     */
+    virtual void seriallize(std::ofstream& file) const override;
 
     // Amount of points awarded
     static const size_t REWARD;

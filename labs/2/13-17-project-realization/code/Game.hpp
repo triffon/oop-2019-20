@@ -92,7 +92,7 @@ public:
     void setWindowBgColor(const sf::Color& bgColor) { m_bgColor = bgColor; }
 
     /**
-     * Sets the games refresh rate
+     * Sets the game's refresh rate
      */
     void setFPS(unsigned int FPS);
 
@@ -112,7 +112,19 @@ public:
      */
     void removeObj(const GameObj& obj);
 
+    /**
+     * Creates a save containing all the info about the current objects
+     */
+    void createSaveFile() const;
+
+    /**
+     * Loads the previous save containing all the info about the current objects
+     */
+    void loadSaveFile();
+
 private:
+    void deleteGameObjects();
+
     // The type of the container used to store the game objects
     using GameObjContainer = std::vector<GameObj*>;
 

@@ -1,6 +1,9 @@
 #include <cmath>
+#include <iostream>
+#include <fstream>
 #include "Game.hpp"
 #include "PhysicsObj.hpp"
+#include "SaveFileFactory.hpp"
 
 
 // The default refresh rate
@@ -12,6 +15,9 @@ const sf::Color DEFAULT_BGCOLOR = { 127, 127, 127, 255 };
 // The game tiles' size
 const float Game::BLOCK_SIZE    = 32;
 
+// The default save file name
+const char* SAVE_FILE = "prev_save.bin";
+
 
 Game::Game()
     : m_bgColor(DEFAULT_BGCOLOR)
@@ -21,10 +27,7 @@ Game::Game()
 
 Game::~Game()
 {
-    // Iterate through the game's object container
-    // and delete them, because they are polymorphic
-    for (size_t i = 0; i < m_objects.size(); ++i)
-        delete m_objects[i];
+    deleteGameObjects();
 }
 
 
@@ -79,6 +82,16 @@ void Game::pollEvents()
         // "Window's close button is pressed"
         if (event.type == sf::Event::Closed)
             m_window.close();
+    }
+
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::P)) {
+        std::cout << "P pressed" << std::endl;
+        // Save the game
+        createSaveFile();
+    } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::L)) {
+        std::cout << "L pressed" << std::endl;
+        loadSaveFile();
+        // Load the previous save
     }
 }
 
@@ -135,4 +148,48 @@ void Game::removeObj(const GameObj& obj)
             return;
         }
     }
+}
+
+
+void Game::createSaveFile() const
+{
+    std::ofstream file(SAVE_FILE, std::ios::binary);
+    if (!file) {
+        std::cout << "Couldn't save the game!" << std::endl;
+        return;
+    }
+
+    for (size_t i = 0; i < m_objects.size(); i++)
+        m_objects[i]->seriallize(file);
+
+    file.close();
+}
+
+
+void Game::loadSaveFile()
+{
+    std::ifstream file(SAVE_FILE, std::ios::binary);
+    if (!file) {
+        std::cout << "Couldn't load the game!" << std::endl;
+        return;
+    }
+
+    deleteGameObjects();
+
+    SaveFileFactory fact(file);
+    while (GameObj* obj = fact.createObj())
+        m_objects.push_back(obj);
+
+    file.close();
+}
+
+
+void Game::deleteGameObjects()
+{
+    // Iterate through the game's object container
+    // and delete them, because they are polymorphic
+    for (size_t i = 0; i < m_objects.size(); ++i)
+        delete m_objects[i];
+    
+    m_objects.clear();
 }

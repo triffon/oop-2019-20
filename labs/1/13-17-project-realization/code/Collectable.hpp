@@ -10,6 +10,7 @@ class Collectable : public Interactable
 /// Implements the polymorphic BigFour
 public:
     Collectable(const sf::Vector2f& pos, const sf::Vector2f& size);
+    Collectable(std::ifstream& in);
     Collectable(const Collectable& other) = default;
     Collectable& operator=(const Collectable& other) = default;
     virtual ~Collectable() = default;
@@ -20,7 +21,7 @@ public:
      * using the Game::i().removeObj(*this) method.
      * @param interactor is the object that is interacting with the current object
      */
-    virtual void interact(GameObj& interactor) override;
+    virtual void interact(GameObj&) override;
 
     /**
      * By default calls the interact(interactor) method

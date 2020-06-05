@@ -2,15 +2,17 @@
 
 #include "PhysicsObj.hpp"
 #include "Game.hpp"
+#include "Solid.hpp"
 
 /**
  * The player object class
  */
-class Player : public PhysicsObj
+class Player : public PhysicsObj, public Solid
 {
 /// Implements the polymorphic BigFour
 public:
     Player(const sf::Vector2f& pos, const sf::Vector2f& size = { Game::BLOCK_SIZE , Game::BLOCK_SIZE });
+    Player(std::ifstream& in);
     Player(const Player& other) = default;
     Player& operator=(const Player& other) = default;
     virtual ~Player() = default;
@@ -31,6 +33,16 @@ public:
      * @param score is the amount of points to be added
      */
     void addScore(size_t points);
+
+    /**
+     * Save the current object to a binary file
+     */
+    virtual void seriallize(std::ofstream& file) const override;
+
+    /**
+     * Player's ID used for savefiles
+     */
+    static size_t getSaveId();
 
 private:
     // The horizontal speed acceleration

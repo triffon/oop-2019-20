@@ -6,7 +6,12 @@ Collectable::Collectable(const sf::Vector2f& pos, const sf::Vector2f& size)
 {}
 
 
-void Collectable::interact(GameObj& interactor)
+Collectable::Collectable(std::ifstream& in)
+    : Interactable(in)
+{}
+
+
+void Collectable::interact(GameObj&)
 {
     Game::i().removeObj(*this);
 }
