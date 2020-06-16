@@ -1,7 +1,11 @@
-# 'a' is Player
-# 'p' is Platform
-# 'o' is Coin
-# 'c' is Crate
+# 'a' is a Player
+# 'p' is a Platform
+# 'o' is a Coin
+# 'c' is a Crate
+# '0' - '5' is a Button
+# '6' - '9' os a Door
+# Matching colors Buttons and Doors have a sum of '9'
+# (e.g. '2' and '7' are the same color Button and Door)
 
 
 ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp
