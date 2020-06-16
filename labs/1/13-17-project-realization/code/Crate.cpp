@@ -1,6 +1,6 @@
 #include "Crate.hpp"
 
-const size_t ID = 3;
+const unsigned char ID = 'c';
 const sf::Color DEFAULT_COLOR = sf::Color(101, 67, 33);
 
 Crate::Crate(const sf::Vector2f& pos, const sf::Vector2f& size)
@@ -35,16 +35,16 @@ void Crate::update()
 }
 
 
-size_t Crate::getSaveId()
+unsigned char Crate::getSaveId()
 {
     return ID;
 }
 
 
-void Crate::seriallize(std::ofstream& file) const
+void Crate::serialize(std::ofstream& file) const
 {
-    size_t id = getSaveId();
+    unsigned char id = getSaveId();
     file.write((const char*) &id, sizeof(id));
 
-    PhysicsObj::seriallize(file);
+    PhysicsObj::serialize(file);
 }

@@ -11,10 +11,14 @@ class GameObj
 /// Implements the polymorphic BigFour
 public:
     GameObj(const sf::Vector2f& pos, const sf::Vector2f& size);
-    GameObj(std::ifstream& in);
     GameObj(const GameObj& other) = default;
     GameObj& operator=(const GameObj& other) = default;
     virtual ~GameObj() = default;
+
+    /**
+     * Constructs a game object from the given binary file
+     */
+    GameObj(std::ifstream& in);
 
     /**
      * Pure virtual clone method
@@ -26,6 +30,11 @@ public:
      * Polymorphic draw method used to draw the object on the screen
      */
     virtual void draw() const;
+
+    /**
+     * Polymorphic draw method used to draw the object's GUI
+     */
+    virtual void drawGUI() const;
 
     /**
      * @returns The position of the object
@@ -50,7 +59,7 @@ public:
     /**
      * Save the current object to a binary file
      */
-    virtual void seriallize(std::ofstream& file) const;
+    virtual void serialize(std::ofstream& file) const;
 
 protected:
     // Moved the m_shape to the base class GameObj

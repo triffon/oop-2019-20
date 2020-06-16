@@ -16,7 +16,7 @@ Pushable::Pushable(std::ifstream& in)
 void Pushable::interact(GameObj& interactor)
 {
     if (PhysicsObj* inter = dynamic_cast<PhysicsObj*>(&interactor)) {
-        sf::Rect<float> collisionRect(getPosition(), getSize());
+        sf::FloatRect collisionRect(getPosition(), getSize());
         if (inter->getHspd() > 0) {
             collisionRect.left += collisionRect.width;
             collisionRect.width = inter->getHspd();

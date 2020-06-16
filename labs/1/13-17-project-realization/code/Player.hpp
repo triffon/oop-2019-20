@@ -12,21 +12,30 @@ class Player : public PhysicsObj, public Solid
 /// Implements the polymorphic BigFour
 public:
     Player(const sf::Vector2f& pos, const sf::Vector2f& size = { Game::BLOCK_SIZE , Game::BLOCK_SIZE });
-    Player(std::ifstream& in);
     Player(const Player& other) = default;
     Player& operator=(const Player& other) = default;
     virtual ~Player() = default;
 
     /**
+     * Constructs a player from the given binary file
+     */
+    Player(std::ifstream& in);
+
+    /**
      * Polymorphic clone method
      * @returns A pointer to a dynamically allocated polymorhic game object
      */
-    virtual GameObj* clone() const override { return new Player(*this); }
+    virtual GameObj* clone() const override { return new (std::nothrow) Player(*this); }
 
     /**
      * Polymorphic method that runs every frame
      */
     virtual void update() override;
+
+    /**
+     * Draws the score on screen
+     */
+    virtual void drawGUI() const override;
 
     /**
      * Adds points to the player's score
@@ -35,14 +44,14 @@ public:
     void addScore(size_t points);
 
     /**
-     * Save the current object to a binary file
+     * Serializes the object to a binary file
      */
-    virtual void seriallize(std::ofstream& file) const override;
+    virtual void serialize(std::ofstream& file) const override;
 
     /**
      * Player's ID used for savefiles
      */
-    static size_t getSaveId();
+    static unsigned char getSaveId();
 
 private:
     // The horizontal speed acceleration

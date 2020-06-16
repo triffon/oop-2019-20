@@ -11,16 +11,20 @@ class Coin : public Collectable
 /// Implements the polymorphic BigFour
 public:
     Coin(const sf::Vector2f& pos, const sf::Vector2f& size = { Game::BLOCK_SIZE * 0.5f , Game::BLOCK_SIZE * 0.5f });
-    Coin(std::ifstream& in);
     Coin(const Coin& other) = default;
     Coin& operator=(const Coin& other) = default;
     virtual ~Coin() = default;
 
     /**
+     * Constructs a coin from the given binary file
+     */
+    Coin(std::ifstream& in);
+
+    /**
      * Polymorphic clone method
      * @returns A pointer to a dynamically allocated polymorhic game object
      */
-    virtual GameObj* clone() const override { return new Coin(*this); }
+    virtual GameObj* clone() const override { return new (std::nothrow) Coin(*this); }
 
     /**
      * Method that's called when an object interacts with this object
@@ -31,12 +35,12 @@ public:
     /**
      * Coin's ID used for savefiles
      */
-    static size_t getSaveId();
+    static unsigned char getSaveId();
 
     /**
-     * Save the current object to a binary file
+     * Serializes the object to a binary file
      */
-    virtual void seriallize(std::ofstream& file) const override;
+    virtual void serialize(std::ofstream& file) const override;
 
     // Amount of points awarded
     static const size_t REWARD;

@@ -1,0 +1,21 @@
+# 'a' is Player
+# 'p' is Platform
+# 'o' is Coin
+# 'c' is Crate
+
+
+ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp
+p                  9 8 7 6 5                                  p
+p        0         9 8 7 6 5                                  p
+p                  9 8 7 6 5                                  p
+p                  pppppppppppppppppppppppppppppppppppppppppp p
+p                               p                             p
+p       ppppppp                 p                             p
+p                               p                             p
+p                               p                             p
+p      1                        p                             p
+p    ppppp                      p                             p
+p                               p                             p
+p          a  3 4    2          p o o o o o o o o o o o o o o p
+ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp
+

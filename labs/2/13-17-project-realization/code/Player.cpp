@@ -5,17 +5,19 @@
 #include "Util.hpp"
 #include "Collectable.hpp"
 
-
-const sf::Keyboard::Key KEY_LEFT   = sf::Keyboard::Key::A;
-const sf::Keyboard::Key KEY_RIGHT  = sf::Keyboard::Key::D;
-const sf::Keyboard::Key KEY_JUMP   = sf::Keyboard::Key::Space;
-const float DEFAULT_ACC            = 1;
-const float DEFAULT_MAX_HSPD       = 5;
-const float DEFAULT_JUMP_FORCE     = 12.0f;
-const float DEFAULT_GRAVITY        = 0.6f;
-const float DEFAULT_HDRAG          = 0.8f;
-const size_t ID                    = 0;
-const sf::Color DEFAULT_COLOR      = sf::Color::Green;
+const sf::Keyboard::Key KEY_LEFT     = sf::Keyboard::Key::A;
+const sf::Keyboard::Key KEY_RIGHT    = sf::Keyboard::Key::D;
+const sf::Keyboard::Key KEY_JUMP     = sf::Keyboard::Key::Space;
+const float DEFAULT_ACC              = 1;
+const float DEFAULT_MAX_HSPD         = 5;
+const float DEFAULT_JUMP_FORCE       = 12.0f;
+const float DEFAULT_GRAVITY          = 0.6f;
+const float DEFAULT_HDRAG            = 0.8f;
+const unsigned char ID               = 'a';
+const sf::Color DEFAULT_COLOR        = sf::Color::Green;
+const sf::Vector2f GUI_SCORE_POS     = { 10, 6 };
+const sf::Vector2f GUI_SHADOW_OFFSET = { 2, 2 };
+const size_t SCORE_TEXT_SIZE         = 24;
 
 
 Player::Player(const sf::Vector2f& pos, const sf::Vector2f& size)
@@ -73,12 +75,24 @@ void Player::update()
 }
 
 
+void Player::drawGUI() const
+{
+    // Text to draw on the screen
+    std::string text = "Score: " + std::to_string(m_score);
+
+    // Draw the text
+    Game::i().drawGUIText(GUI_SCORE_POS, text, SCORE_TEXT_SIZE, sf::Color::White, sf::Color::Black);
+}
+
+
 void Player::activateInteractables()
 {
-    sf::Rect<float> collisionRect(getPosition(), getSize());
+    // Collision rectangle at the next position
+    sf::FloatRect collisionRect(getPosition(), getSize());
     collisionRect.left += m_hspd;
     collisionRect.top += m_vspd;
 
+    // Interact with all the objects in the collision rect
     std::vector<Interactable*> vec = Game::i().checkCollision<Interactable>(collisionRect);
     for (size_t i = 0; i < vec.size(); i++)
         vec[i]->interact(*this);
@@ -88,16 +102,15 @@ void Player::activateInteractables()
 void Player::addScore(size_t points)
 {
     m_score += points;
-    std::cout << "Player score: " << m_score << std::endl;
 }
 
 
-void Player::seriallize(std::ofstream& file) const
+void Player::serialize(std::ofstream& file) const
 {
-    size_t id = getSaveId();
+    unsigned char id = getSaveId();
     file.write((const char*) &id, sizeof(id));
 
-    PhysicsObj::seriallize(file);
+    PhysicsObj::serialize(file);
 
     file.write((const char*) &m_acc, sizeof(m_acc));
     file.write((const char*) &m_maxhspd, sizeof(m_maxhspd));
@@ -107,7 +120,7 @@ void Player::seriallize(std::ofstream& file) const
 }
 
 
-size_t Player::getSaveId()
+unsigned char Player::getSaveId()
 {
     return ID;
 }
@@ -123,7 +136,7 @@ void Player::calcHspd()
         m_hspd += m_acc;
 
     if (m_hspd != 0) {
-        // If the player is moving apply drag
+        // If the player is moving and hasn't pressed a direction key apply drag
         if (!sf::Keyboard::isKeyPressed(KEY_LEFT) && !sf::Keyboard::isKeyPressed(KEY_RIGHT)) {
             float newHspd = m_hspd - (m_hspd > 0 ? 1 : -1) * m_hdrag;
 
@@ -148,7 +161,7 @@ void Player::hcollide()
 
     // Create the correct collision rectangle directly
     // next to the player right where he should move to
-    sf::Rect<float> collisionRect(getPosition(), getSize());
+    sf::FloatRect collisionRect(getPosition(), getSize());
     if (m_hspd > 0) {
         collisionRect.left += collisionRect.width;
         collisionRect.width = m_hspd;
@@ -178,7 +191,7 @@ void Player::hcollide()
 
 void Player::calcVspd()
 {
-    // Apply jump force
+    // Apply jump force if the player is on the ground
     if (m_grounded && sf::Keyboard::isKeyPressed(KEY_JUMP))
         m_vspd = -m_jumpforce;
 }
@@ -190,7 +203,7 @@ void Player::vcollide()
     if (m_vspd < 0) {
         // Create a collision rectangle directly above the
         // player right where the object should move up to
-        sf::Rect<float> collisionRect (getPosition(), getSize());
+        sf::FloatRect collisionRect (getPosition(), getSize());
         collisionRect.top += m_vspd;
         collisionRect.height = m_vspd;
 

@@ -19,10 +19,12 @@ public:
      * Polymorphic clone method
      * @returns A pointer to a dynamically allocated polymorhic game object
      */
-    virtual GameObj* clone() const override { return new Monkey(*this); }
+    virtual GameObj* clone() const override { return new (std::nothrow) Monkey(*this); }
 
     /**
      * Polymorphic method that runs every frame used for AI
      */
     virtual void update() override;
+
+    // TODO: Add serialize method and deserializing constructor
 };

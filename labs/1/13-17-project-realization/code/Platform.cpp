@@ -1,7 +1,7 @@
 #include "Platform.hpp"
 #include "Game.hpp"
 
-const size_t ID = 2;
+const unsigned char ID = 'p';
 const sf::Color DEFAULT_COLOR = sf::Color::Black;
 
 Platform::Platform(const sf::Vector2f& pos, const sf::Vector2f& size)
@@ -20,16 +20,16 @@ Platform::Platform(std::ifstream& in)
 }
 
 
-size_t Platform::getSaveId()
+unsigned char Platform::getSaveId()
 {
     return ID;
 }
 
 
-void Platform::seriallize(std::ofstream& file) const
+void Platform::serialize(std::ofstream& file) const
 {
-    size_t id = getSaveId();
+    unsigned char id = getSaveId();
     file.write((const char*) &id, sizeof(id));
 
-    Solid::seriallize(file);
+    Solid::serialize(file);
 }

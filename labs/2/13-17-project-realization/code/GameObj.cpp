@@ -24,7 +24,11 @@ void GameObj::draw() const
 }
 
 
-void GameObj::seriallize(std::ofstream& file) const
+void GameObj::drawGUI() const
+{}
+
+
+void GameObj::serialize(std::ofstream& file) const
 {
     sf::Vector2f pos = m_shape.getPosition();
     sf::Vector2f size = m_shape.getSize();

@@ -10,10 +10,14 @@ class PhysicsObj : virtual public Entity
 /// Implements the polymorphic BigFour
 public:
     PhysicsObj(const sf::Vector2f& pos, const sf::Vector2f& size, float gravity = 0.5);
-    PhysicsObj(std::ifstream& in);
     PhysicsObj(const PhysicsObj& other) = default;
     PhysicsObj& operator=(const PhysicsObj& other) = default;
     virtual ~PhysicsObj() = default;
+
+    /**
+     * Constructs a physics object from the given binary file
+     */
+    PhysicsObj(std::ifstream& in);
 
     /**
      * Polymorphic method that runs every frame and applies gravity to m_vspd.
@@ -37,9 +41,9 @@ public:
     float getVspd() const { return m_vspd; }
 
     /**
-     * Save the current object to a binary file
+     * Serializes the object to a binary file
      */
-    virtual void seriallize(std::ofstream& file) const override;
+    virtual void serialize(std::ofstream& file) const override;
 
 protected:
     // Gravity acceleration
@@ -53,7 +57,4 @@ protected:
 
     // The object is on the ground
     bool m_grounded;
-
-    // Inactive time after creation
-    size_t m_inactivity;
 };

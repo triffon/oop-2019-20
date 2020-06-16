@@ -2,7 +2,7 @@
 #include "Player.hpp"
 
 const size_t Coin::REWARD = 10;
-const size_t ID = 1;
+const unsigned char ID    = 'o';
 const sf::Color DEFAULT_COLOR = sf::Color::Yellow;
 
 
@@ -33,16 +33,16 @@ void Coin::interact(GameObj& interactor)
 }
 
 
-size_t Coin::getSaveId()
+unsigned char Coin::getSaveId()
 {
     return ID;
 }
 
 
-void Coin::seriallize(std::ofstream& file) const
+void Coin::serialize(std::ofstream& file) const
 {
-    size_t id = getSaveId();
+    unsigned char id = getSaveId();
     file.write((const char*) &id, sizeof(id));
 
-    Collectable::seriallize(file);
+    Collectable::serialize(file);
 }

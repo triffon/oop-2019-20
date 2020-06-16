@@ -5,7 +5,8 @@
 #include <algorithm>
 #include "GameObj.hpp"
 
-enum class Direction {
+enum class Direction
+{
     UP,
     RIGHT,
     DOWN,
@@ -63,6 +64,30 @@ public:
     void drawAll();
 
     /**
+     * Draws all objects' GUI
+     */
+    void drawAllGUI();
+
+    /**
+     * Draws text on the screen at the given position
+     */
+    void drawText(const sf::Vector2f& pos,
+                  const std::string& text,
+                  size_t textSize,
+                  sf::Color textColor = sf::Color::White,
+                  sf::Color outlineColor = sf::Color::Transparent);
+
+    /**
+     * Draws text on the screen at the given position as GUI
+     */
+    void drawGUIText(const sf::Vector2f& pos,
+                     const std::string& text,
+                     size_t textSize,
+                     sf::Color textColor = sf::Color::White,
+                     sf::Color outlineColor = sf::Color::Transparent);
+
+
+    /**
      * Adds a dynamically allocated polymorhic object to the game
      */
     void addObj(GameObj* obj);
@@ -72,7 +97,7 @@ public:
      * in collision with the specified collisionRect
      */
     template<typename T>
-    std::vector<T*> checkCollision(const sf::Rect<float>& collisionRect) const;
+    std::vector<T*> checkCollision(const sf::FloatRect& collisionRect) const;
 
     /**
      * @returns All objects of the template type that are
@@ -97,11 +122,6 @@ public:
     void setFPS(unsigned int FPS);
 
     /**
-     * The game tiles' size
-     */
-    static const float BLOCK_SIZE;
-
-    /**
      * @returns The closest object of the given vector in the given direction
      */
     template<typename T>
@@ -122,6 +142,22 @@ public:
      */
     void loadSaveFile();
 
+    /**
+     * Loads the given level
+     */
+    void loadLevel(size_t level);
+
+    /**
+     * @returns A vector containing pointers to all game objects of a certain type
+     */
+    template <typename T>
+    std::vector<T*> getAll() const;
+
+    /**
+     * The game tiles' size
+     */
+    static const float BLOCK_SIZE;
+
 private:
     void deleteGameObjects();
 
@@ -134,6 +170,12 @@ private:
     // The window all objects get drawn on
     sf::RenderWindow m_window;
 
+    // The view of the game
+    sf::View m_view;
+
+    // The object being followed by the view
+    GameObj* m_viewFollow;
+
     // The background color of the window
     sf::Color m_bgColor;
 
@@ -142,11 +184,14 @@ private:
 
     // The target time in microseconds between each frame
     static const int REFRESH_RATE;
+
+    // The default game font
+    sf::Font m_defaultFont;
 };
 
 
 template<typename T>
-std::vector<T*> Game::checkCollision(const sf::Rect<float>& collisionRect) const
+std::vector<T*> Game::checkCollision(const sf::FloatRect& collisionRect) const
 {
     std::vector<T*> result;
 
@@ -157,7 +202,7 @@ std::vector<T*> Game::checkCollision(const sf::Rect<float>& collisionRect) const
         if (T* obj = dynamic_cast<T*>(m_objects[i])) {
 
             // And if it's colliding -> add it to the result vector
-            sf::Rect<float> objRect(obj->getPosition(), obj->getSize());
+            sf::FloatRect objRect(obj->getPosition(), obj->getSize());
             if (collisionRect.intersects(objRect))
                 result.push_back(obj);
 
@@ -172,7 +217,7 @@ std::vector<T*> Game::checkCollision(const sf::Rect<float>& collisionRect) const
 template<typename T>
 std::vector<T*> Game::checkCollision(const GameObj& obj) const
 {
-    return checkCollision<T>(sf::Rect<float>(obj.getPosition(), obj.getSize()));
+    return checkCollision<T>(sf::FloatRect(obj.getPosition(), obj.getSize()));
 }
 
 
@@ -205,4 +250,16 @@ T* Game::getClosest(const std::vector<T*> objects, Direction dir)
 
     // STL function that returns an iterator to the minimal element using a given function to compare
     return *std::min_element(objects.begin(), objects.end(), comparator);
+}
+
+
+template<typename T>
+std::vector<T*> Game::getAll() const
+{
+    std::vector<T*> result;
+    for (GameObj* obj : m_objects)
+        if (T* t = dynamic_cast<T*>(obj))
+            result.push_back(t);
+
+    return result;
 }

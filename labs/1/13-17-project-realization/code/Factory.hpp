@@ -5,6 +5,10 @@
 class Factory
 {
 public:
-    virtual GameObj* createObj() const = 0;
+    /**
+     * The pure virtual creatObj method every factory should implement
+     */
+    virtual GameObj* createObj() = 0;
+
     virtual ~Factory() = default;
 };

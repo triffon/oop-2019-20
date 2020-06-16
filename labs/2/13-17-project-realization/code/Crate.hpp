@@ -13,16 +13,20 @@ class Crate : public Solid, public PhysicsObj, public Pushable
 /// Implements the polymorphic BigFour
 public:
     Crate(const sf::Vector2f& pos, const sf::Vector2f& size = { Game::BLOCK_SIZE , Game::BLOCK_SIZE });
-    Crate(std::ifstream& in);
     Crate(const Crate& other) = default;
     Crate& operator=(const Crate& other) = default;
     virtual ~Crate() = default;
 
     /**
+     * Constructs a crate from the given binary file
+     */
+    Crate(std::ifstream& in);
+
+    /**
      * Polymorphic clone method
      * @returns A pointer to a dynamically allocated polymorhic game object
      */
-    virtual GameObj* clone() const override { return new Crate(*this); }
+    virtual GameObj* clone() const override { return new (std::nothrow) Crate(*this); }
 
     /**
      * Polymorphic method that runs every frame and applies PhysicsObj::update()
@@ -33,10 +37,10 @@ public:
     /**
      * Crate's ID used for savefiles
      */
-    static size_t getSaveId();
+    static unsigned char getSaveId();
 
     /**
-     * Save the current object to a binary file
+     * Serializes the object to a binary file
      */
-    virtual void seriallize(std::ofstream& file) const override;
+    virtual void serialize(std::ofstream& file) const override;
 };

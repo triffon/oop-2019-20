@@ -19,7 +19,8 @@ public:
      * Polymorphic clone method
      * @returns A pointer to a dynamically allocated polymorhic game object
      */
-    virtual GameObj* clone() const override { return new PowerUp(*this); }
+    virtual GameObj* clone() const override { return new (std::nothrow) PowerUp(*this); }
 
     // TODO: Implement collecting power-ups
+    // TODO: Add serialize method and deserializing constructor
 };
