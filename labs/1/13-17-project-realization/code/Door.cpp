@@ -2,7 +2,6 @@
 
 const size_t COLORS_COUNT = 5;
 const sf::Color COLORS[] = { sf::Color::Magenta, sf::Color::Cyan, sf::Color::Blue, sf::Color::Green, sf::Color::Red };
-const unsigned char ID = '9';
 const unsigned char MAX_DOOR_ID = '9';
 const unsigned char MIN_DOOR_ID = '5';
 

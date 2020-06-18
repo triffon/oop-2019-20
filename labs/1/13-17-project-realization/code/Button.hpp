@@ -35,6 +35,8 @@ public:
     virtual void serialize(std::ofstream& file) const override;
 
     static unsigned char getSaveId();
+    static unsigned char getMinId();
+    static unsigned char getMaxId();
 
 private:
     sf::Color m_color;

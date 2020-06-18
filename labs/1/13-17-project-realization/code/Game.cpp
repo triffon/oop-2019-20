@@ -23,7 +23,7 @@ const char* SAVE_FILE = "prev_save.bin";
 const char* DEFAULT_FONT = "Montserrat-Regular.ttf";
 
 // The default font outline thickness
-size_t DEFAULT_FONT_OUTLINE = 1;
+const size_t DEFAULT_FONT_OUTLINE = 1;
 
 // Info message
 const char* INFO_MSG = "Use WASD + Space to move.\n"
@@ -32,10 +32,13 @@ const char* INFO_MSG = "Use WASD + Space to move.\n"
                        "Press '1' to load level 1.";
 
 // Info message position
-sf::Vector2f INFO_MSG_POS = { 10, 40 };
+const sf::Vector2f INFO_MSG_POS = { 10, 40 };
 
 // Info message size
-size_t INFO_MSG_SIZE = 14;
+const size_t INFO_MSG_SIZE = 14;
+
+// View Y offset factor
+const float VIEW_Y_OFFSET_FACTOR = 0.15f;
 
 
 Game::Game()
@@ -96,8 +99,12 @@ void Game::run()
         drawAllGUI();
 
         // Set view
-        if (m_viewFollow)
-            m_view.setCenter(m_viewFollow->getPosition() + m_viewFollow->getSize() / 2.0f);
+        if (m_viewFollow) {
+            sf::Vector2f fPos = m_viewFollow->getPosition();
+            fPos += m_viewFollow->getSize() * 0.5f; // Center on object
+            fPos.y -= m_window.getSize().y * VIEW_Y_OFFSET_FACTOR;
+            m_view.setCenter(fPos);
+        }
         m_window.setView(m_view);
 
         // Render the window

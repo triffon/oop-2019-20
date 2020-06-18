@@ -46,8 +46,8 @@ GameObj* LevelFactory::createObj()
         if (id == Coin::getSaveId())
             return new (std::nothrow) Coin({ currX, currY });
 
-        if (id >= '0' && id <= '4')
-            return new (std::nothrow) Button({ currX, currY }, id - '0');
+        if (id >= Button::getMinId() && id <= Button::getMaxId())
+            return new (std::nothrow) Button({ currX, currY }, id);
 
         if (id >= Door::getMinId() && id <= Door::getMaxId())
             return new (std::nothrow) Door({ currX, currY }, id);
