@@ -24,5 +24,5 @@
 
     
 ## Дистанционни Упражнения
- * [__Група 1&2 - практикуми, Група 2 - семинари__](https://drive.google.com/drive/folders/1xwjK4JYI5lm9ySMgNpT4ZhBoqzVhHYYV?usp=sharing)
+ * [__Първа и втора група - практикуми, Втора група - семинари__](https://drive.google.com/drive/folders/1xwjK4JYI5lm9ySMgNpT4ZhBoqzVhHYYV?usp=sharing)
  * [__Шеста група__](https://drive.google.com/drive/folders/0B2mK2PokkjqTfmk2ZjhhVDBwNWVhVEd6bnU4SFlES2loQ0hhcHVRSGVsZDA2Q0ZjNkY0dXM?usp=sharing)
