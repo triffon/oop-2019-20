@@ -1,6 +1,6 @@
-[submodule "13-17-project-realization"]
+[submodule "13-17-project-realization2"]
 	path = labs/2/13-17-project-realization
 	url = https://github.com/dimbata23/fmi-oop-teaching-practice-project
 [submodule "13-17-project-realization1"]
-	path = labs/1/fmi-oop-teaching-practice-project
+	path = labs/1/13-17-project-realization
 	url = https://github.com/dimbata23/fmi-oop-teaching-practice-project
